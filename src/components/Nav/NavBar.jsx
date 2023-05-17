@@ -4,7 +4,7 @@ import Profile from './Profile/UserBtn'
 
 function NavBar() {
   return (
-    <nav className='shadow-md h-[10vh] flex justify-between items-center'>
+    <nav className='shadow-md h-[13vh] flex justify-between items-center'>
         
         <div className='flex items-center'>
             <Logo />

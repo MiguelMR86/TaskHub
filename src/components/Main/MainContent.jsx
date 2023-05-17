@@ -1,12 +1,10 @@
 import React from 'react'
-// import SideBar from './Sidebar/SideBar'
-import SideBarBtn from './Sidebar/SideBarBtn'
+import SideBar from './Sidebar/SideBar'
 
 function MainContent() {
   return (
-    <div className='relative h-[90vh]'>
-        <SideBarBtn />
-        {/* <SideBar /> */}
+    <div className='relative h-screen'>
+        <SideBar />
     </div>
   )
 }
