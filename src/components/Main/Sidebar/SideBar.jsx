@@ -4,6 +4,7 @@ import SideBarContent from "./SideBarContent";
 import UserBtn from "../../Nav/Profile/UserBtn";
 import SettingsBtn from "../../Nav/Profile/SettingsBtn";
 import Logo from "../../Nav/Logo";
+import HomeBtn from "../../Nav/Profile/HomeBtn";
 
 export default function SideBar() {
   const [openNav, setOpenNav] = useState(false);
@@ -19,19 +20,20 @@ export default function SideBar() {
         </label>
       </div>
 
-      <Navbar fullWidth className={`absolute w-[300px] h-[90vh] flex flex-wrap rounded-none rounded-r-lg top-[60px] shadow-[0_5px_25px_rgba(0,0,0,0.3)] transition-all ${openNav ? 'translate-x-[0]' : ' -translate-x-[300px]'}`}>
-        
-        <div id="user-btn" className=' w-full h-fit flex gap-2 justify-between items-center'>
+      <Navbar fullWidth className={`absolute w-[300px] h-[90vh] flex flex-col justify-between rounded-none rounded-r-lg top-[60px] shadow-[0_5px_25px_rgba(0,0,0,0.3)] transition-all ${openNav ? 'translate-x-[0]' : ' -translate-x-[300px]'}`}>
+        <div open={openNav}>
           <Logo />
+          <SideBarContent/>
+        </div>
+
+        <div id="user-btn" className='w-full h-fit flex gap-2 justify-between items-center'>
+          <HomeBtn />
           <div className="flex gap-3">
             <SettingsBtn />
             <UserBtn />
           </div>
         </div>
-        
-        <div open={openNav} className='flex flex-wrap w-full content-between justify-end'>
-          <SideBarContent/>
-        </div>
+
       </Navbar>
     </>
   );
