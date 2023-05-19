@@ -1,11 +1,10 @@
 import React from 'react'
-import {BsPersonWorkspace} from 'react-icons/bs'
 import { Button } from '@material-tailwind/react'
-
+import { TfiWorld } from 'react-icons/tfi'
 function HomeBtn() {
   return (
-    <Button className='w-[60px] h-[60px] select-none text-white bg-gradient-to-r from-[#7c4396] to-[#993a76] rounded-full'>
-        <BsPersonWorkspace className=' scale-[2.5]'/>
+    <Button className='w-[50px] h-[50px] p-0 m-0 flex justify-center items-center select-none bg-white text-[#7c4396] border-2 border-[#7c4396] border-dashed rounded-full z-10 opacity-80'>
+        <TfiWorld className='scale-[2.3]'/>
     </Button>
   )
 }

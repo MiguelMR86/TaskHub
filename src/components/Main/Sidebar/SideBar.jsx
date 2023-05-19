@@ -27,11 +27,16 @@ export default function SideBar() {
         </div>
 
         <div id="user-btn" className='w-full h-fit flex gap-2 justify-between items-center'>
-          <HomeBtn />
-          <div className="flex gap-3">
-            <SettingsBtn />
-            <UserBtn />
+          
+          <div className="relative flex gap-3">
+            <HomeBtn />
+            <div className="absolute left-10">
+              <UserBtn />
+            </div>
           </div>
+          
+          <SettingsBtn />
+          
         </div>
 
       </Navbar>
