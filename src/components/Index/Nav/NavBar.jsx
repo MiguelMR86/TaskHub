@@ -1,6 +1,6 @@
 import React from 'react'
 import Logo from './Logo'
-import Profile from './Profile/UserBtn'
+import Profile from '../../General/Profile/UserBtn'
 
 function NavBar() {
   return (
