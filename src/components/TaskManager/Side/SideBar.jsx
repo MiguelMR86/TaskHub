@@ -1,17 +1,17 @@
 import React, {useState} from "react";
 import { Navbar } from "@material-tailwind/react";
 import SideBarContent from "./SideBarContent";
-import UserBtn from "../../../General/Profile/UserBtn";
-import SettingsBtn from "../../../General/Profile/SettingsBtn";
-import Logo from "../../../Index/Nav/Logo";
-import HomeBtn from "../../../General/Profile/HomeBtn";
+import UserBtn from "../../General/Profile/UserBtn";
+import SettingsBtn from "../../General/Profile/SettingsBtn";
+import Logo from "../../Index/Nav/Logo";
+import HomeBtn from "../../General/Profile/HomeBtn";
 
 export default function SideBar() {
   const [openNav, setOpenNav] = useState(false);
  
   return (
     <>
-      <div className='absolute flex justify-center items-center w-[58px] h-[58px] p-3 select-none bg-gradient-to-r from-[#7c4396] to-[#993a76] rounded-br-lg'>
+      <div className='flex justify-center items-center w-[58px] h-[58px] p-3 select-none bg-gradient-to-r from-[#7c4396] to-[#993a76]'>
         <label className="relative w-[50px] h-[25px] bg-transparent cursor-pointer" htmlFor="burger">
           <input type="checkbox" id="burger" className="hidden" onClick={() => setOpenNav(!openNav)}/>
           <span className={`block absolute w-full bg-white p-[2px] rounded-[9px] opacity-1 left-0 rotate-0 transition-all top-0 origin-[left_center] ${openNav ? 'rotate-[45deg] top-0 left-[5px]' : ''}`}></span>
