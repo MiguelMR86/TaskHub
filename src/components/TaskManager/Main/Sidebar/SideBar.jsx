@@ -1,10 +1,10 @@
 import React, {useState} from "react";
 import { Navbar } from "@material-tailwind/react";
 import SideBarContent from "./SideBarContent";
-import UserBtn from "../../Nav/Profile/UserBtn";
-import SettingsBtn from "../../Nav/Profile/SettingsBtn";
-import Logo from "../../Nav/Logo";
-import HomeBtn from "../../Nav/Profile/HomeBtn";
+import UserBtn from "../../../Index/Nav/Profile/UserBtn";
+import SettingsBtn from "../../../Index/Nav/Profile/SettingsBtn";
+import Logo from "../../../Index/Nav/Logo";
+import HomeBtn from "../../../Index/Nav/Profile/HomeBtn";
 
 export default function SideBar() {
   const [openNav, setOpenNav] = useState(false);
