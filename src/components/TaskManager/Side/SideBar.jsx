@@ -3,7 +3,7 @@ import { Navbar } from "@material-tailwind/react";
 import SideBarContent from "./SideBarContent";
 import UserBtn from "../../General/Profile/UserBtn";
 import SettingsBtn from "../../General/Profile/SettingsBtn";
-import Logo from "../../Index/Nav/Logo";
+import Logo from "../../General/Others/Logo";
 import HomeBtn from "../../General/Profile/HomeBtn";
 
 export default function SideBar() {
