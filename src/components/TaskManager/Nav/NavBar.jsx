@@ -3,7 +3,7 @@ import NavList from './NavList'
 
 function NavBar() {
   return (
-    <div className='w-full'>
+    <div className='w-full bg-white'>
         <NavList />
     </div>
   )

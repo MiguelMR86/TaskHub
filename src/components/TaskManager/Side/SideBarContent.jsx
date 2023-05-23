@@ -11,7 +11,7 @@ function SideBarContent() {
         className="p-1 font-medium"
       >
         <a href="#" className="flex items-center hover:text-blue-500 transition-colors">
-          Pages
+          Home
         </a>
       </Typography>
       <Typography
@@ -21,7 +21,7 @@ function SideBarContent() {
         className="p-1 font-medium"
       >
         <a href="#" className="flex items-center hover:text-blue-500 transition-colors">
-          Account
+          Info
         </a>
       </Typography>
       <Typography
@@ -31,17 +31,7 @@ function SideBarContent() {
         className="p-1 font-medium"
       >
         <a href="#" className="flex items-center hover:text-blue-500 transition-colors">
-          Blocks
-        </a>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-medium"
-      >
-        <a href="#" className="flex items-center hover:text-blue-500 transition-colors">
-          Docs
+          Notifications
         </a>
       </Typography>
     </ul>

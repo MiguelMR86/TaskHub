@@ -1,29 +1,40 @@
-import React from 'react'
+import React, { useState } from "react";
 
 function NavList() {
+  const [currentSection, setCurrentSection] = useState("Home");
+
   return (
-    <div className='flex items-center h-full justify-between'>
-        <ul className='flex flex-row ml-4 gap-10'>
-            <a href="">
-                <li>Board</li>
-            </a>
-            <a href="">
-                <li>Home</li>
-            </a>
-            <a href="">
-                <li>Home</li>
-            </a>
-            <a href="">
-                <li>Calendar</li>
-            </a>
-        </ul>
-        <ul className='mr-4'>
-            <a href="">
-                <li>Automotions</li>
-            </a>
-        </ul>
+    <div className="flex items-center h-full justify-between select-none">
+      <ul className="flex flex-row items-center ml-4 gap-6 overflow-y-auto">
+        <a
+          className={`border-b-4 h-[85%] flex items-center rounded cursor-pointer  ${currentSection == "Board" ? "border-[#993a76]" : "border-transparent hover:border-gray-400"}`}
+          onClick={() => setCurrentSection("Board")}
+        >
+          <li>Board</li>
+        </a>
+        <a
+          className={`border-b-4 h-[85%] flex items-center rounded cursor-pointer  ${currentSection == "List" ? "border-[#993a76]" : "border-transparent hover:border-gray-400"}`}
+          onClick={() => setCurrentSection("List")}
+        >
+          <li>List</li>
+        </a>
+        <a
+          className={`border-b-4 h-[85%] flex items-center rounded cursor-pointer  ${currentSection == "Calendar" ? "border-[#993a76]" : "border-transparent hover:border-gray-400"}`}
+          onClick={() => setCurrentSection("Calendar")}
+        >
+          <li>Calendar</li>
+        </a>
+      </ul>
+      <ul className="flex flex-row items-center gap-10 mr-4 border-l-2 border-gray-400 pl-4">
+        <a
+          className={`border-b-4 h-[85%] flex items-center rounded cursor-pointer  ${currentSection == "Automotions" ? "border-[#993a76]" : "border-transparent hover:border-gray-400"}`}
+          onClick={() => setCurrentSection("Automotions")}
+        >
+          <li>Automotions</li>
+        </a>
+      </ul>
     </div>
-  )
+  );
 }
 
-export default NavList
+export default NavList;
