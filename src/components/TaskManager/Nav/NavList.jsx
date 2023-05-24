@@ -5,7 +5,7 @@ function NavList() {
 
   return (
     <div className="flex items-center h-full justify-between select-none">
-      <ul className="flex flex-row items-center ml-4 gap-6 overflow-y-auto sm:gap-10 lg:gap-16">
+      <ul className="flex flex-row items-center ml-4 gap-6 overflow-y-auto mr-4 sm:gap-10 lg:gap-16">
         <a
           className={`border-b-4 h-[85%] flex items-center rounded cursor-pointer transition-all  ${currentSection == "Board" ? "border-[#993a76]" : "border-transparent hover:border-gray-400"}`}
           onClick={() => setCurrentSection("Board")}

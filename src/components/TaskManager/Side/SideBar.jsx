@@ -11,7 +11,7 @@ export default function SideBar() {
  
   return (
     <>
-      <div className='flex justify-center items-center w-[58px] h-[58px] p-3 select-none bg-gradient-to-r from-[#7c4396] to-[#993a76]'>
+      <div className='flex justify-center items-center w-[58px] h-[58px] ml-1 p-3 rounded-lg select-none scale-90 bg-gradient-to-r from-[#7c4396] to-[#993a76]'>
         <label className="relative w-[50px] h-[25px] bg-transparent cursor-pointer" htmlFor="burger">
           <input type="checkbox" id="burger" className="hidden" onClick={() => setOpenNav(!openNav)}/>
           <span className={`block absolute w-full bg-white p-[2px] rounded-[9px] opacity-1 left-0 rotate-0 transition-all top-0 origin-[left_center] ${openNav ? 'rotate-[45deg] top-0 left-[5px]' : ''}`}></span>
@@ -20,7 +20,7 @@ export default function SideBar() {
         </label>
       </div>
 
-      <Navbar fullWidth className={`absolute w-[300px] h-[90vh] flex flex-col justify-between rounded-none rounded-r-lg top-[60px] shadow-[0_5px_25px_rgba(0,0,0,0.3)] transition-all ${openNav ? 'translate-x-[0]' : ' -translate-x-[300px]'}`}>
+      <Navbar color="white" fullWidth className={`absolute w-[300px] h-[530px] md:h-[600px] flex flex-col justify-between rounded-lg top-[186px] md:top-[130px] shadow-[0_5px_25px_rgba(0,0,0,0.3)] transition-all ${openNav ? '-translate-x-[19px]' : ' -translate-x-[336px]'}`}>
         <div open={openNav}>
           <Logo />
           <SideBarContent/>

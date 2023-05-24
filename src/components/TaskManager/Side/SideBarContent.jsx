@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography } from "@material-tailwind/react";
+import { Typography, Button } from "@material-tailwind/react";
 
 function SideBarContent() {
   return (
@@ -10,9 +10,10 @@ function SideBarContent() {
         color="blue-gray"
         className="p-1 font-medium"
       >
-        <a href="#" className="flex items-center hover:text-blue-500 transition-colors">
-          Home
-        </a>
+        <Button variant="text" color="blue-gray">
+          Home 
+        </Button>
+        
       </Typography>
       <Typography
         as="li"
@@ -20,9 +21,9 @@ function SideBarContent() {
         color="blue-gray"
         className="p-1 font-medium"
       >
-        <a href="#" className="flex items-center hover:text-blue-500 transition-colors">
-          Info
-        </a>
+        <Button variant="text" color="blue-gray">
+          Info 
+        </Button>
       </Typography>
       <Typography
         as="li"
@@ -30,9 +31,9 @@ function SideBarContent() {
         color="blue-gray"
         className="p-1 font-medium"
       >
-        <a href="#" className="flex items-center hover:text-blue-500 transition-colors">
-          Notifications
-        </a>
+        <Button variant="text" color="blue-gray">
+          Notifications 
+        </Button>
       </Typography>
     </ul>
   );
