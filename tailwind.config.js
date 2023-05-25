@@ -18,7 +18,7 @@ module.exports = withMT({
         },
       },
       screens: {
-        'lg': '580px',
+        'mobileXL': '410px',
       },
     },
   },

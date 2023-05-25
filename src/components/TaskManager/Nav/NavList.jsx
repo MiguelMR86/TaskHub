@@ -5,35 +5,35 @@ function NavList() {
   const { currentSection, setCurrentSection } = useContext(Context);
 
   return (
-    <div className="flex items-center h-full justify-between select-none">
-      <ul className="flex flex-row items-center ml-4 gap-6 overflow-y-auto mr-4 sm:gap-10 lg:gap-16">
+    <div className="flex flex-wrap items-center w-full h-full justify-center select-none p-4 gap-y-4 mobileXL:justify-between mobileXL:p-0">
+      <div className="flex flex-row items-center ml-4 gap-8 mr-4 sm:gap-10 lg:gap-16">
         <a
           className={`border-b-4 h-[85%] flex items-center rounded cursor-pointer transition-all  ${currentSection == "Board" ? "border-[#993a76]" : "border-transparent hover:border-gray-400"}`}
           onClick={() => setCurrentSection("Board")}
         >
-          <li>Board</li>
+          Board
         </a>
         <a
           className={`border-b-4 h-[85%] flex items-center rounded cursor-pointer transition-all  ${currentSection == "List" ? "border-[#993a76]" : "border-transparent hover:border-gray-400"}`}
           onClick={() => setCurrentSection("List")}
         >
-          <li>List</li>
+          List
         </a>
         <a
           className={`border-b-4 h-[85%] flex items-center rounded cursor-pointer transition-all  ${currentSection == "Calendar" ? "border-[#993a76]" : "border-transparent hover:border-gray-400"}`}
           onClick={() => setCurrentSection("Calendar")}
         >
-          <li>Calendar</li>
+          Calendar
         </a>
-      </ul>
-      <ul className="flex flex-row items-center gap-10 mr-4 border-l-2 border-gray-400 pl-4">
+      </div>
+      <div className="flex flex-row items-center gap-10 mr-4 w-full mobileXL:w-auto">
         <a
-          className={`border-b-4 h-[85%] flex items-center rounded cursor-pointer transition-all  ${currentSection == "Automotions" ? "border-[#993a76]" : "border-transparent hover:border-gray-400"}`}
+          className={`border-b-4 h-[85%] w-full flex justify-center items-center rounded cursor-pointer transition-all  ${currentSection == "Automotions" ? "border-[#993a76]" : "border-transparent hover:border-gray-400"}`}
           onClick={() => setCurrentSection("Automotions")}
         >
-          <li>Automotions</li>
+          Automotions
         </a>
-      </ul>
+      </div>
     </div>
   );
 }
