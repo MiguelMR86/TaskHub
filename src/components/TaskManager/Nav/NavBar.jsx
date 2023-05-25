@@ -5,9 +5,9 @@ import NavList from './NavList.jsx'
 export default function NavBar() {
   return (
     <Navbar color="transparent" className="w-full bg-white border-4 border-[#DCDCDC] rounded-lg" fullWidth={true}>
-      <div className="flex flex-wrap sm:flex-nowrap items-center gap-4 text-blue-gray-900">
+      <div className="flex flex-wrap tablet:flex-nowrap items-center gap-4 gap-y-8 text-blue-gray-900">
         <SideBarBtn />
-        <hr className="border-2 rounded-full w-full sm:hidden"/>
+        <hr className="border-2 rounded-full w-full tablet:hidden"/>
         <NavList />
       </div>
     </Navbar>

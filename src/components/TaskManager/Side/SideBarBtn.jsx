@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Context } from '../../../context/Context.jsx'
+import { Context } from '../../../context/Context'
 
 export default function SideBarBtn() {
   const { openSideBar, setOpenSideBar } = useContext(Context)

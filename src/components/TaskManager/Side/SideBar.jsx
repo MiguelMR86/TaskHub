@@ -12,7 +12,7 @@ function SideBar() {
   const { openSideBar } = useContext(Context)
 
   return (
-    <Navbar color="transparent" fullWidth className={`absolute top-0 left-0 w-[300px] h-full bg-white flex flex-col justify-between rounded-lg shadow-[0_5px_25px_rgba(0,0,0,0.3)] transition-all ${openSideBar ? '-translate-x-0' : ' -translate-x-[316px]'}`}>
+    <Navbar color="transparent" fullWidth className={`absolute top-0 left-0 border-4 border-[#DCDCDC] w-[300px] h-full bg-white flex flex-col justify-between rounded-lg shadow-[0_5px_25px_rgba(0,0,0,0.3)] transition-all ${openSideBar ? '-translate-x-0' : ' -translate-x-[316px]'}`}>
         <div open={openSideBar}>
           <Logo />
           <Searcher />
