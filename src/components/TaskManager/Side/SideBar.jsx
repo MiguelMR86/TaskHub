@@ -1,4 +1,5 @@
-import React, {useState} from "react";
+import React, { useContext } from 'react'
+import { Context } from '../../../context/Context'
 import { Navbar } from "@material-tailwind/react";
 import SideBarContent from "./SideBarContent";
 import UserBtn from "../../General/Profile/UserBtn";
@@ -6,22 +7,12 @@ import SettingsBtn from "../../General/Profile/SettingsBtn";
 import Logo from "../../General/Others/Logo";
 import HomeBtn from "../../General/Profile/HomeBtn";
 
-export default function SideBar() {
-  const [openNav, setOpenNav] = useState(false);
- 
-  return (
-    <>
-      <div className='flex justify-center items-center w-[58px] h-[58px] ml-1 p-3 rounded-lg select-none scale-90 bg-gradient-to-r from-[#7c4396] to-[#993a76]'>
-        <label className="relative w-[50px] h-[25px] bg-transparent cursor-pointer" htmlFor="burger">
-          <input type="checkbox" id="burger" className="hidden" onClick={() => setOpenNav(!openNav)}/>
-          <span className={`block absolute w-full bg-white p-[2px] rounded-[9px] opacity-1 left-0 rotate-0 transition-all top-0 origin-[left_center] ${openNav ? 'rotate-[45deg] top-0 left-[5px]' : ''}`}></span>
-          <span className={`block absolute w-full bg-white p-[2px] rounded-[9px] opacity-1 left-0 rotate-0 transition-all top-[50%] translate-y-[-50%] ${openNav ? 'w-0 opacity-0' : ''} `}></span>
-          <span className={`block absolute w-full bg-white p-[2px] rounded-[9px] opacity-1 left-0 rotate-0 transition-all top-[100%] origin-[left_center] translate-y-[-100%] ${openNav ? ' rotate-[-45deg] top-[28px] left-[5px]' : ''}`}></span>
-        </label>
-      </div>
+function SideBar() {
+  const { openSideBar } = useContext(Context)
 
-      <Navbar color="white" fullWidth className={`absolute w-[300px] h-[530px] md:h-[600px] flex flex-col justify-between rounded-lg top-[186px] md:top-[130px] shadow-[0_5px_25px_rgba(0,0,0,0.3)] transition-all ${openNav ? '-translate-x-[19px]' : ' -translate-x-[336px]'}`}>
-        <div open={openNav}>
+  return (
+    <Navbar color="transparent" fullWidth className={`absolute top-0 left-0 w-[300px] h-full bg-white flex flex-col justify-between rounded-lg shadow-[0_5px_25px_rgba(0,0,0,0.3)] transition-all ${openSideBar ? '-translate-x-0' : ' -translate-x-[316px]'}`}>
+        <div open={openSideBar}>
           <Logo />
           <SideBarContent/>
         </div>
@@ -39,7 +30,8 @@ export default function SideBar() {
           
         </div>
 
-      </Navbar>
-    </>
-  );
+    </Navbar>
+  )
 }
+
+export default SideBar

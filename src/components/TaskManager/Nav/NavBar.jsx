@@ -5,14 +5,13 @@ import {
   Button,
   Input,
 } from "@material-tailwind/react";
-import { BellIcon, Cog6ToothIcon } from "@heroicons/react/24/solid";
-import SideBar from '../Side/SideBar'
+import SideBarBtn from '../Side/SideBarBtn.jsx'
 
 export default function NavBar() {
   return (
     <Navbar color="transparent" className="w-full bg-white border-4 border-[#DCDCDC] rounded-lg" fullWidth={true}>
       <div className="flex flex-wrap items-center justify-between gap-y-4 text-blue-gray-900">
-        <SideBar />
+        <SideBarBtn />
         
         {/*  */}
 

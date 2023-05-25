@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import { Context } from '../../../context/context.jsx'
 
 function NavList() {
-  const [currentSection, setCurrentSection] = useState("Home");
+  const { currentSection, setCurrentSection } = useContext(Context);
 
   return (
     <div className="flex items-center h-full justify-between select-none">
