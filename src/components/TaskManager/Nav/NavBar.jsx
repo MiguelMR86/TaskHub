@@ -1,13 +1,16 @@
+import React from "react";
 import { Navbar } from "@material-tailwind/react";
 import SideBarBtn from '../Side/SideBarBtn.jsx'
 import NavList from './NavList.jsx'
+import AutoBtn from "./AutoBtn.jsx";
 
 export default function NavBar() {
+
   return (
-    <Navbar color="transparent" className="w-full bg-white border-4 border-[#DCDCDC] rounded-lg" fullWidth={true}>
-      <div className="flex flex-wrap tablet:flex-nowrap items-center gap-4 gap-y-8 text-blue-gray-900">
+    <Navbar color="transparent" className="w-full min-h-[10vh] bg-white border-4 border-[#DCDCDC] rounded-lg" fullWidth={true}>
+      <div className="relative flex items-center">
         <SideBarBtn />
-        <hr className="border-2 rounded-full w-full tablet:hidden"/>
+        <AutoBtn />
         <NavList />
       </div>
     </Navbar>
