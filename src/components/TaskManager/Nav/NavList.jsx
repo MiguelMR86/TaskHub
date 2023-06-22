@@ -6,8 +6,8 @@ function NavList() {
   const { currentSection, setCurrentSection } = useContext(Context);
 
   return (
-      <div className="flex justify-between items-center h-full min-w-[320px] p-4 overflow-y-auto ">
-        <div className="flex gap-6">
+      <div className="flex justify-between items-center gap-x-6 h-full min-w-[300px] p-4 overflow-hidden overflow-x-scroll">
+        <div className="flex gap-x-6">
           <div>
             <Button
               fullWidth={true}
