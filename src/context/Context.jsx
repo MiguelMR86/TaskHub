@@ -5,8 +5,8 @@ export const Context = createContext();
 export function ContextProvider({ children }) {
 
     // MENUS AND SECTIONS
-    const [currentSection, setCurrentSection] = useState("Home");
-    const [openSideBar, setOpenSideBar] = useState(false);
+    const [currentSection, setCurrentSection] = useState("Board");
+    const [openSideBar, setOpenSideBar] = useState(true);
     const [openConfigMenu, setOpenConfigMenu] = useState(false)
 
     const handelSideBarDisplay = () => {
