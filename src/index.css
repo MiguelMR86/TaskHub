@@ -2,9 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* Estilos para el scrollbar */
 ::-webkit-scrollbar {
-  height: 10px;
+  height: 8px;
+  width: 10px;
 }
 
 /* Estilos para el track del scrollbar */
