@@ -1,11 +1,12 @@
-import TaskManager from './components/TaskManager/TaskManager'
+import { RouterProvider } from 'react-router'
+import router from './routes/Router'
 
 function App() {
 
-  return (
-    <div id='app' className='w-full h-screen'>
-      <TaskManager />
-    </div>
+  return (   
+   <>
+     <RouterProvider router={router}/>
+   </>
   )
 }
 
