@@ -9,7 +9,7 @@ function Searcher() {
         label="Type here..."
         className=" pr-[90px]"
     />
-    <Button size="sm" className="!absolute right-1 top-1 rounded bg-gradient-to-r from-[#7c4396] to-[#993a76]">
+    <Button size="sm" className="!absolute right-1 top-1 rounded bg-[#2196F3]">
         Search
     </Button>
     </div>

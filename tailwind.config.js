@@ -17,9 +17,6 @@ module.exports = withMT({
           "100%": {transform: "rotate(360deg)"},
         },
       },
-      screens: {
-        'tablet': '750px',
-      },
     },
   },
   plugins: [],
