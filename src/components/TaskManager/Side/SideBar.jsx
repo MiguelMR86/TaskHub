@@ -7,6 +7,7 @@ import SideBarContent from "./SideBarContent";
 import HomeBtn from "../../General/Profile/HomeBtn";
 import UserBtn from "../../General/Profile/UserBtn";
 import ConfigBtn from '../../General/Profile/ConfigBtn';
+
 function SideBar() {
   const { openSideBar } = useContext(Context)
 

@@ -29,23 +29,21 @@ function LogSettings() {
         handler={handleOpen}
         className="bg-transparent shadow-none"
       >
-        <Card shadow={false} className="p-4 w-fit">
-          <Typography variant="h2" color="blue-gray">
-            Sign Up
+        
+        <Card shadow={false} className="p-8">
+          <Typography variant="h2" color="blue-gray" className="text-center">
+            Login
           </Typography>
-          <Typography color="gray" className="mt-1 font-normal">
-            Enter your details to register.
+          <Typography color="gray" className="my-2 font-normal">
+            {/* Choose your method to get started. */}
+            Let's get started!
           </Typography>
-          <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
             <div className="flex flex-col">
-              <Button id="login-button" className="mt-6 mb-4 p-4" type="submit">
-                Login
-              </Button>
               <Button
                 id="login-google-button"
                 variant="outlined"
                 color="blue-gray"
-                className="flex  items-center justify-center gap-3"
+                className="flex items-center justify-center gap-3"
                 onClick={signInWithGoogle}
               >
                 <img
@@ -56,7 +54,6 @@ function LogSettings() {
                 Continue with Google
               </Button>
             </div>
-          </form>
         </Card>
       </Dialog>
     </Fragment>
