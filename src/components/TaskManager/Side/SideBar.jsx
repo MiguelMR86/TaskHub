@@ -4,7 +4,7 @@ import { Navbar } from "@material-tailwind/react";
 import Logo from "../../General/Others/Logo";
 import Searcher from './Searcher';
 import SideBarContent from "./SideBarContent";
-import HomeBtn from "../../General/Profile/HomeBtn";
+import SpacesBtn from "../../General/Profile/SpacesBtn";
 import UserBtn from "../../General/Profile/UserBtn";
 import ConfigBtn from '../../General/Profile/ConfigBtn';
 
@@ -24,7 +24,7 @@ function SideBar() {
         <div id="user-btn" className='w-full h-fit flex gap-2 justify-between items-center'>
           
           <div className="relative flex gap-3">
-            <HomeBtn />
+            <SpacesBtn />
             <div className="absolute left-10">
               <UserBtn />
             </div>
