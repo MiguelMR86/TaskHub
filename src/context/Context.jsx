@@ -8,6 +8,7 @@ export function ContextProvider({ children }) {
     const [currentSection, setCurrentSection] = useState("Board");
     const [openSideBar, setOpenSideBar] = useState(true);
     const [openConfigMenu, setOpenConfigMenu] = useState(false)
+    const [openSpacesMenu, setOpenSpacesMenu] = useState(false)
 
     // USER
     const [logedIn, setLogedIn] = useState(false);
@@ -23,6 +24,7 @@ export function ContextProvider({ children }) {
         currentSection, setCurrentSection,
         openSideBar, setOpenSideBar,
         openConfigMenu, setOpenConfigMenu,
+        openSpacesMenu, setOpenSpacesMenu,
         logedIn, setLogedIn,
         handelSideBarDisplay
     };
