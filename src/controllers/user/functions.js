@@ -16,13 +16,21 @@ export const signInWithGoogle = async () => {
 // Function to check if user is loged in
 // * If user is loged in, it will reload the user data to get the latest data
 // * If user is not loged in, it will redirect to login page
-export const isLogedIn = () => {
+export const isLogedIn = async () => {
   auth.onAuthStateChanged((user) => {
     if (user) {
       user.reload()
+      return true
     }
     else {
-      window.location.href = "/"
+      return false
     }
   })
+}
+
+// Function to sign out
+// * It will sign out the user and redirect to login page
+export const signOut = () => {
+  auth.signOut()
+  window.location.href = "/"
 }

@@ -1,13 +1,13 @@
 import React from "react";
 import Logo from "../../General/Others/Logo";
-import LogSettingsBtn from "../../General/User-Log/LogSettingsBtn";
+import AccountSettingsBtn from "../../General/User-Log/AccountSettingsBtn";
 
 function NavBar() {
   return (
-    <nav className="flex justify-between items-center shadow-md h-[11vh] mb-10 rounded-lg bg-white border-4 border-[#DCDCDC]">
+    <nav className="flex justify-between items-center shadow-md h-[10.9vh] mb-10 rounded-lg bg-white border-4 border-[#DCDCDC]">
       <Logo />
       <div className="mr-4">
-        <LogSettingsBtn />
+        <AccountSettingsBtn />
       </div>
     </nav>
   );
