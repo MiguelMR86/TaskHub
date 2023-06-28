@@ -4,7 +4,7 @@ import { Button } from '@material-tailwind/react'
 import { auth } from '../../../config/firebase'
 
 function UserBtn() {
-  const [photoURL, setPhotoURL] = useState("");
+  const [photoURL, setPhotoURL] = useState();
 
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
@@ -16,8 +16,8 @@ function UserBtn() {
 
   return (
     <Button className='w-[50px] h-[50px] p-0 m-0 flex justify-center items-center select-none text-white bg-[#2196F3] rounded-full'>
-        {auth?.currentUser ? 
-        <img src={photoURL} alt="Google-Profile-Img" className=' rounded-full'/>
+        {auth?.currentUser?.photoURL ? 
+        <img src={photoURL} alt="Profile-Img" className=' rounded-full'/>
         : <AiOutlineUser size={30} />}
     </Button>
   )
