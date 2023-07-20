@@ -15,8 +15,11 @@ export function ContextProvider({ children }) {
     const [logedIn, setLogedIn] = useState(false);
 
     // FUNTIONS
-    const handelSideBarDisplay = () => setOpenSideBar(!openSideBar)
-    
+    const handelSideBarDisplay = () => {
+        setOpenSideBar(!openSideBar)
+        if (openConfigMenu) setOpenConfigMenu(false)
+        if (openSpacesMenu) setOpenSpacesMenu(false)
+    }
 
     const functions = {
         currentSection, setCurrentSection,
