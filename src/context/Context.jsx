@@ -12,6 +12,7 @@ export function ContextProvider({ children }) {
     const [openCreateSpace, setOpenCreateSpace] = useState(false)
     const [openSpacesSelector, setOpenSpacesSelector] = useState(false)
     const [currentSpace, setCurrentSpace] = useState(null)
+    const [spaces, setSpaces] = useState([]);
 
     // USER
     const [logedIn, setLogedIn] = useState(false);
@@ -31,6 +32,7 @@ export function ContextProvider({ children }) {
         openCreateSpace, setOpenCreateSpace,
         openSpacesSelector, setOpenSpacesSelector,
         currentSpace, setCurrentSpace,
+        spaces, setSpaces,
         logedIn, setLogedIn,
         handelSideBarDisplay
     };

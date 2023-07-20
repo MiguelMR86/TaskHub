@@ -12,10 +12,10 @@ import { getUserSpaces } from "../../../../controllers/spaces/functions";
 import SpaceBtn from "./SpaceBtn";
 
 function YourSpacesBtn() {
-  const { openSpacesSelector, setOpenSpacesSelector } = useContext(Context);
-  const [spaces, setSpaces] = useState([]);
+  const { openSpacesSelector, setOpenSpacesSelector, spaces, setSpaces } = useContext(Context);
   const handleOpen = () => setOpenSpacesSelector(!openSpacesSelector);
-  const handelOptions = () => getUserSpaces().then((spaces) => setSpaces(spaces));
+  const handelOptions = () =>
+    getUserSpaces().then((spaces) => setSpaces(spaces));
 
   useEffect(() => {
     getUserSpaces().then((spaces) => {
@@ -26,9 +26,9 @@ function YourSpacesBtn() {
   return (
     <>
       <Button
-        onClick={() => { 
-          handleOpen()
-          handelOptions()
+        onClick={() => {
+          handleOpen();
+          handelOptions();
         }}
         fullWidth
         variant="text"
@@ -46,30 +46,32 @@ function YourSpacesBtn() {
         className="w-full max-w-md"
       >
         <DialogHeader>Choose your Space</DialogHeader>
-        <form>
-          <DialogBody divider className="overflow-y-auto h-[250px]">
-            {spaces.length === 0 ? (
-              <p>You don't have any space yet</p>
-            ) : (
-              <ul className="flex flex-col gap-1">
-                {spaces.map((space) => (
-                  <SpaceBtn space={space} key={space.id} handleOpen={handleOpen} />
-                ))}
-              </ul>
-            )}
 
-          </DialogBody>
-          <DialogFooter>
-            <Button
-              variant="text"
-              color="gray"
-              onClick={() => handleOpen(null)}
-              className="mr-1"
-            >
-              <span>Cancel</span>
-            </Button>
-          </DialogFooter>
-        </form>
+        <DialogBody divider className="overflow-y-auto h-[250px]">
+          {spaces.length === 0 ? (
+            <p>You don't have any space yet</p>
+          ) : (
+            <ul className="flex flex-col gap-1">
+              {spaces.map((space) => (
+                <SpaceBtn
+                  space={space}
+                  key={space.id}
+                  handleOpen={handleOpen}
+                />
+              ))}
+            </ul>
+          )}
+        </DialogBody>
+        <DialogFooter>
+          <Button
+            variant="text"
+            color="gray"
+            onClick={() => handleOpen(null)}
+            className="mr-1"
+          >
+            <span>Cancel</span>
+          </Button>
+        </DialogFooter>
       </Dialog>
     </>
   );
