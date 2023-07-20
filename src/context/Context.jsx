@@ -10,6 +10,8 @@ export function ContextProvider({ children }) {
     const [openConfigMenu, setOpenConfigMenu] = useState(false)
     const [openSpacesMenu, setOpenSpacesMenu] = useState(false)
     const [openCreateSpace, setOpenCreateSpace] = useState(false)
+    const [openSpacesSelector, setOpenSpacesSelector] = useState(false)
+    const [currentSpace, setCurrentSpace] = useState(null)
 
     // USER
     const [logedIn, setLogedIn] = useState(false);
@@ -27,6 +29,8 @@ export function ContextProvider({ children }) {
         openConfigMenu, setOpenConfigMenu,
         openSpacesMenu, setOpenSpacesMenu,
         openCreateSpace, setOpenCreateSpace,
+        openSpacesSelector, setOpenSpacesSelector,
+        currentSpace, setCurrentSpace,
         logedIn, setLogedIn,
         handelSideBarDisplay
     };

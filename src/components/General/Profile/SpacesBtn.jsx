@@ -3,7 +3,7 @@ import { Context } from "../../../context/Context";
 import { Button } from "@material-tailwind/react";
 import { TfiWorld } from "react-icons/tfi";
 import NewSpaceBtn from "./Spaces/NewSpaceBtn";
-import YourSpacesBtn from "./Spaces/YourSpacesBtn";
+import ChooseSpaceBtn from "./Spaces/ChooseSpaceBtn";
 function SpacesBtn() {
   const { openSpacesMenu, setOpenSpacesMenu } = useContext(Context);
   return (
@@ -19,7 +19,7 @@ function SpacesBtn() {
           openSpacesMenu ? "" : "hidden"
         }`}
       >
-        <YourSpacesBtn />
+        <ChooseSpaceBtn />
         <NewSpaceBtn />
       </div>
     </div>

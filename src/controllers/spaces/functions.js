@@ -1,5 +1,5 @@
 import { db, storage, auth } from "../../config/firebase";
-import { collection, getDocs, addDoc, doc, deleteDoc, updateDoc } from "firebase/firestore";
+import { collection, getDocs, addDoc, doc, deleteDoc, updateDoc, or, orderBy, where } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL, deleteObject } from "firebase/storage";
 
 const spacesCollection = collection(db, "spaces");
@@ -12,11 +12,11 @@ export const createSpace = async (space) => {
     const url = await getDownloadURL(storageRef);
    
     try{
-        console.log(auth.currentUser.uid);
         await addDoc(spacesCollection, {
             owner: auth.currentUser.uid,
             name: space.name,
             description: space.description,
+            date: day.getTime(),
             url: url,
             path: imagePath,
         });
@@ -27,3 +27,14 @@ export const createSpace = async (space) => {
     }
 }
 
+export const getUserSpaces = async () => {
+    const spaces = [];
+    const query = await getDocs(spacesCollection,
+        where("owner", "==", auth?.currentUser?.uid));
+        query.forEach((doc) => {
+            spaces.push({ ...doc.data(), id: doc.id });
+        });
+    // order by date descending
+    spaces.sort((a, b) => a.date - b.date);
+    return spaces;
+}
