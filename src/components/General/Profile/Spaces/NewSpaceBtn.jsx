@@ -10,10 +10,26 @@ import {
   Input,
   Textarea 
 } from "@material-tailwind/react";
+import InputFile from "../../Others/InputFile";
+
+import { createSpace } from "../../../../controllers/spaces/functions";
+import { doc } from "firebase/firestore";
 
 function NewSpaceBtn() {
   const { openCreateSpace, setOpenCreateSpace } = useContext(Context);
   const handleOpen = () => setOpenCreateSpace(!openCreateSpace);
+  
+  const handleCreateSpace = (e) => {
+    e.preventDefault();
+    console.log("Creating space...")
+    const name = document.getElementById("space-name").value;
+    const description = document.getElementById("space-description").value;
+    const img = document.getElementById("space-img").files[0];
+    const space = { name, description, img };
+    createSpace(space);
+    handleOpen(null)   
+  };
+
   return (
     <>
       <Button
@@ -34,27 +50,32 @@ function NewSpaceBtn() {
         className="w-full max-w-md"
       >
         <DialogHeader>Create a new Space</DialogHeader>
-        <DialogBody divider className="flex flex-col gap-3">
-          <Input size="lg" label="Space Name" />
-          <Textarea label="Description" />
-        </DialogBody>
-        <DialogFooter>
-          <Button
-            variant="text"
-            color="red"
-            onClick={() => handleOpen(null)}
-            className="mr-1"
-          >
-            <span>Cancel</span>
-          </Button>
-          <Button
-            variant="gradient"
-            color="green"
-            onClick={() => handleOpen(null)}
-          >
-            <span>Confirm</span>
-          </Button>
-        </DialogFooter>
+        <form onSubmit={handleCreateSpace}>
+          <DialogBody divider className="flex flex-col gap-3">
+
+            <Input id="space-name" size="lg" label="Space Name" required/>
+            <Textarea id="space-description" label="Description" />
+            <InputFile id="space-img" required={true}/>
+          
+          </DialogBody>
+          <DialogFooter>
+            <Button
+              variant="text"
+              color="gray"
+              onClick={() => handleOpen(null)}
+              className="mr-1"
+            >
+              <span>Cancel</span>
+            </Button>
+            <Button
+              variant="gradient"
+              color="blue"
+              type="submit"
+            >
+              <span>Confirm</span>
+            </Button>
+          </DialogFooter>
+        </form>
       </Dialog>
     </>
   );
