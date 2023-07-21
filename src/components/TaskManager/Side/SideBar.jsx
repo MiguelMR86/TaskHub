@@ -2,8 +2,7 @@ import React, { useContext } from 'react'
 import { Context } from '../../../context/Context'
 import { Navbar } from "@material-tailwind/react";
 import Logo from "../../General/Others/Logo";
-import Searcher from './Searcher';
-import SideBarContent from "./SideBarContent";
+import SideBarBody from "./SideBarBody";
 import SpacesBtn from "../../General/Profile/SpacesBtn";
 import UserBtn from "../../General/Profile/UserBtn";
 import ConfigBtn from '../../General/Profile/ConfigBtn';
@@ -17,8 +16,7 @@ function SideBar() {
           <div className='w-[80%]'>
             <Logo />
           </div>
-          <Searcher />
-          <SideBarContent/>
+          <SideBarBody/>
         </div>
 
         <div id="user-btn" className='w-full h-fit flex gap-2 justify-between items-center'>

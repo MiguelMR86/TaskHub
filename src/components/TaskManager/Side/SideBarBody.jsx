@@ -1,12 +1,13 @@
-import React, { useContext } from "react";
-import { Context } from '../../../context/Context'
+import React from "react";
 import { Typography, Button } from "@material-tailwind/react";
+import Searcher from "./Searcher";
 
-function SideBarContent() {
-  const { setCurrentSection } = useContext(Context);
+function SideBarBody() {
 
   return (
     <ul className="my-2 w-full flex flex-col gap-2">
+                <Searcher />
+
       <Typography
         as="li"
         variant="small"
@@ -16,7 +17,8 @@ function SideBarContent() {
         <Button
           variant="text"
           color="blue-gray"
-          onClick={() => setCurrentSection("Home")}
+          onClick={() => window.location.href = "/manager"}
+          href="/manager"
         >
           Home
         </Button>
@@ -45,4 +47,4 @@ function SideBarContent() {
   );
 }
 
-export default SideBarContent;
+export default SideBarBody;
