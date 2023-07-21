@@ -11,7 +11,7 @@ import { BiWorld } from "react-icons/bi";
 import { getUserSpaces } from "../../../../controllers/spaces/functions";
 import SpaceBtn from "./SpaceBtn";
 
-function YourSpacesBtn() {
+function ChooseSpaceBtn() {
   const { openSpacesSelector, setOpenSpacesSelector, spaces, setSpaces } = useContext(Context);
   const handleOpen = () => setOpenSpacesSelector(!openSpacesSelector);
   const handelOptions = () =>
@@ -77,4 +77,4 @@ function YourSpacesBtn() {
   );
 }
 
-export default YourSpacesBtn;
+export default ChooseSpaceBtn;

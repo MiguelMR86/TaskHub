@@ -1,5 +1,5 @@
 import { db, storage, auth } from "../../config/firebase";
-import { collection, getDocs, addDoc, doc, deleteDoc, updateDoc, or, orderBy, where } from "firebase/firestore";
+import { collection, getDocs, getDoc, addDoc, doc, deleteDoc, updateDoc, or, orderBy, where } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL, deleteObject } from "firebase/storage";
 
 const spacesCollection = collection(db, "spaces");
@@ -37,4 +37,9 @@ export const getUserSpaces = async () => {
     // order by date descending
     spaces.sort((a, b) => a.date - b.date);
     return spaces;
+}
+
+export const getUserSpace = async (id) => {
+    const query = await getDoc(doc(spacesCollection, id));
+    return query.data();
 }
