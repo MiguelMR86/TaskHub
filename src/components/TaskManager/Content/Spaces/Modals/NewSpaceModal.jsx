@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Context } from "../../../context/Context";
+import { Context } from "../../../../../context/Context";
 import {
   Dialog,
   DialogHeader,
@@ -9,9 +9,9 @@ import {
   Textarea,
   Button,
 } from "@material-tailwind/react";
-import InputFile from "../../General/Others/InputFile";
-import { createSpace } from "../../../controllers/spaces/functions";
-import { getUserSpaces } from "../../../controllers/spaces/functions";
+import InputFile from "../../../../General/Others/InputFile"
+import { createSpace } from "../../../../../controllers/spaces/functions";
+import { getUserSpaces } from "../../../../../controllers/spaces/functions";
 
 function NewSpaceModal() {
   const { openCreateSpace, setOpenCreateSpace, setSpaces } = useContext(Context);

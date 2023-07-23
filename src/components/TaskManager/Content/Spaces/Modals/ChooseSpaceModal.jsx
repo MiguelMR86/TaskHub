@@ -1,5 +1,5 @@
-import React, { useContext, useEffect } from "react";
-import { Context } from "../../../context/Context";
+import React, { useContext } from "react";
+import { Context } from "../../../../../context/Context";
 import {
   Button,
   Dialog,

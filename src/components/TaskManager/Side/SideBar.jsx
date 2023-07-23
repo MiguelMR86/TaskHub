@@ -3,7 +3,7 @@ import { Context } from '../../../context/Context'
 import { Navbar } from "@material-tailwind/react";
 import Logo from "../../General/Others/Logo";
 import SideBarBody from "./SideBarBody";
-import CurrentSpaceBtn from "../../Spaces/Buttons/CurrentSpaceBtn";
+import CurrentSpaceBtn from '../../TaskManager/Content/Spaces/Buttons/CurrentSpaceBtn';
 import UserBtn from '../../General/Profile/UserBtn';
 import ConfigBtn from '../../General/Profile/ConfigBtn';
 import SideBarSpaces from './SideBarSpaces';
