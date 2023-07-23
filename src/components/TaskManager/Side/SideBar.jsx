@@ -8,6 +8,7 @@ import UserBtn from '../../General/Profile/UserBtn';
 import ConfigBtn from '../../General/Profile/ConfigBtn';
 import SideBarSpaces from './SideBarSpaces';
 import Divider from '../../General/Others/Divider';
+import SideBarTasks from './SideBarTasks';
 
 function SideBar() {
   const { openSideBar } = useContext(Context)
@@ -22,7 +23,8 @@ function SideBar() {
           <Divider />
           <SideBarSpaces />
           <Divider />
-
+          <SideBarTasks />
+          
         </div>
 
         <div id="user-btn" className='w-full h-fit flex gap-2 justify-between items-center'>
