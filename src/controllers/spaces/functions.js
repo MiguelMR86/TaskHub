@@ -20,7 +20,6 @@ export const createSpace = async (space) => {
             url: url,
             path: imagePath,
         });
-        console.log("Created")
     }
     catch(e){
         console.log(e);

@@ -14,18 +14,21 @@ import { createSpace } from "../../../../../controllers/spaces/functions";
 import { getUserSpaces } from "../../../../../controllers/spaces/functions";
 
 function NewSpaceModal() {
-  const { openCreateSpace, setOpenCreateSpace, setSpaces } = useContext(Context);
+  const { openCreateSpace, setOpenCreateSpace, setSpaces, setOpenSpaces } = useContext(Context);
   
   const handleOpen = () => setOpenCreateSpace(!openCreateSpace);
   const handleCreateSpace = (e) => {
     e.preventDefault();
-    console.log("Creating space...");
     const name = document.getElementById("space-name").value;
     const description = document.getElementById("space-description").value;
     const img = document.getElementById("space-img").files[0];
     const space = { name, description, img };
     createSpace(space);
-    getUserSpaces().then((spaces) => setSpaces(spaces));
+    getUserSpaces().then((spaces) => {
+      setSpaces(spaces); 
+      setOpenSpaces(false)
+    }
+    );
     handleOpen(null);
   };
 

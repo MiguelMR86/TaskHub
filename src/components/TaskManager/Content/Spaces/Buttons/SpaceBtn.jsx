@@ -3,8 +3,8 @@ import { Context } from "../../../../../context/Context";
 import { MenuItem } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
 
-function SpaceBtn({ space, handleOpen }) {
-  const { setCurrentSpace } = useContext(Context);
+function SpaceBtn({ space }) {
+  const { setCurrentSpace, handelSpacesMenu } = useContext(Context);
 
   return (
     <MenuItem
@@ -12,7 +12,7 @@ function SpaceBtn({ space, handleOpen }) {
       key={space.id}
       onClick={() => {
         setCurrentSpace(space);
-        handleOpen(null);
+        handelSpacesMenu(null);
       }}
     >
       <Link

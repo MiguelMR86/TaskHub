@@ -10,14 +10,14 @@ import {
 import SpaceBtn from "../Buttons/SpaceBtn";
 import EmptySpacesBtn from "../Buttons/EmptySpacesBtn";
 
-function ChooseSpaceModal() {
-  const { openSpacesSelector, setOpenSpacesSelector, spaces } = useContext(Context);
+function SpaceSelectorModal() {
+  const { openSpaceSelector, setOpenSpaceSelector, spaces } = useContext(Context);
 
-  const handleOpen = () => setOpenSpacesSelector(!openSpacesSelector);
+  const handleOpen = () => setOpenSpaceSelector(!openSpaceSelector);
 
   return (
     <Dialog
-      open={openSpacesSelector}
+      open={openSpaceSelector}
       handler={handleOpen}
       size="md"
       className="w-full max-w-md"
@@ -49,4 +49,4 @@ function ChooseSpaceModal() {
   );
 }
 
-export default ChooseSpaceModal;
+export default SpaceSelectorModal;

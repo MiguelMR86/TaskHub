@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { Context } from "../../../context/Context";
 import { Typography, Button } from "@material-tailwind/react";
 import SpaceBtn from "../Content/Spaces/Buttons/SpaceBtn"
@@ -8,17 +8,13 @@ import NewSpaceModal from "../Content/Spaces/Modals/NewSpaceModal";
 import DeleteSpaceBtn from "../Content/Spaces/Buttons/DeleteSpaceBtn";
 
 function SideBarSpaces() {
-  const [open, setOpen] = useState(false);
-  const { spaces, setSpaces } = useContext(Context);
+  const { spaces, setSpaces, openSpaces, handelSpacesMenu } = useContext(Context);
   
-  const handleOpen = () => setOpen(!open);
-  const handelOptions = () => getUserSpaces().then((spaces) => setSpaces(spaces));
+  const handelGetSpaces = () => getUserSpaces().then((spaces) => setSpaces(spaces));
 
   useEffect(() => {
-    getUserSpaces().then((spaces) => {
-      setSpaces(spaces);
-    });
-  }, [spaces]);
+    getUserSpaces().then((spaces) => setSpaces(spaces));
+  }, []);
 
   return (
     <ul className="my-2 w-full flex flex-col gap-2">
@@ -31,9 +27,9 @@ function SideBarSpaces() {
           variant="text"
           color="blue-gray"
           className="flex justify-between items-center gap-2 border"
-          onClick={() => {handleOpen(), handelOptions()}}
+          onClick={() => {handelSpacesMenu(), handelGetSpaces()}}
         >
-          <p className={`bg-[#2196F3] text-white rounded-full border-[#DCDCDC] border-[1px] w-[20px] h-[20px] flex items-center justify-center transition-all ${open ? "rotate-[-90deg]" : "rotate-[90deg]"} `}>
+          <p className={`bg-[#2196F3] text-white rounded-full border-[#DCDCDC] border-[1px] w-[20px] h-[20px] flex items-center justify-center transition-all ${openSpaces ? "rotate-[-90deg]" : "rotate-[90deg]"} `}>
             &lt;
           </p>
           <p className="text-[#2196F3]">
@@ -45,11 +41,11 @@ function SideBarSpaces() {
         <DeleteSpaceBtn />
       </Typography>
 
-      {open ? (
+      {openSpaces ? (
         <>
-          <ul className="flex flex-col gap-2 max-h-[170px] overflow-y-auto">
+          <ul className="flex flex-col gap-2 max-h-[110px] overflow-y-auto">
             {spaces.map((space) => (
-              <SpaceBtn space={space} key={space.id} handleOpen={handleOpen} />
+              <SpaceBtn space={space} key={space.id} />
             ))}
           </ul>
         </>

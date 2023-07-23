@@ -7,7 +7,7 @@ import { isLogedIn } from "../../controllers/user/functions";
 import { getUserSpace } from "../../controllers/spaces/functions";
 
 function TaskManager() {
-  const { setLogedIn, logedIn, setCurrentSpace } = useContext(Context);
+  const { setLogedIn, setCurrentSpace } = useContext(Context);
 
   useEffect(() => {
     if (isLogedIn()) {
@@ -23,7 +23,7 @@ function TaskManager() {
       });
     }
   }, []);
-
+  
   return (
     <div className="h-screen w-full p-4 flex flex-col gap-4 bg-[#2196F3]">
       <div className="relative h-full flex justify-end">
