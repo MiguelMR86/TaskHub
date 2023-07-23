@@ -1,11 +1,11 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Context } from "../../../context/Context";
 import { Typography, Button } from "@material-tailwind/react";
-import SpaceBtn from "../../General/Profile/Spaces/Buttons/SpaceBtn";
+import SpaceBtn from "../../Spaces/Buttons/SpaceBtn";
 import { getUserSpaces } from "../../../controllers/spaces/functions";
-import NewSpaceBtn from "../../General/Profile/Spaces/Buttons/NewSpaceBtn";
-import NewSpaceModal from "../../General/Profile/Spaces/Modals/NewSpaceModal";
-import DeleteSpaceBtn from "../../General/Profile/Spaces/Buttons/DeleteSpaceBtn";
+import NewSpaceBtn from "../../Spaces/Buttons/NewSpaceBtn";
+import NewSpaceModal from "../../Spaces/Modals/NewSpaceModal";
+import DeleteSpaceBtn from "../../Spaces/Buttons/DeleteSpaceBtn";
 
 function SideBarSpaces() {
   const [open, setOpen] = useState(false);

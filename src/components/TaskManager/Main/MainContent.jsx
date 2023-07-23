@@ -2,8 +2,8 @@ import React, { useContext } from "react";
 import { Context } from "../../../context/Context";
 import SideBarBtn from "./SideBarBtn";
 import SpaceTitle from "./SpaceTitle";
-import StartBtn from "../../General/Profile/Spaces/Buttons/StartBtn";
-import ChooseSpaceModal from "../../General/Profile/Spaces/Modals/ChooseSpaceModal";
+import StartBtn from "../../Spaces/Buttons/StartBtn";
+import ChooseSpaceModal from "../../Spaces/Modals/ChooseSpaceModal";
 
 function MainContent() {
   const { currentSpace } = useContext(Context);
