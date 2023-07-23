@@ -7,15 +7,11 @@ import { isLogedIn } from "../../controllers/user/functions";
 import { getUserSpace } from "../../controllers/spaces/functions";
 
 function TaskManager() {
-  const { setLogedIn, setCurrentSpace } = useContext(Context);
+  const { setLogedIn, logedIn, setCurrentSpace } = useContext(Context);
 
   useEffect(() => {
     if (isLogedIn()) {
       setLogedIn(true);
-    } 
-    else {
-      setLogedIn(false);
-      window.location.href = "/";
     }
 
     // GET paths

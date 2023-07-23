@@ -4,6 +4,7 @@ import { Typography, Button } from "@material-tailwind/react";
 import SpaceBtn from "../../General/Profile/Spaces/Buttons/SpaceBtn";
 import { getUserSpaces } from "../../../controllers/spaces/functions";
 import NewSpaceBtn from "../../General/Profile/Spaces/Buttons/NewSpaceBtn";
+import NewSpaceModal from "../../General/Profile/Spaces/Modals/NewSpaceModal";
 import DeleteSpaceBtn from "../../General/Profile/Spaces/Buttons/DeleteSpaceBtn";
 
 function SideBarSpaces() {
@@ -39,6 +40,7 @@ function SideBarSpaces() {
             spaces
           </p>
         </Button>
+        <NewSpaceModal />
         <NewSpaceBtn />
         <DeleteSpaceBtn />
       </Typography>

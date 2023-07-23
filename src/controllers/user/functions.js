@@ -23,6 +23,7 @@ export const isLogedIn = async () => {
       return true
     }
     else {
+      window.location.href = "/"
       return false
     }
   })
