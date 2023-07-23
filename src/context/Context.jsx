@@ -8,7 +8,6 @@ export function ContextProvider({ children }) {
     const [currentSection, setCurrentSection] = useState("Board");
     const [openSideBar, setOpenSideBar] = useState(true);
     const [openConfigMenu, setOpenConfigMenu] = useState(false)
-    const [openSpacesMenu, setOpenSpacesMenu] = useState(false)
     const [openCreateSpace, setOpenCreateSpace] = useState(false)
     const [openSpacesSelector, setOpenSpacesSelector] = useState(false)
     const [currentSpace, setCurrentSpace] = useState(null)
@@ -21,14 +20,12 @@ export function ContextProvider({ children }) {
     const handelSideBarDisplay = () => {
         setOpenSideBar(!openSideBar)
         if (openConfigMenu) setOpenConfigMenu(false)
-        if (openSpacesMenu) setOpenSpacesMenu(false)
     }
 
     const functions = {
         currentSection, setCurrentSection,
         openSideBar, setOpenSideBar,
         openConfigMenu, setOpenConfigMenu,
-        openSpacesMenu, setOpenSpacesMenu,
         openCreateSpace, setOpenCreateSpace,
         openSpacesSelector, setOpenSpacesSelector,
         currentSpace, setCurrentSpace,

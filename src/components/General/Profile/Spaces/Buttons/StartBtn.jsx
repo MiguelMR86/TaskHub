@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import { Context } from "../../../../context/Context";
-import { getUserSpaces } from "../../../../controllers/spaces/functions";
+import { Context } from "../../../../../context/Context";
+import { getUserSpaces } from "../../../../../controllers/spaces/functions";
 
 function StartBtn() {
     const { openSpacesSelector, setOpenSpacesSelector, setSpaces } = useContext(Context);

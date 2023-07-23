@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Context } from "../../../../context/Context";
+import { Context } from "../../../../../context/Context";
 import { TbWorldUpload } from "react-icons/tb";
 import {
   Button,
@@ -10,8 +10,8 @@ import {
   Input,
   Textarea,
 } from "@material-tailwind/react";
-import InputFile from "../../Others/InputFile";
-import { createSpace } from "../../../../controllers/spaces/functions";
+import InputFile from "../../../Others/InputFile";
+import { createSpace } from "../../../../../controllers/spaces/functions";
 
 function NewSpaceBtn() {
   const { openCreateSpace, setOpenCreateSpace } = useContext(Context);
@@ -32,12 +32,10 @@ function NewSpaceBtn() {
     <>
       <Button
         onClick={handleOpen}
-        fullWidth
         variant="text"
         color="blue-gray"
-        className="flex justify-between items-center"
+        className="flex justify-between items-center border p-4"
       >
-        New space
         <TbWorldUpload className="scale-[2]" />
       </Button>
 

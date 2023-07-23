@@ -3,9 +3,11 @@ import { Context } from '../../../context/Context'
 import { Navbar } from "@material-tailwind/react";
 import Logo from "../../General/Others/Logo";
 import SideBarBody from "./SideBarBody";
-import SpacesBtn from "../../General/Profile/SpacesBtn";
+import CurrentSpaceBtn from "../../General/Profile/Spaces/Buttons/CurrentSpaceBtn";
 import UserBtn from "../../General/Profile/UserBtn";
 import ConfigBtn from '../../General/Profile/ConfigBtn';
+import SideBarSpaces from './SideBarSpaces';
+import Divider from '../../General/Others/Divider';
 
 function SideBar() {
   const { openSideBar } = useContext(Context)
@@ -17,12 +19,16 @@ function SideBar() {
             <Logo />
           </div>
           <SideBarBody/>
+          <Divider />
+          <SideBarSpaces />
+          <Divider />
+
         </div>
 
         <div id="user-btn" className='w-full h-fit flex gap-2 justify-between items-center'>
           
           <div className="relative flex gap-3">
-            <SpacesBtn />
+            <CurrentSpaceBtn />
             <div className="absolute left-10">
               <UserBtn />
             </div>

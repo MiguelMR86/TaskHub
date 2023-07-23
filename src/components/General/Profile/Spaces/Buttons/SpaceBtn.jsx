@@ -1,13 +1,15 @@
 import React, { useContext } from "react";
-import { Context } from "../../../../context/Context";
-import { MenuItem } from "@material-tailwind/react";
+import { Context } from "../../../../../context/Context";
+import { Button } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
 
 function SpaceBtn({ space, handleOpen }) {
   const { setCurrentSpace } = useContext(Context);
 
   return (
-    <MenuItem
+    <Button
+      color="blue-gray"
+      variant="text"
       key={space.id}
       onClick={() => {
         setCurrentSpace(space);
@@ -16,7 +18,7 @@ function SpaceBtn({ space, handleOpen }) {
     >
       <Link
         to={`/manager/space/${space.id}`}
-        className="flex justify-between items-center h-12"
+        className="flex justify-between items-center h-8"
       >
         <p>{space.name}</p>
         <img
@@ -25,7 +27,7 @@ function SpaceBtn({ space, handleOpen }) {
           className="w-8 h-8 rounded-full"
         />
       </Link>
-    </MenuItem>
+    </Button>
   );
 }
 

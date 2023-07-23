@@ -6,8 +6,7 @@ function SideBarBody() {
 
   return (
     <ul className="my-2 w-full flex flex-col gap-2">
-                <Searcher />
-
+      <Searcher />
       <Typography
         as="li"
         variant="small"
