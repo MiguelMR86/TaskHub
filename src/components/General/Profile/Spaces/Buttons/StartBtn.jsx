@@ -1,12 +1,11 @@
 import React, { useContext } from "react";
 import { Context } from "../../../../../context/Context";
-import { getUserSpaces } from "../../../../../controllers/spaces/functions";
 
 function StartBtn() {
-    const { openSpacesSelector, setOpenSpacesSelector, setSpaces } = useContext(Context);
+    const { openSpacesSelector, setOpenSpacesSelector } = useContext(Context);
 
     const handleOpen = () => setOpenSpacesSelector(!openSpacesSelector);
-    const handelOptions = () => getUserSpaces().then((spaces) => setSpaces(spaces));
+
   return (
     <button
       onClick={() => {

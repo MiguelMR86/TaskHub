@@ -12,9 +12,10 @@ import {
 } from "@material-tailwind/react";
 import InputFile from "../../../Others/InputFile";
 import { createSpace } from "../../../../../controllers/spaces/functions";
+import { getUserSpaces } from "../../../../../controllers/spaces/functions";
 
 function NewSpaceBtn() {
-  const { openCreateSpace, setOpenCreateSpace } = useContext(Context);
+  const { openCreateSpace, setOpenCreateSpace, setSpaces } = useContext(Context);
   const handleOpen = () => setOpenCreateSpace(!openCreateSpace);
 
   const handleCreateSpace = (e) => {
@@ -25,6 +26,7 @@ function NewSpaceBtn() {
     const img = document.getElementById("space-img").files[0];
     const space = { name, description, img };
     createSpace(space);
+    getUserSpaces().then((spaces) => setSpaces(spaces));
     handleOpen(null);
   };
 
@@ -34,7 +36,7 @@ function NewSpaceBtn() {
         onClick={handleOpen}
         variant="text"
         color="blue-gray"
-        className="flex justify-between items-center border p-4"
+        className="flex justify-between items-center border p-4 text-[#2196F3]"
       >
         <TbWorldUpload className="scale-[2]" />
       </Button>

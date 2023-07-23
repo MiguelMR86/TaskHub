@@ -1,15 +1,14 @@
 import React, { useContext } from "react";
 import { Context } from "../../../../../context/Context";
-import { Button } from "@material-tailwind/react";
+import { MenuItem } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
 
 function SpaceBtn({ space, handleOpen }) {
   const { setCurrentSpace } = useContext(Context);
 
   return (
-    <Button
-      color="blue-gray"
-      variant="text"
+    <MenuItem
+      className="text-blue-gray-500 w-[94%] border hover:bg-blue-gray-100"
       key={space.id}
       onClick={() => {
         setCurrentSpace(space);
@@ -27,7 +26,7 @@ function SpaceBtn({ space, handleOpen }) {
           className="w-8 h-8 rounded-full"
         />
       </Link>
-    </Button>
+    </MenuItem>
   );
 }
 

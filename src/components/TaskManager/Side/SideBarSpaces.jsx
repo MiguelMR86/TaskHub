@@ -17,12 +17,11 @@ function SideBarSpaces() {
     getUserSpaces().then((spaces) => {
       setSpaces(spaces);
     });
-  }, []);
+  }, [spaces]);
 
   return (
     <ul className="my-2 w-full flex flex-col gap-2">
       <Typography
-        as="li"
         variant="small"
         color="black"
         className="flex items-center gap-2"
@@ -33,10 +32,12 @@ function SideBarSpaces() {
           className="flex justify-between items-center gap-2 border"
           onClick={() => {handleOpen(), handelOptions()}}
         >
-          <p className={` bg-blue-gray-500 text-white rounded-full border-[#DCDCDC] border-[1px] w-[20px] h-[20px] flex items-center justify-center transition-all ${open ? "rotate-[-90deg]" : "rotate-[90deg]"} `}>
+          <p className={`bg-[#2196F3] text-white rounded-full border-[#DCDCDC] border-[1px] w-[20px] h-[20px] flex items-center justify-center transition-all ${open ? "rotate-[-90deg]" : "rotate-[90deg]"} `}>
             &lt;
           </p>
-          spaces
+          <p className="text-[#2196F3]">
+            spaces
+          </p>
         </Button>
         <NewSpaceBtn />
         <DeleteSpaceBtn />
@@ -44,7 +45,7 @@ function SideBarSpaces() {
 
       {open ? (
         <>
-          <ul className="flex flex-col gap-1">
+          <ul className="flex flex-col gap-2 max-h-[170px] overflow-y-auto">
             {spaces.map((space) => (
               <SpaceBtn space={space} key={space.id} handleOpen={handleOpen} />
             ))}

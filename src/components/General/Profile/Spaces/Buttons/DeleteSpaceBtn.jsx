@@ -6,7 +6,7 @@ function EditSpaceBtn() {
     <Button
         variant="text"
         color="blue-gray"
-        className="flex justify-between items-center border p-4"
+        className="flex justify-between items-center border p-4 text-[#2196F3]"
         >
         <TbWorldOff className="scale-[2]" />
     </Button>
