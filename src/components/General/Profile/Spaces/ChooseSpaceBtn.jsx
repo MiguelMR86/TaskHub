@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { Context } from "../../../../context/Context";
 import {
   Button,
@@ -10,6 +10,7 @@ import {
 import { BiWorld } from "react-icons/bi";
 import { getUserSpaces } from "../../../../controllers/spaces/functions";
 import SpaceBtn from "./SpaceBtn";
+import EmptySpacesBtn from "./EmptySpacesBtn";
 
 function ChooseSpaceBtn() {
   const { openSpacesSelector, setOpenSpacesSelector, spaces, setSpaces } = useContext(Context);
@@ -49,7 +50,7 @@ function ChooseSpaceBtn() {
 
         <DialogBody divider className="overflow-y-auto h-[250px]">
           {spaces.length === 0 ? (
-            <p>You don't have any space yet</p>
+            <EmptySpacesBtn />
           ) : (
             <ul className="flex flex-col gap-1">
               {spaces.map((space) => (

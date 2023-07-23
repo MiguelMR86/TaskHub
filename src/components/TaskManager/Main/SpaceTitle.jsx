@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useContext } from "react";
+import { Context } from "../../../context/Context";
 
 function SpaceTitle() {
-  return (
-    <h1 className=' font-bold text-3xl text-[#c0c0c0]'>Space Title</h1>
-  )
+  const { currentSpace } = useContext(Context);
+  return currentSpace ? (
+    <h1 className=" font-bold text-3xl">{currentSpace.name}</h1>
+  ) : (
+    <></>
+  );
 }
 
-export default SpaceTitle
+export default SpaceTitle;

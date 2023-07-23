@@ -11,7 +11,7 @@ export function ContextProvider({ children }) {
     const [openSpacesMenu, setOpenSpacesMenu] = useState(false)
     const [openCreateSpace, setOpenCreateSpace] = useState(false)
     const [openSpacesSelector, setOpenSpacesSelector] = useState(false)
-    const [currentSpace, setCurrentSpace] = useState()
+    const [currentSpace, setCurrentSpace] = useState(null)
     const [spaces, setSpaces] = useState([]);
 
     // USER
