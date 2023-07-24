@@ -11,6 +11,7 @@ export function ContextProvider({ children }) {
     const [currentSection, setCurrentSection] = useState("Board");
     const [currentSpace, setCurrentSpace] = useState(null)
     const [spaces, setSpaces] = useState([]);
+    const [tasks, setTasks] = useState([]);
     
     // MENUS 
     const [openSideBar, setOpenSideBar] = useState(true);
@@ -18,27 +19,30 @@ export function ContextProvider({ children }) {
     const [openCreateSpace, setOpenCreateSpace] = useState(false)
     const [openSpaceSelector, setOpenSpaceSelector] = useState(false)
     const [openSpaces, setOpenSpaces] = useState(false)
-    const [openTaskSelector, setOpenTaskSelector] = useState(false)
+    const [openTasks, setOpenTasks] = useState(false)
 
     // FUNTIONS
     const handelSideBarDisplay = () => {
         setOpenSideBar(!openSideBar)
         if (openConfigMenu) setOpenConfigMenu(false)
     }
-
     const handelSpacesMenu = () => setOpenSpaces(!openSpaces)
+    const handelTasksMenu = () => setOpenTasks(!openTasks)
 
     const functions = {
         logedIn, setLogedIn,
         currentSection, setCurrentSection,
         currentSpace, setCurrentSpace,
         spaces, setSpaces,
+        tasks, setTasks,
         openSideBar,
         openConfigMenu, setOpenConfigMenu,
         openCreateSpace, setOpenCreateSpace,
         openSpaceSelector, setOpenSpaceSelector,
-        openSpaces, setOpenSpaces, 
+        openSpaces, setOpenSpaces,
+        openTasks, setOpenTasks, 
         handelSpacesMenu,
+        handelTasksMenu,
         handelSideBarDisplay
     };
 

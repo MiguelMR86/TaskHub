@@ -1,13 +1,22 @@
-import React, { useState, useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Context } from "../../../context/Context";
 import { Typography, Button } from "@material-tailwind/react";
+import SpaceBtn from "../Content/Spaces/Buttons/SpaceBtn"
+import { getUserSpaces } from "../../../controllers/spaces/functions";
+import NewSpaceBtn from "../Content/Spaces/Buttons/NewSpaceBtn";
+import NewSpaceModal from "../Content/Spaces/Modals/NewSpaceModal";
+import DeleteSpaceBtn from "../Content/Spaces/Buttons/DeleteSpaceBtn";
 
 function SideBarTasks() {
-  const { currentSpace } = useContext(Context);
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(!open);
+  const { tasks, setTasks, openTasks, handelTasksMenu } = useContext(Context);
+  
+  const handelGetTasks = () => getUserSpaces().then((tasks) => setTasks(tasks));
 
-  return currentSpace ? (
+  useEffect(() => {
+    // handelGetTasks();
+  }, []);
+
+  return (
     <ul className="my-2 w-full flex flex-col gap-2">
       <Typography
         variant="small"
@@ -19,22 +28,34 @@ function SideBarTasks() {
           color="blue-gray"
           className="flex justify-between items-center gap-2 border"
           onClick={() => {
-            handleOpen(), handelOptions();
+            handelTasksMenu(); 
+            // handelGetTasks()
           }}
         >
-          <p
-            className={`bg-[#2196F3] text-white rounded-full border-[#DCDCDC] border-[1px] w-[20px] h-[20px] flex items-center justify-center transition-all ${
-              open ? "rotate-[-90deg]" : "rotate-[90deg]"
-            } `}
-          >
+          <p className={`bg-[#2196F3] text-white rounded-full border-[#DCDCDC] border-[1px] w-[20px] h-[20px] flex items-center justify-center transition-all ${openTasks ? "rotate-[-90deg]" : "rotate-[90deg]"} `}>
             &lt;
           </p>
-          <p className="text-[#2196F3]">Tasks</p>
+          <p className="text-[#2196F3]">
+            tasks
+          </p>
         </Button>
+        <NewSpaceModal />
+        <NewSpaceBtn />
+        <DeleteSpaceBtn />
       </Typography>
+
+      {openTasks ? (
+        <>
+          <ul className="flex flex-col gap-2 max-h-[110px] overflow-y-auto">
+            {tasks.map((space) => (
+              <SpaceBtn space={space} key={space.id} />
+            ))}
+          </ul>
+        </>
+      ) : (
+        <></>
+      )}
     </ul>
-  ) : (
-    <></>
   );
 }
 
