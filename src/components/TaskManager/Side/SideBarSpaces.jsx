@@ -13,7 +13,7 @@ function SideBarSpaces() {
   const handelGetSpaces = () => getUserSpaces().then((spaces) => setSpaces(spaces));
 
   useEffect(() => {
-    getUserSpaces().then((spaces) => setSpaces(spaces));
+    handelGetSpaces();
   }, []);
 
   return (

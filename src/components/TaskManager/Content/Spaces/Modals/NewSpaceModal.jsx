@@ -9,13 +9,13 @@ import {
   Textarea,
   Button,
 } from "@material-tailwind/react";
-import InputFile from "../../../../General/Others/InputFile"
+import InputFile from "../../../../General/Others/InputFile";
 import { createSpace } from "../../../../../controllers/spaces/functions";
 import { getUserSpaces } from "../../../../../controllers/spaces/functions";
 
 function NewSpaceModal() {
   const { openCreateSpace, setOpenCreateSpace, setSpaces, setOpenSpaces } = useContext(Context);
-  
+
   const handleOpen = () => setOpenCreateSpace(!openCreateSpace);
   const handleCreateSpace = (e) => {
     e.preventDefault();
@@ -24,11 +24,8 @@ function NewSpaceModal() {
     const img = document.getElementById("space-img").files[0];
     const space = { name, description, img };
     createSpace(space);
-    getUserSpaces().then((spaces) => {
-      setSpaces(spaces); 
-      setOpenSpaces(false)
-    }
-    );
+    getUserSpaces()
+    .then((spaces) => { setSpaces(spaces); setOpenSpaces(false);});
     handleOpen(null);
   };
 
@@ -50,7 +47,7 @@ function NewSpaceModal() {
           <Button
             variant="gradient"
             color="blue-gray"
-            onClick={() => handleOpen()}
+            onClick={handleOpen}
             className="mr-1"
           >
             <span>Cancel</span>
