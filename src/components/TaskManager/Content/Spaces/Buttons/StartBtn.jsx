@@ -2,9 +2,9 @@ import React, { useContext } from "react";
 import { Context } from "../../../../../context/Context";
 
 function StartBtn() {
-  const { openSpacesSelector, setOpenSpacesSelector } = useContext(Context);
+  const { openSpaceSelector, setOpenSpaceSelector } = useContext(Context);
 
-  const handleOpen = () => setOpenSpacesSelector(!openSpacesSelector);
+  const handleOpen = () => setOpenSpaceSelector(!openSpaceSelector);
 
   return (
     <button
