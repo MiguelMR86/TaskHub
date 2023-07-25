@@ -17,6 +17,7 @@ export function ContextProvider({ children }) {
     const [openSpaceSelector, setOpenSpaceSelector] = useState(false)
     const [openSpaces, setOpenSpaces] = useState(false)
     const [openTasks, setOpenTasks] = useState(false)
+    const [openCreateTask, setOpenCreateTask] = useState(false)
 
     // FUNTIONS
     const handelSideBarDisplay = () => {
@@ -36,7 +37,8 @@ export function ContextProvider({ children }) {
         openCreateSpace, setOpenCreateSpace,
         openSpaceSelector, setOpenSpaceSelector,
         openSpaces, setOpenSpaces,
-        openTasks, setOpenTasks, 
+        openTasks, setOpenTasks,
+        openCreateTask, setOpenCreateTask,
         handelSpacesMenu,
         handelTasksMenu,
         handelSideBarDisplay

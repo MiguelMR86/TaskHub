@@ -1,16 +1,16 @@
-import React from 'react'
+import React from "react";
 import { TbWorldOff } from "react-icons/tb";
-import { Button } from "@material-tailwind/react";
+
 function EditSpaceBtn() {
   return (
-    <Button
-        variant="text"
-        color="blue-gray"
-        className="flex justify-between items-center border p-4 text-[#2196F3]"
-        >
-        <TbWorldOff className="scale-[2]" />
-    </Button>
-  )
+    <button
+      variant="text"
+      color="blue-gray"
+      className="flex justify-between items-center border p-4 text-[#2196F3] rounded-lg hover:bg-blue-gray-50 transition-all duration-300 ease-in-out"
+    >
+      <TbWorldOff className="scale-[1.7]" />
+    </button>
+  );
 }
 
-export default EditSpaceBtn
+export default EditSpaceBtn;

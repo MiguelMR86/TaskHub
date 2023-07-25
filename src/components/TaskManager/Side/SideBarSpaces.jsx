@@ -45,7 +45,6 @@ function SideBarSpaces() {
         </Button>
         <NewSpaceModal />
         <NewSpaceBtn />
-        <DeleteSpaceBtn />
       </Typography>
 
       {openSpaces ? (

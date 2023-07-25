@@ -1,22 +1,21 @@
 import React, { useContext } from "react";
 import { Context } from "../../../../../context/Context";
-import { HiOutlineFolderAdd } from 'react-icons/hi'
-import { Button } from "@material-tailwind/react";
+import { HiOutlineFolderAdd } from "react-icons/hi";
 
 function NewTaskBtn() {
-    const { openCreateSpace, setOpenCreateSpace } = useContext(Context);
-  const handleOpen = () => setOpenCreateSpace(!openCreateSpace);
+  const { openCreateTask, setOpenCreateTask } = useContext(Context);
+  const handleOpen = () => setOpenCreateTask(!openCreateTask);
 
   return (
-    <Button
-        onClick={handleOpen}
-        variant="text"
-        color="blue-gray"
-        className="flex justify-between items-center border p-4 text-[#2196F3]"
-      >
-        <HiOutlineFolderAdd className="scale-[2.8]" />
-      </Button>
-  )
+    <button
+      onClick={handleOpen}
+      variant="text"
+      color="blue-gray"
+      className="flex justify-between items-center border p-4 text-[#2196F3] rounded-lg hover:bg-blue-gray-50 transition-all duration-300 ease-in-out"
+    >
+      <HiOutlineFolderAdd className="scale-[1.7]" />
+    </button>
+  );
 }
 
-export default NewTaskBtn
+export default NewTaskBtn;
