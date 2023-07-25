@@ -4,25 +4,19 @@ import { ref, uploadBytes, getDownloadURL, deleteObject } from "firebase/storage
 
 const tasksCollection = collection(db, "tasks");
 
-export const createTask = async (task) => {
-    const day = new Date();
-    // const imagePath = `tasks/${day.getTime() + "-" + task.img.name}`
-    // const storageRef = ref(storage, imagePath);
-    // await uploadBytes(storageRef, task.img);
-    // const url = await getDownloadURL(storageRef);
-    
+export const createTask = async (task) => {    
     try{
         await addDoc(tasksCollection, {
-            spaceID: task.spaceID,
-            taskID: task.taskID,
+            spaceId: task.spaceId,
             owner: auth.currentUser.uid,
-            date: day.getTime(),
-            lastEdit: day.getTime(),
             name: task.name,
             description: task.description,
-            status: task.status,
             dueDate: task.dueDate,
-            });
+            dueTime: task.dueTime,
+            priority: task.priority,
+            status: "To Do",
+            lastEdit: "",
+        });
     }
     catch(e){
         console.log(e);

@@ -2,13 +2,14 @@ import React, { useContext, useEffect } from "react";
 import { Context } from "../../../context/Context";
 import { Typography, Button } from "@material-tailwind/react";
 import SpaceBtn from "../Content/Spaces/Buttons/SpaceBtn";
-import { getUserSpaces } from "../../../controllers/spaces/functions";
+import { getUserTasks } from "../../../controllers/tasks/functions";
 import NewTaskBtn from "../Content/Tasks/Buttons/NewTaskBtn";
+import NewTaskModal from "../Content/Tasks/Modals/NewTaskModal";
 
 function SideBarTasks() {
   const { tasks, setTasks, openTasks, handelTasksMenu } = useContext(Context);
 
-  const handelGetTasks = () => getUserSpaces().then((tasks) => setTasks(tasks));
+  const handelGetTasks = () => getUserTasks().then((tasks) => setTasks(tasks));
 
   useEffect(() => {
     // handelGetTasks();
@@ -40,6 +41,7 @@ function SideBarTasks() {
           </p>
           <p className="text-[#2196F3]">tasks</p>
         </Button>
+        <NewTaskModal />
         <NewTaskBtn />
 
       </Typography>
