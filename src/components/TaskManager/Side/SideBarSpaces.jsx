@@ -26,9 +26,10 @@ function SideBarSpaces() {
         className="flex items-center gap-2"
       >
         <Button
+          fullWidth
           variant="text"
           color="blue-gray"
-          className="flex justify-between items-center gap-2 border"
+          className="flex justify-center items-center gap-2 border"
           onClick={() => {
             handelSpacesMenu(), handelGetSpaces();
           }}

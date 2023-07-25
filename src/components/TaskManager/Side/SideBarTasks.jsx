@@ -3,6 +3,7 @@ import { Context } from "../../../context/Context";
 import { Typography, Button } from "@material-tailwind/react";
 import SpaceBtn from "../Content/Spaces/Buttons/SpaceBtn";
 import { getUserSpaces } from "../../../controllers/spaces/functions";
+import NewTaskBtn from "../Content/Tasks/Buttons/NewTaskBtn";
 
 function SideBarTasks() {
   const { tasks, setTasks, openTasks, handelTasksMenu } = useContext(Context);
@@ -21,9 +22,10 @@ function SideBarTasks() {
         className="flex items-center gap-2"
       >
         <Button
+          fullWidth
           variant="text"
           color="blue-gray"
-          className="flex justify-between items-center gap-2 border"
+          className="flex justify-center items-center gap-2 border"
           onClick={() => {
             handelTasksMenu();
             // handelGetTasks()
@@ -38,6 +40,8 @@ function SideBarTasks() {
           </p>
           <p className="text-[#2196F3]">tasks</p>
         </Button>
+        <NewTaskBtn />
+
       </Typography>
 
       {openTasks ? (
