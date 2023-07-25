@@ -3,10 +3,7 @@ import React, { createContext, useState } from "react";
 export const Context = createContext();
 
 export function ContextProvider({ children }) {
-    
-    // USER
-    const [logedIn, setLogedIn] = useState(false);
-    
+        
     // SECTIONS
     const [currentSection, setCurrentSection] = useState("Board");
     const [currentSpace, setCurrentSpace] = useState(null)
@@ -30,7 +27,6 @@ export function ContextProvider({ children }) {
     const handelTasksMenu = () => setOpenTasks(!openTasks)
 
     const functions = {
-        logedIn, setLogedIn,
         currentSection, setCurrentSection,
         currentSpace, setCurrentSpace,
         spaces, setSpaces,

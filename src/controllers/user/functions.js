@@ -20,11 +20,9 @@ export const isLogedIn = async () => {
   auth.onAuthStateChanged((user) => {
     if (user) {
       user.reload()
-      return true
     }
     else {
       window.location.href = "/"
-      return false
     }
   })
 }

@@ -3,9 +3,6 @@ import { Context } from "../../../context/Context";
 import { Typography, Button } from "@material-tailwind/react";
 import SpaceBtn from "../Content/Spaces/Buttons/SpaceBtn"
 import { getUserSpaces } from "../../../controllers/spaces/functions";
-import NewSpaceBtn from "../Content/Spaces/Buttons/NewSpaceBtn";
-import NewSpaceModal from "../Content/Spaces/Modals/NewSpaceModal";
-import DeleteSpaceBtn from "../Content/Spaces/Buttons/DeleteSpaceBtn";
 
 function SideBarTasks() {
   const { tasks, setTasks, openTasks, handelTasksMenu } = useContext(Context);
@@ -39,9 +36,6 @@ function SideBarTasks() {
             tasks
           </p>
         </Button>
-        <NewSpaceModal />
-        <NewSpaceBtn />
-        <DeleteSpaceBtn />
       </Typography>
 
       {openTasks ? (
