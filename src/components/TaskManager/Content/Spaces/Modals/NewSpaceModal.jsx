@@ -6,7 +6,6 @@ import {
   DialogBody,
   DialogFooter,
   Input,
-  Textarea,
   Button,
 } from "@material-tailwind/react";
 import InputFile from "../../../../General/Others/InputFile";
@@ -19,10 +18,9 @@ function NewSpaceModal() {
   const handleCreateSpace = (e) => {
     e.preventDefault();
     const name = document.getElementById("space-name").value;
-    const description = document.getElementById("space-description").value;
     const img = document.getElementById("space-img").files[0];
-    const space = { name, description, img };
-    createSpace(space)
+    const space = { name, img };
+    createSpace(space);
     handleOpen(null);
   };
 
@@ -36,8 +34,16 @@ function NewSpaceModal() {
       <DialogHeader>Create a new Space</DialogHeader>
       <form onSubmit={handleCreateSpace}>
         <DialogBody divider className="flex flex-col gap-3">
-          <Input id="space-name" size="lg" label="Space Name" required />
-          <Textarea id="space-description" label="Description" />
+          <Input
+            onChange={(e) => {
+              if (e.target.value.length > 20)
+                e.target.value = e.target.value.slice(0, 20);
+            }}
+            id="space-name"
+            size="lg"
+            label="Space Name"
+            required
+          />
           <InputFile id="space-img" required={true} />
         </DialogBody>
         <DialogFooter>
@@ -49,7 +55,12 @@ function NewSpaceModal() {
           >
             <span>Cancel</span>
           </Button>
-          <Button variant="gradient" color="blue" type="submit">
+          <Button
+            id="space-submit"
+            variant="gradient"
+            color="blue"
+            type="submit"
+          >
             <span>Confirm</span>
           </Button>
         </DialogFooter>

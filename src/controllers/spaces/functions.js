@@ -31,7 +31,6 @@ export const createSpace = async (space) => {
     await addDoc(spacesCollection, {
       owner: auth?.currentUser?.uid,
       name: space.name,
-      description: space.description,
       date: day.getTime(),
       url: url,
       path: imagePath,
