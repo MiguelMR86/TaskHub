@@ -1,6 +1,5 @@
 import React, { useEffect, useContext } from "react";
 import { Context } from "../../context/Context";
-import NavBar from "./Nav/NavBar";
 import MainContent from "./Main/MainContent";
 import SideBar from "./Side/SideBar.jsx";
 import { isLogedIn } from "../../controllers/user/functions";
