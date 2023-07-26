@@ -6,7 +6,7 @@ import { getUserTasks } from "../../../../../controllers/tasks/functions";
 
 function SpaceBtn({ space }) {
   const { currentSpace, setCurrentSpace, handelSpacesMenu, setTasks } = useContext(Context);
-  const handelGetTasks = () => getUserTasks(currentSpace.id).then((tasks) => setTasks(tasks));
+  const handelGetTasks = () => getUserTasks(space.id).then((tasks) => setTasks(tasks));
 
   return (
     <MenuItem

@@ -8,11 +8,10 @@ import NavBar from "../Nav/NavBar";
 import TaskList from "../Content/Tasks/TaskList";
 
 function MainContent() {
-  const { currentSpace, currentTask } = useContext(Context);
+  const { currentSpace } = useContext(Context);
 
   return (
-    <div className={`w-full h-full flex gap-4 items-end rounded-lg bg-white shadow-[0_5px_15px_rgba(0,0,0,.4)] p-4 border-4 border-[#DCDCDC]
-    ${currentSpace ? "flex-col" : "flex-wrap"}`}>
+    <div className={`w-full h-full flex gap-4 items-end rounded-lg bg-white shadow-[0_5px_15px_rgba(0,0,0,.4)] p-4 border-4 border-[#DCDCDC] ${currentSpace ? "flex-col" : "flex-wrap"}`}>
       <SideBarBtn />
       <SpaceTitle />
 
