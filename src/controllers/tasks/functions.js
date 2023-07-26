@@ -38,11 +38,11 @@ export const createTask = async (task) => {
   }
 };
 
-export const getUserTasks = async () => {
+export const getUserTasks = async (currentSpaceId) => {
   const tasks = [];
   const query = await getDocs(tasksCollection);
   query.forEach((doc) => {
-    if (doc.data().owner === auth.currentUser.uid)
+    if (doc.data().owner === auth.currentUser.uid && doc.data().spaceId === currentSpaceId)
       tasks.push({ ...doc.data(), id: doc.id });
   });
   // order by date descending

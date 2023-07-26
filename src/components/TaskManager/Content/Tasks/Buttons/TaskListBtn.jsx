@@ -8,13 +8,13 @@ function TaskListBtn({ task }) {
   return (
     <Button
       key={task.id}
-      className="relative flex justify-end items-center border-4 text-white  bg-green-400 border-green-200"
+      className="relative rounded-xl flex justify-end items-center border-4 text-white  bg-green-400 border-green-200"
       onClick={() => {
         setCurrentTask(task);
       }}
     >
       <div
-        className={`absolute h-[120%] w-[120px] -top-1 -left-1 rounded-l-lg border-l-4 border-y-4 grid place-items-center
+        className={`absolute h-full w-[120px] top-0 left-0 rounded-l-lg grid place-items-center
         ${handelPriority(task.priority)}
       `}
       >

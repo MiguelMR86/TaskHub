@@ -7,9 +7,9 @@ import NewTaskBtn from "../Content/Tasks/Buttons/NewTaskBtn";
 import NewTaskModal from "../Content/Tasks/Modals/NewTaskModal";
 
 function SideBarTasks() {
-  const { tasks, setTasks, openTasks, handelTasksMenu } = useContext(Context);
+  const { tasks, setTasks, openTasks, handelTasksMenu, currentSpace } = useContext(Context);
 
-  const handelGetTasks = () => getUserTasks().then((tasks) => setTasks(tasks));
+  const handelGetTasks = () => getUserTasks(currentSpace.id).then((tasks) => setTasks(tasks));
 
   useEffect(() => {
     handelGetTasks();

@@ -2,9 +2,11 @@ import React, { useContext } from "react";
 import { Context } from "../../../../../context/Context";
 import { MenuItem } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
+import { getUserTasks } from "../../../../../controllers/tasks/functions";
 
 function SpaceBtn({ space }) {
-  const { setCurrentSpace, handelSpacesMenu } = useContext(Context);
+  const { currentSpace, setCurrentSpace, handelSpacesMenu, setTasks } = useContext(Context);
+  const handelGetTasks = () => getUserTasks(currentSpace.id).then((tasks) => setTasks(tasks));
 
   return (
     <MenuItem
@@ -13,6 +15,7 @@ function SpaceBtn({ space }) {
       onClick={() => {
         setCurrentSpace(space);
         handelSpacesMenu(null);
+        handelGetTasks();
       }}
     >
       <Link

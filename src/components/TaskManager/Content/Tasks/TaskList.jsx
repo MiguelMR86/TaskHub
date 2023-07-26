@@ -5,12 +5,12 @@ import TaskListBtn from './Buttons/TaskListBtn'
 
 function TaskList() {
     const { currentSpace, setCurrentTask, currentTask, setTasks, tasks } = useContext(Context)
-    
-    const handelGetTasks = () => getUserTasks().then((tasks) => setTasks(tasks));
+  
+    const handelGetTasks = () => getUserTasks(currentSpace.id).then((tasks) => setTasks(tasks));
 
     useEffect(() => {
         handelGetTasks();
-    }, []);
+    }, [currentSpace]);
 
     return (
     <div className='h-full w-full border-4 border-[#DCDCDC] rounded-lg p-4'>

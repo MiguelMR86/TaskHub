@@ -11,8 +11,7 @@ function SideBarSpaces() {
   const { spaces, setSpaces, openSpaces, handelSpacesMenu } =
     useContext(Context);
 
-  const handelGetSpaces = () =>
-    getUserSpaces().then((spaces) => setSpaces(spaces));
+  const handelGetSpaces = () => getUserSpaces().then((spaces) => setSpaces(spaces));
 
   useEffect(() => {
     handelGetSpaces();
