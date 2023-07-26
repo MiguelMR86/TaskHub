@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Context } from "../../../../../context/Context";
-import { TbWorldUpload } from "react-icons/tb";
+import { BsHouseAdd } from "react-icons/bs";
 
 function NewSpaceBtn() {
   const { openCreateSpace, setOpenCreateSpace } = useContext(Context);
@@ -13,7 +13,7 @@ function NewSpaceBtn() {
       color="blue-gray"
       className="flex justify-between items-center border p-4 text-[#2196F3] rounded-lg hover:bg-blue-gray-50 transition-all duration-300 ease-in-out"
     >
-      <TbWorldUpload className="scale-[1.7]" />
+      <BsHouseAdd className="scale-[1.7]" />
     </button>
   );
 }

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { Context } from "../../../context/Context";
 import { Typography, Button } from "@material-tailwind/react";
-import SpaceBtn from "../Content/Spaces/Buttons/SpaceBtn";
+import TaskBtn from "../Content/Tasks/Buttons/TaskBtn"
 import { getUserTasks } from "../../../controllers/tasks/functions";
 import NewTaskBtn from "../Content/Tasks/Buttons/NewTaskBtn";
 import NewTaskModal from "../Content/Tasks/Modals/NewTaskModal";
@@ -12,7 +12,7 @@ function SideBarTasks() {
   const handelGetTasks = () => getUserTasks().then((tasks) => setTasks(tasks));
 
   useEffect(() => {
-    // handelGetTasks();
+    handelGetTasks();
   }, []);
 
   return (
@@ -29,7 +29,7 @@ function SideBarTasks() {
           className="flex justify-center items-center gap-2 border"
           onClick={() => {
             handelTasksMenu();
-            // handelGetTasks()
+            handelGetTasks()
           }}
         >
           <p
@@ -50,8 +50,8 @@ function SideBarTasks() {
         <>
           {tasks.length > 0 ? (
             <ul className="flex flex-col gap-2 max-h-[110px] overflow-y-auto">
-              {tasks.map((space) => (
-                <SpaceBtn space={space} key={space.id} />
+              {tasks.map((task) => (
+                <TaskBtn task={task} key={task.id} />
               ))}
             </ul>
           ) : (

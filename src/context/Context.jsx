@@ -6,9 +6,10 @@ export function ContextProvider({ children }) {
         
     // SECTIONS
     const [currentSection, setCurrentSection] = useState("Board");
-    const [currentSpace, setCurrentSpace] = useState(null)
     const [spaces, setSpaces] = useState([]);
+    const [currentSpace, setCurrentSpace] = useState(null)
     const [tasks, setTasks] = useState([]);
+    const [currentTask, setCurrentTask] = useState(null)
     
     // MENUS 
     const [openSideBar, setOpenSideBar] = useState(true);
@@ -32,6 +33,7 @@ export function ContextProvider({ children }) {
         currentSpace, setCurrentSpace,
         spaces, setSpaces,
         tasks, setTasks,
+        currentTask, setCurrentTask,
         openSideBar,
         openConfigMenu, setOpenConfigMenu,
         openCreateSpace, setOpenCreateSpace,

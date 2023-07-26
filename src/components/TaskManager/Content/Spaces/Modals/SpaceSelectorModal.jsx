@@ -8,7 +8,7 @@ import {
   DialogFooter,
 } from "@material-tailwind/react";
 import SpaceBtn from "../Buttons/SpaceBtn";
-import EmptySpacesBtn from "../Buttons/EmptySpacesBtn";
+import SpaceSelectorBtn from "../Buttons/SpaceSelectorBtn";
 
 function SpaceSelectorModal() {
   const { openSpaceSelector, setOpenSpaceSelector, spaces } = useContext(Context);
@@ -26,7 +26,7 @@ function SpaceSelectorModal() {
 
       <DialogBody divider className="overflow-y-auto h-[250px]">
         {spaces.length === 0 ? (
-          <EmptySpacesBtn />
+          <SpaceSelectorBtn />
         ) : (
           <ul className="flex flex-col gap-1">
             {spaces.map((space) => (

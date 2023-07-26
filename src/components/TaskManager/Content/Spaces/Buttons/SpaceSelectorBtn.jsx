@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Context } from "../../../../../context/Context";
 import { TbWorldUpload } from "react-icons/tb";
 
-function EmptySpacesBtn() {
+function SpaceSelectorBtn() {
   const {
     openCreateSpace,
     setOpenCreateSpace,
@@ -29,4 +29,4 @@ function EmptySpacesBtn() {
   );
 }
 
-export default EmptySpacesBtn;
+export default SpaceSelectorBtn;

@@ -25,11 +25,11 @@ export const createTask = async (task) => {
 
 export const getUserTasks = async () => {
     const tasks = [];
-    const query = await getDocs(tasksCollection,
-        where("owner", "==", auth?.currentUser?.uid));
-        query.forEach((doc) => {
+    const query = await getDocs(tasksCollection);
+    query.forEach((doc) => {
+        if (doc.data().owner === auth.currentUser.uid)
             tasks.push({ ...doc.data(), id: doc.id });
-        });
+    });
     // order by date descending
     tasks.sort((a, b) => a.date - b.date);
     return tasks;

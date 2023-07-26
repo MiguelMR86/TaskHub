@@ -8,7 +8,7 @@ function SpaceBtn({ space }) {
 
   return (
     <MenuItem
-      className="text-blue-gray-500 w-[94%] border hover:bg-blue-gray-100"
+      className="text-blue-gray-500 border hover:bg-blue-gray-100"
       key={space.id}
       onClick={() => {
         setCurrentSpace(space);
@@ -17,7 +17,7 @@ function SpaceBtn({ space }) {
     >
       <Link
         to={`/manager/space/${space.id}`}
-        className="flex justify-between items-center h-8"
+        className="flex justify-between items-center"
       >
         <p>{space.name}</p>
         <img
