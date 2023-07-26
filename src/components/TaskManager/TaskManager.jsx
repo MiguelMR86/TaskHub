@@ -17,7 +17,8 @@ function TaskManager() {
     if (path.includes("/manager/space/")) {
       const spaceId = path.split("/manager/space/")[1];
       getUserSpace(spaceId).then((space) => {
-        setCurrentSpace(space);
+        if (!space) window.location.href = "/manager";
+        else setCurrentSpace(space);
       });
     }
   }, []);

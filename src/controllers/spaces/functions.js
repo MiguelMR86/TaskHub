@@ -69,5 +69,6 @@ export const getUserSpaces = async () => {
 
 export const getUserSpace = async (id) => {
   const query = await getDoc(doc(spacesCollection, id));
-  return { ...query.data(), id: query.id };
+  if (query.data()) return { ...query.data(), id: query.id };
+  else return null;
 };
