@@ -14,8 +14,7 @@ import {
 import { createTask } from "../../../../../controllers/tasks/functions";
 
 function NewTaskModal() {
-  const { openCreateTask, setOpenCreateTask, currentSpace } =
-    useContext(Context);
+  const { openCreateTask, setOpenCreateTask, currentSpace } = useContext(Context);
 
   const handleOpen = () => setOpenCreateTask(!openCreateTask);
 
@@ -26,7 +25,7 @@ function NewTaskModal() {
     const description = document.getElementById("task-description").value;
     const dueDate = document.getElementById("task-due-date").value;
     const dueTime = document.getElementById("task-due-time").value;
-    const priority = document.getElementById("task-priority").value;
+    const priority = document.getElementById("task-priority").querySelector('span').innerText;    
     const task = { spaceId, name, description, dueDate, dueTime, priority, };
     createTask(task);
     handleOpen();

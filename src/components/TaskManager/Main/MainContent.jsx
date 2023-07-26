@@ -11,15 +11,18 @@ function MainContent() {
   const { currentSpace, currentTask } = useContext(Context);
 
   return (
-    <div className="w-full h-full flex flex-wrap gap-4 justify-center items-end rounded-lg bg-white shadow-[0_5px_15px_rgba(0,0,0,.4)] p-4 border-4 border-[#DCDCDC]">
+    <div className={`w-full h-full flex gap-4 items-end rounded-lg bg-white shadow-[0_5px_15px_rgba(0,0,0,.4)] p-4 border-4 border-[#DCDCDC]
+    ${currentSpace ? "flex-col" : "flex-wrap"}`}>
       <SideBarBtn />
       <SpaceTitle />
 
-      <div className="w-full h-[90%] rounded-lg bg-white p-4 border-4 border-[#DCDCDC]">
+      <div className="w-full h-[100%] flex flex-col rounded-lg p-4 border-4 border-[#DCDCDC]">
         {currentSpace ? (
           <>
             <NavBar />
-            <TaskList />
+            <div className="flex gap-4 h-full">
+              <TaskList />
+            </div>
           </>
         ) : (
           <div className="w-full h-full flex justify-center items-center text-center">
