@@ -39,7 +39,11 @@ export const createSpace = async (space) => {
       .then(() => {
         getUserSpaces()
           .then((spaces) => {
-            const newSpace = spaces.find((spc) => spc.name === space.name);
+            const newSpace = spaces.find(
+              (newSpace) =>
+                newSpace.name === space.name &&
+                newSpace.owner === auth?.currentUser?.uid
+            );
             window.location.href = `/manager/space/${newSpace.id}`;
           })
           .catch((err) => console.log(err));

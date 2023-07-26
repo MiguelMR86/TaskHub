@@ -30,7 +30,7 @@ function SideBarSpaces() {
           color="blue-gray"
           className="flex justify-center items-center gap-2 border"
           onClick={() => {
-            handelSpacesMenu(), handelGetSpaces();
+            handelSpacesMenu()
           }}
         >
           <p

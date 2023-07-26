@@ -29,7 +29,6 @@ function SideBarTasks() {
           className="flex justify-center items-center gap-2 border"
           onClick={() => {
             handelTasksMenu();
-            handelGetTasks()
           }}
         >
           <p
