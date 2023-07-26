@@ -42,7 +42,10 @@ export const getUserTasks = async (currentSpaceId) => {
   const tasks = [];
   const query = await getDocs(tasksCollection);
   query.forEach((doc) => {
-    if (doc.data().owner === auth.currentUser.uid && doc.data().spaceId === currentSpaceId)
+    if (
+      doc.data().owner === auth.currentUser.uid &&
+      doc.data().spaceId === currentSpaceId
+    )
       tasks.push({ ...doc.data(), id: doc.id });
   });
   // order by date descending
@@ -53,6 +56,14 @@ export const getUserTasks = async (currentSpaceId) => {
 export const getUserTask = async (id) => {
   const query = await getDoc(doc(tasksCollection, id));
   return query.data();
+};
+
+export const deleteTask = async (id) => {
+  try {
+    await deleteDoc(doc(tasksCollection, id));
+  } catch (e) {
+    console.log(e);
+  }
 };
 
 export const handelPriority = (priority) => {

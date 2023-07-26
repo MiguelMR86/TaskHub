@@ -3,7 +3,7 @@ import { Context } from "../../../../../context/Context";
 import { Button } from "@material-tailwind/react";
 import { handelPriority } from "../../../../../controllers/tasks/functions";
 function TaskListBtn({ task }) {
-  const { setCurrentTask } = useContext(Context);
+  const { setCurrentTask, handelEditModal } = useContext(Context);
 
   return (
     <Button
@@ -11,6 +11,7 @@ function TaskListBtn({ task }) {
       className="relative rounded-xl flex justify-end items-center border-4 text-white  bg-green-400 border-green-200"
       onClick={() => {
         setCurrentTask(task);
+        handelEditModal();
       }}
     >
       <div

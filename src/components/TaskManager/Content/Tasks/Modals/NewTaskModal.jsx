@@ -12,6 +12,7 @@ import {
   Option,
 } from "@material-tailwind/react";
 import { createTask } from "../../../../../controllers/tasks/functions";
+import { getUserTasks } from "../../../../../controllers/tasks/functions";
 
 function NewTaskModal() {
   const { openCreateTask, setOpenCreateTask, currentSpace } = useContext(Context);
@@ -27,7 +28,7 @@ function NewTaskModal() {
     const dueTime = document.getElementById("task-due-time").value;
     const priority = document.getElementById("task-priority").querySelector('span').innerText;    
     const task = { spaceId, name, description, dueDate, dueTime, priority, };
-    createTask(task);
+    createTask(task)
     handleOpen();
     };
 

@@ -19,6 +19,7 @@ export function ContextProvider({ children }) {
     const [openSpaces, setOpenSpaces] = useState(false)
     const [openTasks, setOpenTasks] = useState(false)
     const [openCreateTask, setOpenCreateTask] = useState(false)
+    const [openEditTask, setOpenEditTask] = useState(false)
 
     // FUNTIONS
     const handelSideBarDisplay = () => {
@@ -27,6 +28,7 @@ export function ContextProvider({ children }) {
     }
     const handelSpacesMenu = () => setOpenSpaces(!openSpaces)
     const handelTasksMenu = () => setOpenTasks(!openTasks)
+    const handelEditModal = () => setOpenEditTask(!openEditTask)
 
     const functions = {
         currentSection, setCurrentSection,
@@ -41,6 +43,7 @@ export function ContextProvider({ children }) {
         openSpaces, setOpenSpaces,
         openTasks, setOpenTasks,
         openCreateTask, setOpenCreateTask,
+        openEditTask, handelEditModal,
         handelSpacesMenu,
         handelTasksMenu,
         handelSideBarDisplay
