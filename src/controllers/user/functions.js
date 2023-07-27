@@ -19,7 +19,7 @@ export const signInWithGoogle = async () => {
 export const isLogedIn = async () => {
   auth.onAuthStateChanged((user) => {
     if (user) {
-      user.reload()
+      return
     }
     else {
       window.location.href = "/"

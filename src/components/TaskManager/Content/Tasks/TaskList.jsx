@@ -3,7 +3,6 @@ import { Context } from "../../../../context/Context";
 import { getUserTasks } from "../../../../controllers/tasks/functions";
 import TaskListBtn from "./Buttons/TaskListBtn";
 import EditTaskModal from "./Modals/EditTaskModal";
-import ConfirmDeleteModal from "./Modals/ConfirmDeleteModal";
 
 function TaskList() {
   const { currentSpace, currentTask, setTasks, tasks } =
@@ -23,7 +22,6 @@ function TaskList() {
           {currentTask ? (
             <>
               <EditTaskModal />
-              <ConfirmDeleteModal />
             </>
           ) : (
             <></>

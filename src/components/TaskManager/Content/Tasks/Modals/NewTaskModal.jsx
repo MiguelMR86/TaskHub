@@ -15,23 +15,25 @@ import { createTask } from "../../../../../controllers/tasks/functions";
 import { getUserTasks } from "../../../../../controllers/tasks/functions";
 
 function NewTaskModal() {
-  const { openCreateTask, setOpenCreateTask, currentSpace, setTasks } = useContext(Context);
+  const { openCreateTask, setOpenCreateTask, currentSpace, setTasks } =
+    useContext(Context);
 
   const handleOpen = () => setOpenCreateTask(!openCreateTask);
-  const handelGetTasks = () => getUserTasks(currentSpace.id).then((tasks) => setTasks(tasks));
+  const handelGetTasks = () =>
+    getUserTasks(currentSpace.id).then((tasks) => setTasks(tasks));
 
   const handleCreateTask = (e) => {
     e.preventDefault();
     const spaceId = currentSpace.id;
     const name = document.getElementById("task-name").value;
     const description = document.getElementById("task-description").value;
-    const dueDate = document.getElementById("task-due-date").value;
-    const dueTime = document.getElementById("task-due-time").value;
-    const priority = document.getElementById("task-priority").querySelector('span').innerText;    
-    const task = { spaceId, name, description, dueDate, dueTime, priority, };
+    const dueDate = Date.parse(document.getElementById("task-due-date").value);
+    let priority = document.getElementById("task-priority").querySelector("span").innerText;
+    if (priority.length === 0) priority = "None";
+    const task = { spaceId, name, description, dueDate, priority };
     createTask(task).then(() => handelGetTasks());
     handleOpen();
-    };
+  };
 
   return (
     <Dialog
@@ -41,26 +43,31 @@ function NewTaskModal() {
       className="w-full max-w-md"
     >
       <DialogHeader>Create a new Task</DialogHeader>
-      <form
-      onSubmit={handleCreateTask}
-      >
+      <form onSubmit={handleCreateTask}>
         <DialogBody divider className="flex flex-col gap-3">
           <Input id="task-name" size="lg" label="Task Name" required />
           <div className="flex flexw gap-3">
-            <Input id="task-due-date" size="lg" label="Due Date" type="date" />
-            <Input id="task-due-time" size="lg" label="Due Time" type="time" />
+            <Input
+              id="task-due-date"
+              size="lg"
+              label="Due Date"
+              type="datetime-local"
+            />
+            <Select id="task-priority" size="lg" label="Priority">
+              <Option value="None" className="bg-gray-400 text-white mb-1">
+                None
+              </Option>
+              <Option value="Low" className="bg-cyan-400 text-white mb-1">
+                Low
+              </Option>
+              <Option value="Medium" className=" bg-yellow-600 text-white mb-1">
+                Medium
+              </Option>
+              <Option value="High" className="bg-red-600 text-white mb-1">
+                High
+              </Option>
+            </Select>
           </div>
-          <Select id="task-priority" size="lg" label="Priority">
-            <Option value="low" className="bg-cyan-400 text-white mb-1">
-              Low
-            </Option>
-            <Option value="medium" className=" bg-yellow-600 text-white mb-1">
-              Medium
-            </Option>
-            <Option value="high" className="bg-red-600 text-white mb-1">
-              High
-            </Option>
-          </Select>
           <Textarea id="task-description" label="Description" required />
         </DialogBody>
         <DialogFooter>

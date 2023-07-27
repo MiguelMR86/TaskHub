@@ -4,13 +4,15 @@ import { Button } from "@material-tailwind/react";
 import { deleteTask } from "../../../../../controllers/tasks/functions";
 
 function ConfirmDeleteBtn() {
-  const { currentTask, setCurrentTask } = useContext(Context);
+  const { currentTask, setCurrentTask, handelEditModal, handelConfirmDeleteModal } = useContext(Context);
 
   return (
     <Button
-      onClick={() =>
+      onClick={() =>{
+        handelConfirmDeleteModal()
+        handelEditModal()
         deleteTask(currentTask.id).then(() => setCurrentTask(null))
-      }
+      }}
       color="red"
       className="w-fit flex items-center justify-center"
     >
