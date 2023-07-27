@@ -2,13 +2,18 @@ import React, { useContext, useEffect } from "react";
 import { Context } from "../../../../../context/Context";
 import { Button } from "@material-tailwind/react";
 import { handelPriorityColor } from "../../../../../controllers/tasks/functions";
-function TaskListBtn({ task }) {
-  const { setCurrentTask, handelEditModal } = useContext(Context);
+import { handelStatusColor } from "../../../../../controllers/tasks/functions";
 
+function TaskListBtn({ task }) {
+  
+  const { setCurrentTask, handelEditModal } = useContext(Context);
+  const props = handelStatusColor(task.status);
+  
   return (
     <Button
       key={task.id}
-      className="relative rounded-xl flex justify-end items-center border-4 text-white  bg-green-400 border-green-200"
+      color={props[0]}
+      className={`relative rounded-xl flex justify-end items-center border-4 text-white ${props[1]}`}
       onClick={() => {
         setCurrentTask(task);
         handelEditModal();

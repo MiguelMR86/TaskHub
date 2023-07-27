@@ -20,8 +20,9 @@ export function ContextProvider({ children }) {
     const [openTasks, setOpenTasks] = useState(false)
     const [openCreateTask, setOpenCreateTask] = useState(false)
     const [openEditTask, setOpenEditTask] = useState(false)
-    const [openConfirmDelete, setOpenConfirmDelete] = useState(false)
+    const [openStatus, setOpenStatus] = useState(false)
     const [openPriorityFlag, setOpenPriorityFlag] = useState(false)
+    const [openConfirmDelete, setOpenConfirmDelete] = useState(false)
 
     // FUNTIONS
     const handelSideBarDisplay = () => {
@@ -31,8 +32,9 @@ export function ContextProvider({ children }) {
     const handelSpacesMenu = () => setOpenSpaces(!openSpaces)
     const handelTasksMenu = () => setOpenTasks(!openTasks)
     const handelEditModal = () => setOpenEditTask(!openEditTask)
-    const handelConfirmDeleteModal = () => setOpenConfirmDelete(!openConfirmDelete)
+    const handelStatusModal = () => setOpenStatus(!openStatus)
     const handelPriorityFlagModal = () => setOpenPriorityFlag(!openPriorityFlag)
+    const handelConfirmDeleteModal = () => setOpenConfirmDelete(!openConfirmDelete)
 
     const functions = {
         currentSection, setCurrentSection,
@@ -48,8 +50,9 @@ export function ContextProvider({ children }) {
         openTasks, setOpenTasks,
         openCreateTask, setOpenCreateTask,
         openEditTask, handelEditModal,
-        openConfirmDelete, handelConfirmDeleteModal,
+        openStatus, handelStatusModal,
         openPriorityFlag, handelPriorityFlagModal,
+        openConfirmDelete, handelConfirmDeleteModal,
         handelSpacesMenu,
         handelTasksMenu,
         handelSideBarDisplay

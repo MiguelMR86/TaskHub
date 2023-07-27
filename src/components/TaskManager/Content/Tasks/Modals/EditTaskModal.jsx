@@ -7,6 +7,7 @@ import {
   DialogFooter,
 } from "@material-tailwind/react";
 import TtitleTask from "../Buttons/TtitleTask";
+import StatusMenu from "../Menus/StatusMenu";
 import StatusBtn from "../Buttons/StatusBtn";
 import PriorityFlagModal from "./PriorityFlagModal";
 import PriorityFlagBtn from "../Buttons/PriorityFlagBtn";
@@ -24,7 +25,8 @@ function EditTaskModal() {
   return (
     <Dialog size="xl" open={openEditTask} handler={handelEditModal}>
       <DialogHeader className="justify-between">
-        <div className="flex items-center gap-4 w-full">
+        <div className="flex items-center gap-4 w-full relative">
+          <StatusMenu />
           <StatusBtn />
         </div>
         <div className="flex items-center gap-2">

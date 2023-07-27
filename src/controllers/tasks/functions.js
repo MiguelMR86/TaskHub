@@ -133,10 +133,10 @@ export const updateTaskStatus = async (id, status) => {
 };
 
 export const handelStatusColor = (status) => {
-  if (status === "To Do") return ["gray","bg-gray-400"];
-  else if (status === "In Progress") return ["yellow","bg-yellow-600"];
-  else if (status === "Done") return ["green","bg-green-600"];
-  return ["gray","bg-gray-400"];
+  if (status === "To Do") return ["gray","bg-gray-400 border-gray-300"];
+  else if (status === "In Progress") return ["yellow","bg-yellow-600 border-yellow-400"];
+  else if (status === "Done") return ["green","bg-green-500 border-green-400"];
+  return ["gray","bg-gray-400 border-gray-300"];
 };
 
 export const handelPriorityColor = (priority) => {
