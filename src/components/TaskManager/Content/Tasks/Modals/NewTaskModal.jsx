@@ -28,7 +28,9 @@ function NewTaskModal() {
     const name = document.getElementById("task-name").value;
     const description = document.getElementById("task-description").value;
     const dueDate = Date.parse(document.getElementById("task-due-date").value);
-    let priority = document.getElementById("task-priority").querySelector("span").innerText;
+    let priority = document
+      .getElementById("task-priority")
+      .querySelector("span").innerText;
     if (priority.length === 0) priority = "None";
     const task = { spaceId, name, description, dueDate, priority };
     createTask(task).then(() => handelGetTasks());
@@ -45,7 +47,16 @@ function NewTaskModal() {
       <DialogHeader>Create a new Task</DialogHeader>
       <form onSubmit={handleCreateTask}>
         <DialogBody divider className="flex flex-col gap-3">
-          <Input id="task-name" size="lg" label="Task Name" required />
+          <Input
+            onChange={(e) => {
+              if (e.target.value.length > 15)
+                e.target.value = e.target.value.slice(0, 15);
+            }}
+            id="task-name"
+            size="lg"
+            label="Task Name"
+            required
+          />
           <div className="flex flexw gap-3">
             <Input
               id="task-due-date"

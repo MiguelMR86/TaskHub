@@ -16,7 +16,11 @@ function ConfirmDeleteModal() {
 
   return (
     <Dialog size="lg" open={openConfirmDelete} handler={handelConfirmDeleteModal}>
-      <DialogHeader>Confirm Delete -<p className="text-red-500 ml-2">{currentTask.name}</p></DialogHeader>
+      <DialogHeader className="text-center">
+        <div className="flex flex-col w-full">
+        Confirm Delete <p className="text-red-500 text-xl">{currentTask.name}</p>
+        </div>
+      </DialogHeader>
       <DialogBody divider>
         Are you sure you want to delete this task? Once deleted, you
         will NOT be able to recover this task!

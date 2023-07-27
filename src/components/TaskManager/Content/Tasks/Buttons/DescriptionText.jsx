@@ -5,12 +5,11 @@ import { updateTaskDescription } from "../../../../../controllers/tasks/function
 function DescriptionText() {
   const { currentTask, setCurrentTask } = useContext(Context);
   return (
-    <div className="p-4 overflow-y-auto">
+    <div className="w-full p-4 overflow-y-auto">
       <Textarea
         id="edit-task-description"
         className="h-full"
-        variant="static"
-        rows={10}
+        rows={12}
         defaultValue={currentTask.description}
         onBlur={(e) => {
           if (currentTask.description !== e.target.value) {

@@ -34,6 +34,7 @@ export const createTask = async (task) => {
       status: "To Do",
       lastEdit: 0,
     });
+    return
   } catch (e) {
     console.log(e);
   }
@@ -65,6 +66,18 @@ export const getUserTask = async (id) => {
 export const deleteTask = async (id) => {
   try {
     await deleteDoc(doc(tasksCollection, id));
+    return
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+export const updateTaskName = async (id, name) => {
+  try {
+    await updateDoc(doc(tasksCollection, id), {
+      name: name,
+      lastEdit: new Date().getTime(),
+    });
     return
   } catch (e) {
     console.log(e);

@@ -7,9 +7,11 @@ function DueDateBtn() {
   const { currentTask, setCurrentTask } = useContext(Context);
   return (
     <Input
+      label="Due Date"
+      labelProps={{ className: "text-gray-400" }}
+      containerProps={{ className: "min-w-[150px]" }}
       defaultValue={handelInputDateInsert(currentTask.dueDate)}
       id="edit-task-due-date"
-      label="Due Date"
       type="datetime-local"
       onBlur={(e) => {
         const date = new Date(e.target.value).getTime();
@@ -20,6 +22,7 @@ function DueDateBtn() {
         }
       }}
     />
+
   );
 }
 
