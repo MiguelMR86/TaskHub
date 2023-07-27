@@ -9,7 +9,7 @@ function TaskLastEdit() {
   return (
     <div>
       <Typography className="text-xs font-normal text-gray-400">
-        Last Update
+        Last update
       </Typography>
       <Typography variant="small" color="gray" className="text-xs w-fit">
         {handelDates(currentTask.lastEdit)}

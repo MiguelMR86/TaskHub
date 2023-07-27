@@ -9,7 +9,7 @@ function TaskDate() {
   return (
     <div>
       <Typography className="text-xs font-normal text-gray-400">
-        Creation Date
+        Created on
       </Typography>
       <Typography variant="small" color="gray" className="c">
         {handelDates(currentTask.date)}
