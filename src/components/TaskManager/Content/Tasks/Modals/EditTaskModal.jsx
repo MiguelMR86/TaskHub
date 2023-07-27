@@ -5,10 +5,9 @@ import {
   DialogHeader,
   DialogBody,
   DialogFooter,
-  Typography,
-  Button
 } from "@material-tailwind/react";
 import TtitleTask from "../Buttons/TtitleTask";
+import StatusBtn from "../Buttons/StatusBtn";
 import PriorityFlagModal from "./PriorityFlagModal";
 import PriorityFlagBtn from "../Buttons/PriorityFlagBtn";
 import DueDateBtn from "../Buttons/DueDateBtn";
@@ -17,7 +16,7 @@ import ConfirmDeleteModal from "./ConfirmDeleteModal";
 import DeleteTaskBtn from "../Buttons/DeleteTaskBtn";
 import TaskDate from "../Buttons/TaskDate";
 import TaskLastEdit from "../Buttons/TaskLastEdit";
-import TaskUser from "../Buttons/TaskUser";
+import TaskUserName from "../Buttons/TaskUserName";
 
 function EditTaskModal() {
   const { openEditTask, handelEditModal, currentTask } = useContext(Context);
@@ -26,9 +25,7 @@ function EditTaskModal() {
     <Dialog size="xl" open={openEditTask} handler={handelEditModal}>
       <DialogHeader className="justify-between">
         <div className="flex items-center gap-4 w-full">
-          <Button>
-            {currentTask.status}
-          </Button>
+          <StatusBtn />
         </div>
         <div className="flex items-center gap-2">
           <PriorityFlagModal />
@@ -37,12 +34,12 @@ function EditTaskModal() {
       </DialogHeader>
 
       <DialogBody divider={true} className="p-0">
-        <div className="w-full py-3 px-4 border-b border-b-blue-gray-100 flex flex-col gap-6 sm:items-center sm:flex-row sm:gap-0">
-          <div className="-mt-px flex flex-col ">
+        <div className="w-full py-3 px-4 border-b border-b-blue-gray-100 flex flex-wrap sm:items-center sm:flex-row sm:gap-0">
+          <div className="-mt-px flex flex-col mb-4 mr-4">
             <TtitleTask />
-            <TaskUser />
+            <TaskUserName />
           </div>
-          <div>
+          <div className="w-full sm:w-fit">
             <DueDateBtn />
           </div>
         </div>

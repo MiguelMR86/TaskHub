@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { Context } from "../../../../../context/Context";
 import { Button } from "@material-tailwind/react";
-import { handelPriority } from "../../../../../controllers/tasks/functions";
+import { handelPriorityColor } from "../../../../../controllers/tasks/functions";
 function TaskListBtn({ task }) {
   const { setCurrentTask, handelEditModal } = useContext(Context);
 
@@ -16,7 +16,7 @@ function TaskListBtn({ task }) {
     >
       <div
         className={`absolute h-full w-[120px] top-0 left-0 rounded-l-lg grid place-items-center
-        ${handelPriority(task.priority)}
+        ${handelPriorityColor(task.priority)}
       `}
       >
           <p>{task.name}</p>

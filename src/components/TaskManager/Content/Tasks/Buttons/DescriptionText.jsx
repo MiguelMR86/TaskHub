@@ -7,8 +7,12 @@ function DescriptionText() {
   return (
     <div className="w-full p-4 overflow-y-auto">
       <Textarea
+        variant="static"
+        label="Description"
+        labelProps={{ className: "text-gray-400 text-xs" }}
+        containerProps={{ className: "" }}
         id="edit-task-description"
-        className="h-full"
+        className="h-full border-none"
         rows={12}
         defaultValue={currentTask.description}
         onBlur={(e) => {

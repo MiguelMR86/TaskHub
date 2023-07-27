@@ -120,7 +120,26 @@ export const updateTaskPriority = async (id, priority) => {
   }
 };
 
-export const handelPriority = (priority) => {
+export const updateTaskStatus = async (id, status) => {
+  try {
+    await updateDoc(doc(tasksCollection, id), {
+      status: status,
+      lastEdit: new Date().getTime(),
+    });
+    return
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+export const handelStatusColor = (status) => {
+  if (status === "To Do") return ["gray","bg-gray-400"];
+  else if (status === "In Progress") return ["yellow","bg-yellow-600"];
+  else if (status === "Done") return ["green","bg-green-600"];
+  return ["gray","bg-gray-400"];
+};
+
+export const handelPriorityColor = (priority) => {
   if (priority === "Low") return "bg-cyan-400 border-cyan-200";
   else if (priority === "Medium") return "bg-yellow-600 border-yellow-400";
   else if (priority === "High") return "bg-red-600 border-red-400";

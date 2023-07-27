@@ -6,11 +6,11 @@ function PriorityFlagBtn() {
   const { currentTask, handelPriorityFlagModal } = useContext(Context);
   return (
     <button
-      className="absolute -top-2 right-6 w-fit rounded-xl hover:scale-110 hover:-top-1 transition-all duration-300"
+      className="absolute z-10 -top-[11.53px] right-6 w-fit rounded-xl hover:scale-110 hover:-top-[7px] transition-all duration-300"
       onClick={handelPriorityFlagModal}
     >
       <img
-        className="h-20 w-10"
+        className="h-30 w-11"
         src={handelPriorityFlag(currentTask.priority)}
         alt="flag-img"
       />
