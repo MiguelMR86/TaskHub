@@ -2,8 +2,7 @@ import React, { useContext } from "react";
 import { Context } from "../../../../../context/Context";
 
 function StartBtn() {
-  const { handelTaskSelector, } = useContext(Context);
-
+  const { handelTaskSelector } = useContext(Context);
 
   return (
     <button

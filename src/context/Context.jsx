@@ -39,6 +39,11 @@ export function ContextProvider({ children }) {
   const handelPriorityFlagModal = () => setOpenPriorityFlag(!openPriorityFlag);
   const handelConfirmDeleteModal = () => setOpenConfirmDelete(!openConfirmDelete);
   const handelTaskSelector = () => setOpenTaskSelector(!openTaskSelector);
+  const handleSpaceSelectorModals = () => {
+    setOpenTaskSelector(!openSpaceSelector);
+    setOpenCreateTask(!openCreateSpace);
+    handelTaskSelector();
+  };
 
   const functions = {
     currentSection, setCurrentSection,
@@ -60,6 +65,7 @@ export function ContextProvider({ children }) {
     openTaskSelector, handelTaskSelector,
     handelSpacesMenu, 
     handelTasksMenu,
+    handleSpaceSelectorModals,
   };
 
   return <Context.Provider value={functions}>{children}</Context.Provider>;
