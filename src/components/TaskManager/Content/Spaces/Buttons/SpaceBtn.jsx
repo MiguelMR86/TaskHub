@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { getUserTasks } from "../../../../../controllers/tasks/functions";
 
 function SpaceBtn({ space }) {
-  const { currentSpace, setCurrentSpace, handelSpacesMenu, setTasks } = useContext(Context);
+  const { setCurrentSpace, handelSpacesMenu, setTasks } = useContext(Context);
   const handelGetTasks = () => getUserTasks(space.id).then((tasks) => setTasks(tasks));
 
   return (
