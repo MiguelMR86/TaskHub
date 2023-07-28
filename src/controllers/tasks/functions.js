@@ -133,18 +133,18 @@ export const updateTaskStatus = async (id, status) => {
 };
 
 export const handelStatusColor = (status) => {
-  if (status === "To Do") return ["gray","bg-gray-400 border-gray-300"];
-  else if (status === "In Progress") return ["yellow","bg-yellow-600 border-yellow-400"];
-  else if (status === "Done") return ["green","bg-green-500 border-green-400"];
-  return ["gray","bg-gray-400 border-gray-300"];
+  if (status === "To Do") return ["lime","bg-lime-500"];
+  else if (status === "In Progress") return ["teal","bg-teal-400"];
+  else if (status === "Done") return ["green","bg-green-500"];
+  return ["lime","bg-lime-400"];
 };
 
 export const handelPriorityColor = (priority) => {
-  if (priority === "Low") return "bg-cyan-400 border-cyan-200";
-  else if (priority === "Medium") return "bg-yellow-600 border-yellow-400";
-  else if (priority === "High") return "bg-red-600 border-red-400";
-  else if (priority === "None") return "bg-gray-400 border-gray-200";
-  return "bg-gray-400 border-gray-200";
+  if (priority === "Low") return "bg-cyan-400";
+  else if (priority === "Medium") return "bg-yellow-700";
+  else if (priority === "High") return "bg-red-600";
+  else if (priority === "None") return "bg-gray-400";
+  return "bg-gray-400";
 };
 
 export const handelPriorityFlag = (priority) => {

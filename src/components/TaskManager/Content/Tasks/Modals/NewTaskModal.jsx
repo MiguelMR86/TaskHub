@@ -27,10 +27,9 @@ function NewTaskModal() {
     const spaceId = currentSpace.id;
     const name = document.getElementById("task-name").value;
     const description = document.getElementById("task-description").value;
-    const dueDate = Date.parse(document.getElementById("task-due-date").value);
-    let priority = document
-      .getElementById("task-priority")
-      .querySelector("span").innerText;
+    let dueDate = Date.parse(document.getElementById("task-due-date").value);
+    if (!dueDate) dueDate = 0
+    let priority = document.getElementById("task-priority").querySelector("span").innerText;
     if (priority.length === 0) priority = "None";
     const task = { spaceId, name, description, dueDate, priority };
     createTask(task).then(() => handelGetTasks());
@@ -71,7 +70,7 @@ function NewTaskModal() {
               <Option value="Low" className="bg-cyan-400 text-white mb-1">
                 Low
               </Option>
-              <Option value="Medium" className=" bg-yellow-600 text-white mb-1">
+              <Option value="Medium" className=" bg-yellow-700 text-white mb-1">
                 Medium
               </Option>
               <Option value="High" className="bg-red-600 text-white mb-1">

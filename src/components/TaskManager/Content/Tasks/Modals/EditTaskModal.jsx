@@ -23,7 +23,8 @@ function EditTaskModal() {
   const { openEditTask, handelEditModal, currentTask } = useContext(Context);
 
   return (
-    <Dialog size="xl" open={openEditTask} handler={handelEditModal}>
+    <Dialog size="xl"
+    className="w-full max-w-md" open={openEditTask} handler={handelEditModal}>
       <DialogHeader className="justify-between">
         <div className="flex items-center gap-4 w-full relative">
           <StatusMenu />

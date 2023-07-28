@@ -16,7 +16,7 @@ function TaskList() {
   }, [currentSpace, currentTask]);
 
   return (
-    <div className="h-full w-full border-4 border-[#DCDCDC] rounded-lg p-4">
+    <div className="relative h-full w-full border-4 border-[#DCDCDC] rounded-lg">
       {tasks.length > 0 ? (
         <>
           {currentTask ? (
@@ -26,7 +26,7 @@ function TaskList() {
           ) : (
             <></>
           )}
-          <ul className="flex flex-col gap-2 max-h-full overflow-y-auto">
+          <ul className="flex flex-col gap-2 max-h-full overflow-hidden overflow-y-auto p-4">
             {tasks.map((task) => (
               <TaskListBtn task={task} key={task.id} />
             ))}

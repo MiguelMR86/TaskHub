@@ -24,7 +24,7 @@ function StatusBtn() {
         handelStatusModalDelay();
       }}
       color={props[0]}
-      className={props[1]}
+      className={`${props[1]} text-white`}
     >
       {currentTask.status}
     </Button>
