@@ -12,9 +12,10 @@ function MainContent() {
 
   return (
     <div className={`w-full h-full flex gap-4 items-end bg-white p-4 ${currentSpace ? "flex-col" : "flex-wrap"}`}>
-      <SideBarBtn />
-      <SpaceTitle />
-
+      <div className="flex w-full">
+        <SideBarBtn />
+        <SpaceTitle />
+      </div>
       <div className="w-full h-[100%] flex flex-col">
         {currentSpace ? (
           <>
