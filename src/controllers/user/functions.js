@@ -18,10 +18,7 @@ export const signInWithGoogle = async () => {
 // * If user is not loged in, it will redirect to login page
 export const isLogedIn = async () => {
   auth.onAuthStateChanged((user) => {
-    if (user) {
-      return
-    }
-    else {
+    if (!user) {
       window.location.href = "/"
     }
   })
