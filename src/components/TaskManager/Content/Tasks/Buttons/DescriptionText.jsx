@@ -1,16 +1,17 @@
 import React, { useContext } from "react";
 import { Context } from "../../../../../context/Context";
-import { Textarea } from "@material-tailwind/react";
+import { Textarea, Typography } from "@material-tailwind/react";
 import { updateTaskDescription } from "../../../../../controllers/tasks/functions";
 function DescriptionText() {
   const { currentTask, setCurrentTask } = useContext(Context);
   return (
-    <div className="w-full p-4 overflow-y-auto">
+    <div className="w-full p-4">
+      <Typography
+      className="text-xs font-normal text-gray-400 mb-1">Task Description</Typography>
+      
       <Textarea
         variant="static"
-        label="Description"
-        labelProps={{ className: "text-gray-400 text-xs" }}
-        containerProps={{ className: "" }}
+        labelProps={{ className: "hidden" }}
         id="edit-task-description"
         className="h-full border-none"
         rows={12}

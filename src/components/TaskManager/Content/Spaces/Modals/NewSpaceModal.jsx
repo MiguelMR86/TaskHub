@@ -36,8 +36,8 @@ function NewSpaceModal() {
         <DialogBody divider className="flex flex-col gap-3">
           <Input
             onChange={(e) => {
-              if (e.target.value.length > 20)
-                e.target.value = e.target.value.slice(0, 20);
+              if (e.target.value.length > 15)
+                e.target.value = e.target.value.slice(0, 15);
             }}
             id="space-name"
             size="lg"
