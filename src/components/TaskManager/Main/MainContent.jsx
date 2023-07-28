@@ -25,7 +25,7 @@ function MainContent() {
             </div>
           </>
         ) : (
-          <div className="w-full h-full flex justify-center items-center text-center">
+          <div className="w-full h-full grid place-items-center text-center">
             <StartBtn />
             <SpaceSelectorModal />
           </div>
