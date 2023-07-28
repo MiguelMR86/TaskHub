@@ -10,18 +10,18 @@ function TaskListBtn({ task }) {
   const { setCurrentTask, handelEditModal } = useContext(Context);
   const statusColor = handelStatusColor(task.status);
   const priorityColor = handelPriorityColor(task.priority);
-  const checkDeadline = task.dueDate > 0 && task.dueDate < Date.now() ? "text-red-500" : "";
-  const checkDeadlineBorder = task.dueDate > 0 && task.dueDate < Date.now() ? "border-red-500 border" : "";
+  const deadline = task.dueDate > 0 && task.dueDate < Date.now() ? "text-red-500" : "";
+  const deadlineBorder = task.dueDate > 0 && task.dueDate < Date.now() ? "border-red-500 border" : "";
   const dueDate = task.dueDate == 0 ? "There is no Due Date yet" : handelDates(task.dueDate);
 
   return (
     <div
       key={task.id}
       color="white"
-      className={`relative w-full h-[50px] mt-8 border border-gray-300 grid place-items-center hover:bg-gray-100 rounded-md hover:shadow-lg ${checkDeadlineBorder}`}
+      className={`relative w-full h-[50px] mt-8 border border-gray-300 grid place-items-center hover:bg-gray-100 rounded-md hover:shadow-lg ${deadlineBorder}`}
     >
       <div
-        className={`absolute h-[25px] w-[70px] -top-[25px] left-1 text-[11px] text-white rounded-t-md grid place-items-center ${statusColor[1]} ${checkDeadlineBorder}`}
+        className={`absolute h-[25px] w-[70px] -top-[25px] left-1 text-[11px] text-white rounded-t-md grid place-items-center ${statusColor[1]} ${deadlineBorder}`}
       >
         <p>{task.status}</p>
       </div>
@@ -31,7 +31,7 @@ function TaskListBtn({ task }) {
           setCurrentTask(task);
           handelEditModal();
         }}
-        className={`w-full h-full px-4 flex justify-between items-center ${checkDeadline}`}
+        className={`w-full h-full px-4 flex justify-between items-center ${deadline}`}
       >
         <p className="min-w-[149px] text-left truncate">{task.name}</p>
         <div className="flex items-center justify-between h-full max-w-[250px] gap-2 sm:gap-4">
@@ -40,7 +40,7 @@ function TaskListBtn({ task }) {
           >
             <p>{task.priority}</p>
           </div>
-          <p className={`text-xs text-gray-500 ${checkDeadline}`}>{dueDate}</p>
+          <p className={`text-xs text-gray-500 ${deadline}`}>{dueDate}</p>
         </div>
       </button>
     </div>
