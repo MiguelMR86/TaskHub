@@ -20,6 +20,10 @@ function DueDateBtn() {
             setCurrentTask({ ...currentTask, dueDate: date });
           });
         }
+
+        if (Date.parse(e.target.value) < Date.now()) {
+          document.getElementById("edit-task-due-date").value = "";
+        }
       }}
     />
 

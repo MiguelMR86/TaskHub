@@ -58,6 +58,11 @@ function NewTaskModal() {
           />
           <div className="flex flexw gap-3">
             <Input
+              onBlur={(e) => {
+                if (Date.parse(e.target.value) < Date.now()) {
+                  document.getElementById("task-due-date").value = "";
+                }
+              }}
               id="task-due-date"
               size="lg"
               label="Due Date"
