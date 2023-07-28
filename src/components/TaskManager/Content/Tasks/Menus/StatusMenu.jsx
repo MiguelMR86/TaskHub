@@ -1,13 +1,12 @@
 import React, { useContext, useEffect } from "react";
 import { Context } from "../../../../../context/Context";
-import { Button } from "@material-tailwind/react";
 import StatusMenuBtn from "../Buttons/StatusMenuBtn";
 
 function StatusMenu() {
-  const { openStatus, handelStatusModal, currentTask, setCurrentTask } =
+  const { openStatus } =
     useContext(Context);
   useEffect(() => {
-    // document.getElementById("status-menu").classList.add("hidden");
+    document.getElementById("status-menu").classList.add("hidden");
   }, []);
   return (
     <div
