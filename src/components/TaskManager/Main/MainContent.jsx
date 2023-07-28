@@ -11,7 +11,7 @@ function MainContent() {
   const { currentSpace } = useContext(Context);
 
   return (
-    <div className={`w-full h-full flex gap-4 items-end bg-white p-4 ${currentSpace ? "flex-col" : "flex-wrap"}`}>
+    <div className='w-full h-full flex flex-col gap-4 items-end bg-white p-4'>
       <div className="flex w-full">
         <SideBarBtn />
         <SpaceTitle />
