@@ -3,6 +3,7 @@ import { Context } from "../../../../context/Context";
 import { getUserTasks } from "../../../../controllers/tasks/functions";
 import TaskListBtn from "./Buttons/TaskListBtn";
 import EditTaskModal from "./Modals/EditTaskModal";
+import StartBtn from "./Buttons/StartBtn";
 
 function TaskList() {
   const { currentSpace, currentTask, setTasks, tasks } =
@@ -33,9 +34,9 @@ function TaskList() {
           </ul>
         </>
       ) : (
-        <p className=" text-blue-gray-500 ml-4 text-sm">
-          You don't have any task yet ...
-        </p>
+        <div className="w-full h-full p-4 grid place-items-center">
+          <StartBtn />
+        </div>
       )}
     </div>
   );
