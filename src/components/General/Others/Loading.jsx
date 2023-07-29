@@ -3,8 +3,8 @@ import { Spinner } from "@material-tailwind/react";
 
 function Loading() {
   return (
-    <div className='w-full h-screen'>
-        <Spinner className="h-10 w-10" />
+    <div className='w-full h-screen grid place-items-center'>
+        <Spinner className="h-20 w-20" />
     </div>
   )
 }
