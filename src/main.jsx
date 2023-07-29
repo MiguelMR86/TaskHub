@@ -4,14 +4,11 @@ import App from "./App.jsx";
 import "./index.css";
 import { ThemeProvider } from "@material-tailwind/react";
 import { ContextProvider } from "./context/Context.jsx";
-import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <ThemeProvider>
-    <BrowserRouter>
       <ContextProvider>
         <App />
       </ContextProvider>
-    </BrowserRouter>
   </ThemeProvider>
 );

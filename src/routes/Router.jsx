@@ -1,6 +1,6 @@
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
-import IndexPage from "../components/Index/IndexPage";
+import IndexPage from "../components/Index";
 import TaskManager from "../components/TaskManager/TaskManager";
 import NotFound from "../components/NotFound/NotFound";
 
