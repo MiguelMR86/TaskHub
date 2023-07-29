@@ -20,7 +20,7 @@ import TaskLastEdit from "../Buttons/TaskLastEdit";
 import TaskUserName from "../Buttons/TaskUserName";
 
 function EditTaskModal() {
-  const { openEditTask, handelEditModal, currentTask } = useContext(Context);
+  const { openEditTask, handelEditModal } = useContext(Context);
 
   return (
     <Dialog size="xl"
@@ -56,7 +56,7 @@ function EditTaskModal() {
         <div className="w-full flex justify-between items-center gap-4">
           <div className="flex gap-4 sm:gap-10">
             <TaskDate />
-            {currentTask.lastEdit != 0 ? <TaskLastEdit /> : <></>}
+            <TaskLastEdit />
           </div>
           <ConfirmDeleteModal />
           <DeleteTaskBtn />

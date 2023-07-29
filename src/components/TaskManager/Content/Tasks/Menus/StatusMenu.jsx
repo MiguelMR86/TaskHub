@@ -15,7 +15,7 @@ function StatusMenu() {
       className={`absolute top-12 z-10 p-4 bg-white w-[160px] rounded shadow-lg shadow-gray-400 transition-all duration-300 transform flex flex-col gap-y-2
      ${openStatus ? "translate-y-1 opacity-1" : "translate-y-10 opacity-0"}`}
     >
-          <StatusMenuBtn name="To Do" />
+        <StatusMenuBtn name="To Do" />
         <StatusMenuBtn name="In Progress" />
         <StatusMenuBtn name="Done" />
       

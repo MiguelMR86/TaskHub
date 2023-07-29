@@ -11,8 +11,8 @@ function TaskDate() {
       <Typography className="text-xs font-normal text-gray-400">
         Created on
       </Typography>
-      <Typography variant="small" color="gray" className="c">
-        {handelDates(currentTask.date)}
+      <Typography variant="small" color="gray" className="text-xs w-fit">
+      {currentTask && currentTask.lastEdit != 0 ? `${handelDates(currentTask.date)}` : ''}
       </Typography>
     </div>
   );
