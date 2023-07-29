@@ -66,7 +66,6 @@ export const getUserTask = async (id) => {
 export const deleteTask = async (id) => {
   try {
     await deleteDoc(doc(tasksCollection, id));
-    return
   } catch (e) {
     console.log(e);
   }

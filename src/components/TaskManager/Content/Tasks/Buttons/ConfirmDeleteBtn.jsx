@@ -9,9 +9,11 @@ function ConfirmDeleteBtn() {
   return (
     <Button
       onClick={() =>{
-        handelConfirmDeleteModal()
-        handelEditModal()
-        deleteTask(currentTask.id).then(() => setCurrentTask(null))
+        deleteTask(currentTask.id).then(() => {
+          handelConfirmDeleteModal()
+          handelEditModal()
+          setCurrentTask(null)
+        })
       }}
       color="red"
       className="w-fit flex items-center justify-center"
