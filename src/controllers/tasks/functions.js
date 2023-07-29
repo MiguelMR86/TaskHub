@@ -33,6 +33,7 @@ export const createTask = async (task) => {
       priority: task.priority,
       status: "To Do",
       lastEdit: 0,
+      subtasks: [],
     });
     return
   } catch (e) {
@@ -130,6 +131,18 @@ export const updateTaskStatus = async (id, status) => {
     console.log(e);
   }
 };
+
+export const updateTaskSubtasks = async (id, subtasks) => {
+  try {
+    await updateDoc(doc(tasksCollection, id), {
+      subtasks: subtasks,
+      lastEdit: new Date().getTime(),
+    });
+    return
+  } catch (e) {
+    console.log(e);
+  }
+}
 
 export const handelStatusColor = (status) => {
   if (status === "To Do") return ["lime","bg-lime-500"];

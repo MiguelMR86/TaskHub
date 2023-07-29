@@ -8,16 +8,17 @@ function DescriptionText() {
   const description = currentTask ? currentTask.description : "";
 
   return (
-    <div className="w-full p-4">
-      <Typography
-      className="text-xs font-normal text-gray-400 mb-1">Task Description</Typography>
+    <div className="w-full md:w-1/2 py-4 pl-4">
+      <Typography className="text-sm font-semibold text-gray-500 mb-1">
+        Task Description
+      </Typography>
       
       <Textarea
         variant="static"
         labelProps={{ className: "hidden" }}
         id="edit-task-description"
         className="h-full border-none"
-        rows={12}
+        rows={10}
         defaultValue={description}
         onBlur={(e) => {
           if (currentTask && currentTask.description !== e.target.value) {

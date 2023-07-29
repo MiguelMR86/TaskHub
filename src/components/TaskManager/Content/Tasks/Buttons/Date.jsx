@@ -12,7 +12,7 @@ function Date() {
         Created on
       </Typography>
       <Typography variant="small" color="gray" className="text-xs w-fit">
-      {currentTask && currentTask.lastEdit != 0 ? `${handelDates(currentTask.date)}` : ''}
+      {currentTask && currentTask.date != 0 ? `${handelDates(currentTask.date)}` : ''}
       </Typography>
     </div>
   );

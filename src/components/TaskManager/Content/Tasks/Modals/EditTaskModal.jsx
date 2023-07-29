@@ -14,6 +14,7 @@ import PriorityFlagBtn from "../Buttons/PriorityFlagBtn";
 import UserName from "../Buttons/UserName";
 import DueDateBtn from "../Buttons/DueDateBtn";
 import DescriptionText from "../Buttons/DescriptionText";
+import SubtaskList from "../SubtaskList";
 import Date from "../Buttons/Date";
 import LastEdit from "../Buttons/LastEdit";
 import ConfirmDeleteModal from "./ConfirmDeleteModal";
@@ -46,11 +47,12 @@ function EditTaskModal() {
             <DueDateBtn />
           </div>
         </div>
-        <div className="w-full h-full flex flex-col lg:flex-row">
+
+        <div className="w-full h-[300px] overflow-y-auto flex flex-col md:flex-row">
           <DescriptionText />
-          <span className="border border-blue-gray-100" />
-          {/* <DescriptionText /> */}
+          <SubtaskList />
         </div>
+
       </DialogBody>
       <DialogFooter className="justify-between">
         <div className="w-full flex justify-between items-center gap-4">

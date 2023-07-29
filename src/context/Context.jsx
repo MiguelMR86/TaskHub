@@ -56,7 +56,6 @@ export function ContextProvider({ children }) {
     openEditTask, handelEditModal,
     openStatus, handelStatusModal,
     openPriority, handelPriorityModal,
-    openPriority, setOpenPriority,
     openConfirmDelete, handelConfirmDeleteModal,
     handelSpacesMenu,
     handelGetTasks,
