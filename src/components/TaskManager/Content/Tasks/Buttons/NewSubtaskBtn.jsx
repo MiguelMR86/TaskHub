@@ -5,7 +5,7 @@ import { updateTaskSubtasks } from "../../../../../controllers/tasks/functions";
 
 function NewSubtaskBtn() {
   const { currentTask, setCurrentTask } = useContext(Context);
-  const subtasks = currentTask.subtasks;
+  const subtasks = currentTask ? currentTask.subtasks : "";
 
   return (
     <Input
