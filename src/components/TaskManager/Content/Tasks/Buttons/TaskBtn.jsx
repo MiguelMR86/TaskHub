@@ -3,7 +3,7 @@ import { Context } from "../../../../../context/Context";
 import { MenuItem } from "@material-tailwind/react";
 
 function TaskBtn({ task }) {
-  const { setCurrentTask, handelTasksMenu, currentSpace } = useContext(Context);
+  const { setCurrentTask, handelEditModal } = useContext(Context);
 
   return (
     <MenuItem
@@ -11,7 +11,7 @@ function TaskBtn({ task }) {
     key={task.id}
       onClick={() => {
         setCurrentTask(task);
-        handelTasksMenu();
+        handelEditModal();
       }}
     >
         <p>{task.name}</p>

@@ -9,22 +9,30 @@ function TaskList() {
   useEffect(() => {
     handelGetTasks();
   }, [currentSpace]);
-  
+
   return (
-    <div className="relative h-full w-full border-4 border-[#DCDCDC] rounded-lg">
-      {currentTask ? (
-        <>
-          <EditTaskModal />
-        </>
+    <>
+      {tasks.length > 0 ? (
+        <div className="flex gap-4 h-full">
+          <div className="relative h-full w-full border-4 border-[#DCDCDC] rounded-lg">
+            {currentTask ? (
+              <>
+                <EditTaskModal />
+              </>
+            ) : (
+              <></>
+            )}
+            <ul className="flex flex-col gap-2 max-h-full overflow-hidden overflow-y-auto p-4">
+              {tasks.map((task) => (
+                <TaskListBtn task={task} key={task.id} />
+              ))}
+            </ul>
+          </div>
+        </div>
       ) : (
         <></>
       )}
-      <ul className="flex flex-col gap-2 max-h-full overflow-hidden overflow-y-auto p-4">
-        {tasks.map((task) => (
-          <TaskListBtn task={task} key={task.id} />
-        ))}
-      </ul>
-    </div>
+    </>
   );
 }
 

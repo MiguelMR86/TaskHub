@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { Context } from "../../../context/Context";
 import SideBarBtn from "./SideBarBtn";
 import SpaceTitle from "./SpaceTitle";
@@ -8,6 +8,7 @@ import NavBar from "../Nav/NavBar";
 import TaskList from "../Content/Tasks/TaskList";
 import NewTaskModal from "../Content/Tasks/Modals/NewTaskModal";
 import StartTaskBtn from "../Content/Tasks/Buttons/StartTaskBtn";
+
 
 function MainContent() {
   const { currentSpace, tasks } = useContext(Context);
@@ -20,7 +21,6 @@ function MainContent() {
       </div>
       <div className="w-full h-[100%] flex flex-col">
         {currentSpace ? (
-          
           <>
             {tasks.length > 0 ? (
               <>
@@ -28,15 +28,14 @@ function MainContent() {
               </>
             ) : (
               <>
-                <NewTaskModal />
                 <div className="w-full h-full p-4 grid place-items-center">
                   <StartTaskBtn />
                 </div>
               </>
             )}
-            <div className="flex gap-4 h-full">
-              <TaskList />
-            </div>
+            <NewTaskModal />
+
+            <TaskList />
           </>
         ) : (
           <div className="w-full h-full grid place-items-center text-center">
