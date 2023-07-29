@@ -10,11 +10,11 @@ const router = createBrowserRouter([
     element: <IndexPage />,
   },
   {
-    path: "/manager/space/:id",
+    path: "/manager",
     element: <TaskManager />,
   },
   {
-    path: "/manager",
+    path: "/manager/space/:id",
     element: <TaskManager />,
   },
   {
