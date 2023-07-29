@@ -1,4 +1,5 @@
 import React, { createContext, useState } from "react";
+import { getUserTasks } from "../controllers/tasks/functions";
 
 export const Context = createContext();
 
@@ -29,7 +30,7 @@ export function ContextProvider({ children }) {
     if (openConfigMenu) setOpenConfigMenu(false);
   };
   const handelSpacesMenu = () => setOpenSpaces(!openSpaces);
-
+  const handelGetTasks = () => getUserTasks(currentSpace.id).then((tasks) => setTasks(tasks));
   const handelEditModal = () => {
     setOpenEditTask(!openEditTask);
     if (openStatus) setOpenStatus(false);
@@ -55,7 +56,8 @@ export function ContextProvider({ children }) {
     openStatus, handelStatusModal,
     openPriorityFlag, handelPriorityFlagModal,
     openConfirmDelete, handelConfirmDeleteModal,
-    handelSpacesMenu, 
+    handelSpacesMenu,
+    handelGetTasks,
     handleCreateTaskModal,
   };
 
