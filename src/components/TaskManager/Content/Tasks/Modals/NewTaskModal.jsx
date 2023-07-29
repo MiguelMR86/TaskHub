@@ -15,12 +15,9 @@ import { createTask } from "../../../../../controllers/tasks/functions";
 import { getUserTasks } from "../../../../../controllers/tasks/functions";
 
 function NewTaskModal() {
-  const { openCreateTask, setOpenCreateTask, currentSpace, setTasks } =
-    useContext(Context);
+  const { openCreateTask, handleCreateTaskModal, currentSpace, setTasks } = useContext(Context);
 
-  const handleOpen = () => setOpenCreateTask(!openCreateTask);
-  const handelGetTasks = () =>
-    getUserTasks(currentSpace.id).then((tasks) => setTasks(tasks));
+  const handelGetTasks = () =>getUserTasks(currentSpace.id).then((tasks) => setTasks(tasks));
 
   const handleCreateTask = (e) => {
     e.preventDefault();
@@ -33,13 +30,13 @@ function NewTaskModal() {
     if (priority.length === 0) priority = "None";
     const task = { spaceId, name, description, dueDate, priority };
     createTask(task).then(() => handelGetTasks());
-    handleOpen();
+    handleCreateTaskModal();
   };
 
   return (
     <Dialog
       open={openCreateTask}
-      handler={handleOpen}
+      handler={handleCreateTaskModal}
       size="md"
       className="w-full max-w-md"
     >
@@ -89,7 +86,7 @@ function NewTaskModal() {
           <Button
             variant="gradient"
             color="blue-gray"
-            onClick={handleOpen}
+            onClick={handleCreateTaskModal}
             className="mr-1"
           >
             <span>Cancel</span>

@@ -18,9 +18,9 @@ function MainContent() {
         <SpaceTitle />
       </div>
       <div className="w-full h-[100%] flex flex-col">
-        <NewTaskModal />
         {currentSpace ? (
           <>
+            <NewTaskModal />
             {tasks.length > 0 ? <NavBar /> : <></>}
             <div className="flex gap-4 h-full">
               <TaskList />

@@ -18,7 +18,6 @@ export function ContextProvider({ children }) {
   const [openSpaces, setOpenSpaces] = useState(false);
 
   const [openCreateTask, setOpenCreateTask] = useState(false);
-  const [openTaskSelector, setOpenTaskSelector] = useState(false);
   const [openEditTask, setOpenEditTask] = useState(false);
   const [openStatus, setOpenStatus] = useState(false);
   const [openPriorityFlag, setOpenPriorityFlag] = useState(false);
@@ -38,12 +37,7 @@ export function ContextProvider({ children }) {
   const handelStatusModal = () => setOpenStatus(!openStatus);
   const handelPriorityFlagModal = () => setOpenPriorityFlag(!openPriorityFlag);
   const handelConfirmDeleteModal = () => setOpenConfirmDelete(!openConfirmDelete);
-  const handelTaskSelector = () => setOpenTaskSelector(!openTaskSelector);
-  const handleSpaceSelectorModals = () => {
-    setOpenTaskSelector(!openSpaceSelector);
-    setOpenCreateTask(!openCreateSpace);
-    handelTaskSelector();
-  };
+  const handleCreateTaskModal = () => setOpenCreateTask(!openCreateTask);
 
   const functions = {
     currentSection, setCurrentSection,
@@ -61,10 +55,8 @@ export function ContextProvider({ children }) {
     openStatus, handelStatusModal,
     openPriorityFlag, handelPriorityFlagModal,
     openConfirmDelete, handelConfirmDeleteModal,
-    openTaskSelector, handelTaskSelector,
     handelSpacesMenu, 
-
-    handleSpaceSelectorModals,
+    handleCreateTaskModal,
   };
 
   return <Context.Provider value={functions}>{children}</Context.Provider>;

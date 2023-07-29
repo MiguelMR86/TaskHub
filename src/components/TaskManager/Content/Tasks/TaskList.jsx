@@ -4,7 +4,6 @@ import { getUserTasks } from "../../../../controllers/tasks/functions";
 import TaskListBtn from "./Buttons/TaskListBtn";
 import EditTaskModal from "./Modals/EditTaskModal";
 import StartBtn from "./Buttons/StartBtn";
-import TaskSelectorModal from "./Modals/TaskSelectorModal";
 
 function TaskList() {
   const { currentSpace, currentTask, setTasks, tasks } =
@@ -36,7 +35,7 @@ function TaskList() {
         </>
       ) : (
         <div className="w-full h-full p-4 grid place-items-center">
-          <TaskSelectorModal />
+          
           <StartBtn />
         </div>
       )}
