@@ -1,6 +1,6 @@
 import React from 'react'
-import NavBar from './Nav/NavBar'
-import MainContent from './Main/MainContent'
+import NavBar from './Index/Nav/NavBar'
+import MainContent from './Index/Main/MainContent'
 
 function IndexPage() {
   return (
