@@ -13,7 +13,7 @@ function StatusMenuBtn({ name }) {
   return (
     <button
       onClick={() => {
-        if (currentTask.status !== name) {
+        if (currentTask && currentTask.status !== name) {
           updateTaskStatus(currentTask.id, name).then(() => {
             setCurrentTask({ ...currentTask, status: name });
             handelStatusModal();

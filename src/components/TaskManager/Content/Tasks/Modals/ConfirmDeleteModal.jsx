@@ -11,14 +11,14 @@ import {
 import ConfirmDeleteBtn from "../Buttons/ConfirmDeleteBtn";
 
 function ConfirmDeleteModal() {
-  const { openConfirmDelete, handelConfirmDeleteModal, currentTask } =
-    useContext(Context);
+  const { openConfirmDelete, handelConfirmDeleteModal, currentTask } = useContext(Context);
+  const name = currentTask ? currentTask.name : "";
 
   return (
     <Dialog size="lg" open={openConfirmDelete} handler={handelConfirmDeleteModal}>
       <DialogHeader className="text-center">
         <div className="flex flex-col w-full">
-        Confirm Delete <p className="text-red-500 text-xl">{currentTask.name}</p>
+        Confirm Delete <p className="text-red-500 text-xl">{name}</p>
         </div>
       </DialogHeader>
       <DialogBody divider>

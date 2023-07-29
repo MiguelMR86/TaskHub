@@ -5,8 +5,8 @@ import { handelInputDateInsert } from "../../../../../controllers/tasks/function
 import { updateTaskDueDate } from "../../../../../controllers/tasks/functions";
 function DueDateBtn() {
   const { currentTask, setCurrentTask } = useContext(Context);
-  const dueDate = currentTask.dueDate ? handelInputDateInsert(currentTask.dueDate) : ""
-  const deadline = currentTask.dueDate > 0 && currentTask.dueDate < Date.now() ? "text-red-500" : "text-gray-400";
+  const dueDate = currentTask && currentTask.dueDate ? handelInputDateInsert(currentTask.dueDate) : ""
+  const deadline = currentTask && currentTask.dueDate > 0 && currentTask.dueDate < Date.now() ? "text-red-500" : "text-gray-400";
 
 
   return (

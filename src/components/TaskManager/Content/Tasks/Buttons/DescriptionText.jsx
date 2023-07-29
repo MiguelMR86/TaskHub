@@ -2,8 +2,11 @@ import React, { useContext } from "react";
 import { Context } from "../../../../../context/Context";
 import { Textarea, Typography } from "@material-tailwind/react";
 import { updateTaskDescription } from "../../../../../controllers/tasks/functions";
+
 function DescriptionText() {
   const { currentTask, setCurrentTask } = useContext(Context);
+  const description = currentTask ? currentTask.description : "";
+
   return (
     <div className="w-full p-4">
       <Typography
@@ -15,9 +18,9 @@ function DescriptionText() {
         id="edit-task-description"
         className="h-full border-none"
         rows={12}
-        defaultValue={currentTask.description}
+        defaultValue={description}
         onBlur={(e) => {
-          if (currentTask.description !== e.target.value) {
+          if (currentTask && currentTask.description !== e.target.value) {
             updateTaskDescription(currentTask.id, e.target.value).then(() => {
               setCurrentTask({ ...currentTask, description: e.target.value });
             });

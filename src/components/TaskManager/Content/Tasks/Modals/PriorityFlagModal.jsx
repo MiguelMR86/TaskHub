@@ -53,7 +53,7 @@ function PriorityFlagModal() {
             const priority = document
               .getElementById("task-priority-flag")
               .querySelector("span").innerText;
-            if (currentTask.priority !== priority) {
+            if (currentTask && currentTask.priority !== priority) {
               if (priority.length === 0) return;
               updateTaskPriority(currentTask.id, priority).then(() => {
                 setCurrentTask({ ...currentTask, priority: priority });

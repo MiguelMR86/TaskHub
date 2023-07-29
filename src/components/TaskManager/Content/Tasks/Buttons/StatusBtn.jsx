@@ -26,7 +26,7 @@ function StatusBtn() {
       color={props[0]}
       className={`${props[1]} text-white`}
     >
-      {currentTask.status}
+      {currentTask ? currentTask.status : ""}
     </Button>
   );
 }
