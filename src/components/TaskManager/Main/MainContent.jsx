@@ -6,6 +6,7 @@ import StartBtn from "../Content/Spaces/Buttons/StartBtn";
 import SpaceSelectorModal from "../Content/Spaces/Modals/SpaceSelectorModal";
 import NavBar from "../Nav/NavBar";
 import TaskList from "../Content/Tasks/TaskList";
+import NewTaskModal from "../Content/Tasks/Modals/NewTaskModal";
 
 function MainContent() {
   const { currentSpace, tasks } = useContext(Context);
@@ -17,6 +18,7 @@ function MainContent() {
         <SpaceTitle />
       </div>
       <div className="w-full h-[100%] flex flex-col">
+        <NewTaskModal />
         {currentSpace ? (
           <>
             {tasks.length > 0 ? <NavBar /> : <></>}

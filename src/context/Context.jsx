@@ -16,7 +16,7 @@ export function ContextProvider({ children }) {
   const [openCreateSpace, setOpenCreateSpace] = useState(false);
   const [openSpaceSelector, setOpenSpaceSelector] = useState(false);
   const [openSpaces, setOpenSpaces] = useState(false);
-  const [openTasks, setOpenTasks] = useState(false);
+
   const [openCreateTask, setOpenCreateTask] = useState(false);
   const [openTaskSelector, setOpenTaskSelector] = useState(false);
   const [openEditTask, setOpenEditTask] = useState(false);
@@ -30,7 +30,7 @@ export function ContextProvider({ children }) {
     if (openConfigMenu) setOpenConfigMenu(false);
   };
   const handelSpacesMenu = () => setOpenSpaces(!openSpaces);
-  const handelTasksMenu = () => setOpenTasks(!openTasks);
+
   const handelEditModal = () => {
     setOpenEditTask(!openEditTask);
     if (openStatus) setOpenStatus(false);
@@ -56,7 +56,6 @@ export function ContextProvider({ children }) {
     openCreateSpace, setOpenCreateSpace,
     openSpaceSelector, setOpenSpaceSelector,
     openSpaces, setOpenSpaces,
-    openTasks, setOpenTasks,
     openCreateTask, setOpenCreateTask,
     openEditTask, handelEditModal,
     openStatus, handelStatusModal,
@@ -64,7 +63,7 @@ export function ContextProvider({ children }) {
     openConfirmDelete, handelConfirmDeleteModal,
     openTaskSelector, handelTaskSelector,
     handelSpacesMenu, 
-    handelTasksMenu,
+
     handleSpaceSelectorModals,
   };
 
