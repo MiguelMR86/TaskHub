@@ -3,7 +3,7 @@ import { Context } from "../../../../../context/Context";
 import { handelDates } from "../../../../../controllers/tasks/functions";
 import { Typography } from "@material-tailwind/react";
 
-function TaskDate() {
+function Date() {
   const { currentTask } = useContext(Context);
 
   return (
@@ -18,4 +18,4 @@ function TaskDate() {
   );
 }
 
-export default TaskDate;
+export default Date;

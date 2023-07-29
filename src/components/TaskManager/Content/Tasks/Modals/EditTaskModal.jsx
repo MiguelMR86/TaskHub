@@ -11,11 +11,11 @@ import StatusMenu from "../Menus/StatusMenu";
 import StatusBtn from "../Buttons/StatusBtn";
 import PriorityMenu from "../Menus/PriorityMenu";
 import PriorityFlagBtn from "../Buttons/PriorityFlagBtn";
-import TaskUserName from "../Buttons/TaskUserName";
+import UserName from "../Buttons/UserName";
 import DueDateBtn from "../Buttons/DueDateBtn";
 import DescriptionText from "../Buttons/DescriptionText";
-import TaskDate from "../Buttons/TaskDate";
-import TaskLastEdit from "../Buttons/TaskLastEdit";
+import Date from "../Buttons/Date";
+import LastEdit from "../Buttons/LastEdit";
 import ConfirmDeleteModal from "./ConfirmDeleteModal";
 import DeleteTaskBtn from "../Buttons/DeleteTaskBtn";
 
@@ -40,7 +40,7 @@ function EditTaskModal() {
         <div className="w-full py-3 px-4 border-b border-b-blue-gray-100 flex flex-wrap sm:items-center sm:flex-row sm:gap-0">
           <div className="-mt-px flex flex-col mb-4 mr-4">
             <TtitleTask />
-            <TaskUserName />
+            <UserName />
           </div>
           <div className="w-full sm:w-fit">
             <DueDateBtn />
@@ -55,8 +55,8 @@ function EditTaskModal() {
       <DialogFooter className="justify-between">
         <div className="w-full flex justify-between items-center gap-4">
           <div className="flex gap-4 sm:gap-10">
-            <TaskDate />
-            <TaskLastEdit />
+            <Date />
+            <LastEdit />
           </div>
           <ConfirmDeleteModal />
           <DeleteTaskBtn />

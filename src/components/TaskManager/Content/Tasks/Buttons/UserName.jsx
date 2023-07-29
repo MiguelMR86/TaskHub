@@ -2,7 +2,7 @@ import React from "react";
 import { Typography } from "@material-tailwind/react";
 import { auth } from "../../../../../config/firebase";
 
-function TaskUserName() {
+function UserName() {
 
   return (
     <div>
@@ -13,4 +13,4 @@ function TaskUserName() {
   );
 }
 
-export default TaskUserName;
+export default UserName;

@@ -3,7 +3,7 @@ import { Context } from "../../../../../context/Context";
 import { handelDates } from "../../../../../controllers/tasks/functions";
 import { Typography } from "@material-tailwind/react";
 
-function TaskLastEdit() {
+function LastEdit() {
   const { currentTask } = useContext(Context);
 
   return (
@@ -16,9 +16,8 @@ function TaskLastEdit() {
             {currentTask && currentTask.lastEdit != 0 ? `${handelDates(currentTask.lastEdit)}` : ''}
           </Typography>
         </>
-        <></>
     </div>
   );
 }
 
-export default TaskLastEdit;
+export default LastEdit;
