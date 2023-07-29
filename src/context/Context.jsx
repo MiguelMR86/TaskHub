@@ -21,7 +21,7 @@ export function ContextProvider({ children }) {
   const [openCreateTask, setOpenCreateTask] = useState(false);
   const [openEditTask, setOpenEditTask] = useState(false);
   const [openStatus, setOpenStatus] = useState(false);
-  const [openPriorityFlag, setOpenPriorityFlag] = useState(false);
+  const [openPriority, setOpenPriority] = useState(false);
   const [openConfirmDelete, setOpenConfirmDelete] = useState(false);
 
   // FUNTIONS
@@ -34,9 +34,10 @@ export function ContextProvider({ children }) {
   const handelEditModal = () => {
     setOpenEditTask(!openEditTask);
     if (openStatus) setOpenStatus(false);
+    if (openPriority) setOpenPriority(false);
   };
   const handelStatusModal = () => setOpenStatus(!openStatus);
-  const handelPriorityFlagModal = () => setOpenPriorityFlag(!openPriorityFlag);
+  const handelPriorityModal = () => setOpenPriority(!openPriority);
   const handelConfirmDeleteModal = () => setOpenConfirmDelete(!openConfirmDelete);
   const handleCreateTaskModal = () => setOpenCreateTask(!openCreateTask);
 
@@ -54,7 +55,8 @@ export function ContextProvider({ children }) {
     openCreateTask, setOpenCreateTask,
     openEditTask, handelEditModal,
     openStatus, handelStatusModal,
-    openPriorityFlag, handelPriorityFlagModal,
+    openPriority, handelPriorityModal,
+    openPriority, setOpenPriority,
     openConfirmDelete, handelConfirmDeleteModal,
     handelSpacesMenu,
     handelGetTasks,

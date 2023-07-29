@@ -3,11 +3,12 @@ import { Context } from "../../../../../context/Context";
 import StatusMenuBtn from "../Buttons/StatusMenuBtn";
 
 function StatusMenu() {
-  const { openStatus } =
-    useContext(Context);
+  const { openStatus } = useContext(Context);
+  
   useEffect(() => {
     document.getElementById("status-menu").classList.add("hidden");
   }, []);
+  
   return (
     <div
       onLoad={() => {}}
@@ -18,7 +19,6 @@ function StatusMenu() {
         <StatusMenuBtn name="To Do" />
         <StatusMenuBtn name="In Progress" />
         <StatusMenuBtn name="Done" />
-      
     </div>
   );
 }

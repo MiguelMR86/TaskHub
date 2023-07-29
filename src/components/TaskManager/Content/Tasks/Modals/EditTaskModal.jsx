@@ -9,15 +9,15 @@ import {
 import TtitleTask from "../Buttons/TtitleTask";
 import StatusMenu from "../Menus/StatusMenu";
 import StatusBtn from "../Buttons/StatusBtn";
-import PriorityFlagModal from "./PriorityFlagModal";
+import PriorityMenu from "../Menus/PriorityMenu";
 import PriorityFlagBtn from "../Buttons/PriorityFlagBtn";
+import TaskUserName from "../Buttons/TaskUserName";
 import DueDateBtn from "../Buttons/DueDateBtn";
 import DescriptionText from "../Buttons/DescriptionText";
-import ConfirmDeleteModal from "./ConfirmDeleteModal";
-import DeleteTaskBtn from "../Buttons/DeleteTaskBtn";
 import TaskDate from "../Buttons/TaskDate";
 import TaskLastEdit from "../Buttons/TaskLastEdit";
-import TaskUserName from "../Buttons/TaskUserName";
+import ConfirmDeleteModal from "./ConfirmDeleteModal";
+import DeleteTaskBtn from "../Buttons/DeleteTaskBtn";
 
 function EditTaskModal() {
   const { openEditTask, handelEditModal } = useContext(Context);
@@ -31,7 +31,7 @@ function EditTaskModal() {
           <StatusBtn />
         </div>
         <div className="flex items-center gap-2">
-          <PriorityFlagModal />
+          <PriorityMenu />
           <PriorityFlagBtn />
         </div>
       </DialogHeader>

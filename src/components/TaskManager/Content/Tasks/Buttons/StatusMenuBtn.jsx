@@ -6,8 +6,7 @@ import {
 } from "../../../../../controllers/tasks/functions";
 
 function StatusMenuBtn({ name }) {
-  const { currentTask, setCurrentTask, handelStatusModal } =
-    useContext(Context);
+  const { currentTask, setCurrentTask, handelStatusModal } = useContext(Context);
   const props = handelStatusColor(name);
 
   return (
