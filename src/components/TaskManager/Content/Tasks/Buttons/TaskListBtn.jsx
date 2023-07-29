@@ -18,7 +18,7 @@ function TaskListBtn({ task }) {
     <div
       key={task.id}
       color="white"
-      className={`relative w-full h-[50px] mt-8 border border-gray-300 grid place-items-center hover:bg-gray-100 rounded-md hover:shadow-lg ${deadlineBorder}`}
+      className={`relative w-full min-h-[50px] mt-8 border border-gray-300 grid place-items-center hover:bg-gray-100 rounded-md hover:shadow-lg ${deadlineBorder}`}
     >
       <div
         className={`absolute h-[25px] w-[70px] -top-[25px] left-1 text-[11px] text-white rounded-t-md grid place-items-center ${statusColor[1]} ${deadlineBorder}`}
@@ -40,7 +40,7 @@ function TaskListBtn({ task }) {
           >
             <p>{task.priority}</p>
           </div>
-          <p className={`text-xs text-gray-500 ${deadline}`}>{dueDate}</p>
+          <p className={`text-xs text-gray-500 min-w-[50px] ${deadline}`}>{dueDate}</p>
         </div>
       </button>
     </div>

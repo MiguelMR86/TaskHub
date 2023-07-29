@@ -24,11 +24,9 @@ function TaskManager() {
   }, []);
   
   return (
-    <div className="h-screen w-full flex flex-col gap-4">
-      <div className="relative h-full flex justify-end">
-        <SideBar />
-        <MainContent />
-      </div>
+    <div className="h-screen w-full flex flex-col">
+      <SideBar />
+      <MainContent />
     </div>
   );
 }

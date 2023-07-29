@@ -8,7 +8,6 @@ import NavBar from "../Nav/NavBar";
 import TaskList from "../Content/Tasks/TaskList";
 import NewTaskModal from "../Content/Tasks/Modals/NewTaskModal";
 import StartTaskBtn from "../Content/Tasks/Buttons/StartTaskBtn";
-import NewTaskBtn from "../Content/Tasks/Buttons/NewTaskBtn";
 import EditTaskModal from "../Content/Tasks/Modals/EditTaskModal";
 
 function MainContent() {
@@ -16,20 +15,18 @@ function MainContent() {
 
   return (
     <div className="w-full h-full flex flex-col gap-4 items-end bg-white p-4">
-      <div className="flex w-full">
+      <div className="flex w-full h-[7%]">
         <SideBarBtn />
         <SpaceTitle />
       </div>
-      <div className="w-full h-[100%] flex flex-col">
+      <div className="w-full h-[93%] flex flex-col">
         {currentSpace ? (
           <>
             {tasks.length > 0 ? (
               <>
                 <NavBar />
-                <div className="absolute z-10 bottom-8 right-8">
-                  <NewTaskBtn />
-                  <EditTaskModal />
-                </div>
+                
+                <EditTaskModal />
               </>
             ) : (
               <>
