@@ -14,7 +14,6 @@ function AccountSettingsBtn() {
     auth.onAuthStateChanged((user) => {
       if (user) {
         setPhotoURL(user.photoURL);
-        user.reload();
       }
     });
   }, [auth?.currentUser]);
