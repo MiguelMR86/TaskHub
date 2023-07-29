@@ -9,9 +9,7 @@ function NewTaskBtn() {
   return (
     <button
       onClick={handleOpen}
-      variant="text"
-      color="blue-gray"
-      className="flex justify-between items-center border p-4 text-[#2196F3] rounded-lg hover:bg-blue-gray-50 transition-all duration-300 ease-in-out"
+      className="flex justify-between items-center border p-4 bg-[#2196F3] text-white rounded-lg hover:bg-blue-gray-50 hover:text-[#2196F3] hover:shadow-lg transition-all duration-300 ease-in-out"
     >
       <HiOutlineFolderAdd className="scale-[1.7]" />
     </button>

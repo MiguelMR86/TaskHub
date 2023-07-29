@@ -8,7 +8,7 @@ import NavBar from "../Nav/NavBar";
 import TaskList from "../Content/Tasks/TaskList";
 import NewTaskModal from "../Content/Tasks/Modals/NewTaskModal";
 import StartTaskBtn from "../Content/Tasks/Buttons/StartTaskBtn";
-
+import NewTaskBtn from "../Content/Tasks/Buttons/NewTaskBtn";
 
 function MainContent() {
   const { currentSpace, tasks } = useContext(Context);
@@ -25,6 +25,9 @@ function MainContent() {
             {tasks.length > 0 ? (
               <>
                 <NavBar />
+                <div className="absolute bottom-8 right-8">
+                  <NewTaskBtn />
+                </div>
               </>
             ) : (
               <>
@@ -34,7 +37,6 @@ function MainContent() {
               </>
             )}
             <NewTaskModal />
-
             <TaskList />
           </>
         ) : (
