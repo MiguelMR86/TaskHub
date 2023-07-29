@@ -8,7 +8,7 @@ function TaskList() {
 
   useEffect(() => {
     handelGetTasks();
-  }, [currentSpace]);
+  }, [currentSpace, currentTask]);
 
   return (
     <>
