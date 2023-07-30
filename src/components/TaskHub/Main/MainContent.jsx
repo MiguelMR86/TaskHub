@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { Context } from "../../../context/Context";
 import SideBarBtn from "./SideBarBtn";
 import SpaceTitle from "./SpaceTitle";
-import NavBar from "../Nav/NavBar";
 import TaskList from "../Content/Tasks/TaskList";
 import NewTaskModal from "../Content/Tasks/Modals/NewTaskModal";
 import StartTaskBtn from "../Content/Tasks/Buttons/StartTaskBtn";
@@ -23,7 +22,6 @@ function MainContent() {
           <>
             {tasks.length > 0 ? (
               <>
-                <NavBar />
                 <TaskList />
                 <EditTaskModal />
               </>
