@@ -7,12 +7,10 @@ import { getUserSpace } from "../../controllers/spaces/functions";
 
 function TaskManager() {
   const { setCurrentSpace } = useContext(Context);
+  
+  const handelInit = () => {
+    isLogedIn();
 
-  useEffect(() => {
-    
-    isLogedIn()
-
-    // GET paths
     const path = window.location.pathname;
     if (path.includes("/manager/space/")) {
       const spaceId = path.split("/manager/space/")[1];
@@ -21,8 +19,12 @@ function TaskManager() {
         else setCurrentSpace(space);
       });
     }
+  };
+
+  useEffect(() => {
+    handelInit();
   }, []);
-  
+
   return (
     <div className="h-screen w-full flex flex-col">
       <SideBar />
