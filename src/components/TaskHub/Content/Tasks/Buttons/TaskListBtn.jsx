@@ -1,13 +1,11 @@
 import React, { useContext } from "react";
 import { Context } from "../../../../../context/Context";
-import {
-  handelStatusColor,
-  handelPriorityColor,
-} from "../../../../../controllers/tasks/functions";
-import { handelDates } from "../../../../../controllers/tasks/functions";
 
 function TaskListBtn({ task }) {
-  const { setCurrentTask, handelEditModal } = useContext(Context);
+  const { 
+    setCurrentTask, handelEditModal, handelDates, handelStatusColor, handelPriorityColor
+  } = useContext(Context);
+
   const statusColor = handelStatusColor(task.status);
   const priorityColor = handelPriorityColor(task.priority);
   const deadline = task.dueDate > 0 && task.dueDate < Date.now() ? "text-red-500" : "";
@@ -40,7 +38,9 @@ function TaskListBtn({ task }) {
           >
             <p>{task.priority}</p>
           </div>
-          <p className={`text-xs text-gray-500 min-w-[50px] ${deadline}`}>{dueDate}</p>
+          <p className={`text-xs text-gray-500 min-w-[50px] ${deadline}`}>
+            {dueDate}
+          </p>
         </div>
       </button>
     </div>

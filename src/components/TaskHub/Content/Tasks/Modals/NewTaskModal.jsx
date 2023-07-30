@@ -11,13 +11,9 @@ import {
   Select,
   Option,
 } from "@material-tailwind/react";
-import { createTask } from "../../../../../controllers/tasks/functions";
-import { getUserTasks } from "../../../../../controllers/tasks/functions";
 
 function NewTaskModal() {
-  const { openCreateTask, handleCreateTaskModal, currentSpace, setTasks } = useContext(Context);
-
-  const handelGetTasks = () =>getUserTasks(currentSpace.id).then((tasks) => setTasks(tasks));
+  const { openCreateTask, handleCreateTaskModal, handelGetTasks, currentSpace, createTask } = useContext(Context);
 
   const handleCreateTask = (e) => {
     e.preventDefault();

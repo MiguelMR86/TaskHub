@@ -1,12 +1,10 @@
 import React, { useContext } from "react";
 import { Context } from "../../../../../context/Context";
-import {
-  handelStatusColor,
-  updateTaskStatus,
-} from "../../../../../controllers/tasks/functions";
-
+import { updateTaskStatus } from "../../../../../controllers/firebase";
+import { handelStatusColor } from "../../../../../controllers/functions";
 function StatusMenuBtn({ name }) {
-  const { currentTask, setCurrentTask, handelStatusModal } = useContext(Context);
+  const { currentTask, setCurrentTask, handelStatusModal } =
+    useContext(Context);
   const props = handelStatusColor(name);
 
   return (

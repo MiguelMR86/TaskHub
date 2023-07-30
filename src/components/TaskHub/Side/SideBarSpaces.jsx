@@ -1,21 +1,13 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { Context } from "../../../context/Context";
 import { Typography, Button } from "@material-tailwind/react";
 import SpaceBtn from "../Content/Spaces/Buttons/SpaceBtn";
-import { getUserSpaces } from "../../../controllers/spaces/functions";
 import NewSpaceBtn from "../Content/Spaces/Buttons/NewSpaceBtn";
 import NewSpaceModal from "../Content/Spaces/Modals/NewSpaceModal";
 import DeleteSpaceBtn from "../Content/Spaces/Buttons/DeleteSpaceBtn";
 
 function SideBarSpaces() {
-  const { spaces, setSpaces, openSpaces, handelSpacesMenu } =
-    useContext(Context);
-
-  const handelGetSpaces = () => getUserSpaces().then((spaces) => setSpaces(spaces));
-
-  useEffect(() => {
-    handelGetSpaces();
-  }, []);
+  const { spaces, openSpaces, handelSpacesMenu } = useContext(Context);
 
   return (
     <ul className="my-2 w-full flex flex-col gap-2">
@@ -49,7 +41,7 @@ function SideBarSpaces() {
       {openSpaces ? (
         <>
           {spaces.length > 0 ? (
-            <ul className="flex flex-col gap-2 max-h-[110px] overflow-y-auto">
+            <ul className="flex flex-col gap-2 max-h-[300px] overflow-y-auto">
               {spaces.map((space) => (
                 <SpaceBtn space={space} key={space.id} />
               ))}

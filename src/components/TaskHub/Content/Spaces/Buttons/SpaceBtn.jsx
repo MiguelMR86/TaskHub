@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Context } from "../../../../../context/Context";
 import { MenuItem } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
-import { getUserTasks } from "../../../../../controllers/tasks/functions";
+import { getUserTasks } from "../../../../../controllers/firebase";
 
 function SpaceBtn({ space }) {
   const { setCurrentSpace, handelSpacesMenu, setTasks } = useContext(Context);

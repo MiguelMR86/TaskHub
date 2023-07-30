@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../../../../../context/Context";
 import { Typography } from "@material-tailwind/react";
-import { auth } from "../../../../../config/firebase";
 
 function UserName() {
-
+  const { user } = useContext(Context);
   return (
     <div>
       <Typography variant="small" color="gray" className="text-xs font-normal">
-        @{auth.currentUser.displayName}
+        @{user.displayName}
       </Typography>
     </div>
   );

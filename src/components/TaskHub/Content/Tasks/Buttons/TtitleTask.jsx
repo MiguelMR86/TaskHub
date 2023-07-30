@@ -1,10 +1,9 @@
 import React, { useContext } from "react";
 import { Context } from "../../../../../context/Context";
 import { Input } from "@material-tailwind/react";
-import { updateTaskName } from "../../../../../controllers/tasks/functions";
 
 function TtitleTask() {
-  const { currentTask, setCurrentTask } = useContext(Context);
+  const { currentTask, setCurrentTask, updateTaskName } = useContext(Context);
   const title = currentTask ? currentTask.name : "";
 
   return (

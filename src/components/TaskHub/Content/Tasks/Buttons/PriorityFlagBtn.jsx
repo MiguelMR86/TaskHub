@@ -1,9 +1,8 @@
 import React, { useContext } from "react";
 import { Context } from "../../../../../context/Context";
-import { handelPriorityFlag } from "../../../../../controllers/tasks/functions";
 
 function PriorityFlagBtn() {
-  const { currentTask, openPriority, handelPriorityModal } = useContext(Context);
+  const { currentTask, openPriority, handelPriorityModal, handelPriorityFlag } = useContext(Context);
   
   const handelPriorityFlagModal = () => {
     if (!openPriority) {

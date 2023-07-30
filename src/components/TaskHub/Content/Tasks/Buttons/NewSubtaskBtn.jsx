@@ -1,10 +1,9 @@
 import React, { useContext } from "react";
 import { Context } from "../../../../../context/Context";
 import { Input } from "@material-tailwind/react";
-import { updateTaskSubtasks } from "../../../../../controllers/tasks/functions";
 
 function NewSubtaskBtn() {
-  const { currentTask, setCurrentTask } = useContext(Context);
+  const { currentTask, setCurrentTask, updateTaskSubtasks } = useContext(Context);
   const subtasks = currentTask ? currentTask.subtasks : "";
 
   return (

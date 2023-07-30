@@ -1,10 +1,9 @@
 import React, { useContext } from "react";
 import { Context } from "../../../../../context/Context";
 import { Button } from "@material-tailwind/react";
-import { deleteTask } from "../../../../../controllers/tasks/functions";
 
 function ConfirmDeleteBtn() {
-  const { currentTask, setCurrentTask, handelEditModal, handelConfirmDeleteModal } = useContext(Context);
+  const { currentTask, setCurrentTask, handelEditModal, handelConfirmDeleteModal, deleteTask } = useContext(Context);
 
   return (
     <Button

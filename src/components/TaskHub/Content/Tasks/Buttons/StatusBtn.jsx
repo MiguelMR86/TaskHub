@@ -1,12 +1,11 @@
 import React, { useContext } from "react";
 import { Context } from "../../../../../context/Context";
 import { Button } from "@material-tailwind/react";
-import { handelStatusColor } from "../../../../../controllers/tasks/functions";
 
 function StatusBtn() {
-  const { currentTask, openStatus, handelStatusModal } = useContext(Context);
+  const { currentTask, openStatus, handelStatusModal, handelStatusColor } = useContext(Context);
   const props = currentTask ? handelStatusColor(currentTask.status) : ["", ""];
-  // when open status is closed make a dilay of 0,3 seconds to close the modal
+  
   const handelStatusModalDelay = () => {
     if (!openStatus) {
       document.getElementById("status-menu").classList.remove("hidden");

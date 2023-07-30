@@ -11,14 +11,12 @@ import SpaceBtn from "../Buttons/SpaceBtn";
 import SpaceSelectorBtn from "../Buttons/SpaceSelectorBtn";
 
 function SpaceSelectorModal() {
-  const { openSpaceSelector, setOpenSpaceSelector, spaces } = useContext(Context);
-
-  const handleOpen = () => setOpenSpaceSelector(!openSpaceSelector);
+  const { openSpaceSelector, spaces, handleOpenSpaceSelector } = useContext(Context);
 
   return (
     <Dialog
       open={openSpaceSelector}
-      handler={handleOpen}
+      handler={handleOpenSpaceSelector}
       size="md"
       className="w-full max-w-md"
     >
@@ -30,7 +28,7 @@ function SpaceSelectorModal() {
         ) : (
           <ul className="flex flex-col gap-1">
             {spaces.map((space) => (
-              <SpaceBtn space={space} key={space.id} handleOpen={handleOpen} />
+              <SpaceBtn space={space} key={space.id} handleOpen={handleOpenSpaceSelector} />
             ))}
           </ul>
         )}
@@ -39,7 +37,7 @@ function SpaceSelectorModal() {
         <Button
           variant="text"
           color="gray"
-          onClick={() => handleOpen(null)}
+          onClick={() => handleOpenSpaceSelector(null)}
           className="mr-1"
         >
           <span>Cancel</span>

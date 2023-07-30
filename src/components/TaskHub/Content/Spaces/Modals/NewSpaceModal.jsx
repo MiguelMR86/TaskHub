@@ -9,10 +9,9 @@ import {
   Button,
 } from "@material-tailwind/react";
 import InputFile from "../../../../General/Others/InputFile";
-import { createSpace } from "../../../../../controllers/spaces/functions";
 
 function NewSpaceModal() {
-  const { openCreateSpace, setOpenCreateSpace } = useContext(Context);
+  const { openCreateSpace, setOpenCreateSpace, createSpace } = useContext(Context);
 
   const handleOpen = () => setOpenCreateSpace(!openCreateSpace);
   const handleCreateSpace = (e) => {
@@ -20,7 +19,7 @@ function NewSpaceModal() {
     const name = document.getElementById("space-name").value;
     const img = document.getElementById("space-img").files[0];
     const space = { name, img };
-    createSpace(space);
+    createSpace(space)
     handleOpen(null);
   };
 

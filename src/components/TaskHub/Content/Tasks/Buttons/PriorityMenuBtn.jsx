@@ -1,12 +1,11 @@
 import React, { useContext } from "react";
 import { Context } from "../../../../../context/Context";
-import {
-  handelPriorityColor,
-  updateTaskPriority,
-} from "../../../../../controllers/tasks/functions";
+import { handelPriorityColor } from "../../../../../controllers/functions";
+import { updateTaskPriority } from "../../../../../controllers/firebase";
 
 function PriorityMenuBtn({ name }) {
-  const { currentTask, setCurrentTask, handelPriorityModal } = useContext(Context);
+  const { currentTask, setCurrentTask, handelPriorityModal } =
+    useContext(Context);
   const color = handelPriorityColor(name);
 
   return (

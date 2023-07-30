@@ -1,13 +1,11 @@
 import React, { useContext } from "react";
 import { Context } from "../../../../../context/Context";
 import { Input } from "@material-tailwind/react";
-import { handelInputDateInsert } from "../../../../../controllers/tasks/functions";
-import { updateTaskDueDate } from "../../../../../controllers/tasks/functions";
+
 function DueDateBtn() {
-  const { currentTask, setCurrentTask } = useContext(Context);
+  const { currentTask, setCurrentTask, handelInputDateInsert, updateTaskDueDate } = useContext(Context);
   const dueDate = currentTask && currentTask.dueDate ? handelInputDateInsert(currentTask.dueDate) : ""
   const deadline = currentTask && currentTask.dueDate > 0 && currentTask.dueDate < Date.now() ? "text-red-500" : "text-gray-400";
-
 
   return (
     <Input

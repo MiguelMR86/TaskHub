@@ -1,9 +1,9 @@
-import React, { useState, Fragment } from "react";
+import React, { useState, Fragment, useContext } from "react";
+import { Context } from "../../../context/Context";
 import { Button, Dialog, Card, Typography } from "@material-tailwind/react";
-import { signInWithGoogle } from "../../../controllers/user/functions";
-import { auth } from "../../../config/firebase";
 
 function LoginBtn() {
+  const { signInWithGoogle } = useContext(Context);
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen((cur) => !cur);
 

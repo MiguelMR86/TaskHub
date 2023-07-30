@@ -1,11 +1,10 @@
 import React, { useContext, useEffect } from "react";
 import { Context } from "../../../../../context/Context";
-import { Typography, Checkbox, Button } from "@material-tailwind/react";
-import { updateTaskSubtasks } from "../../../../../controllers/tasks/functions";
+import { Typography, Checkbox } from "@material-tailwind/react";
 import {AiOutlineDelete} from "react-icons/ai";
 
 function SubtaskBtn({ subtask }) {
-  const { currentTask, setCurrentTask } = useContext(Context);
+  const { currentTask, setCurrentTask, updateTaskSubtasks } = useContext(Context);
   const status = subtask.done ? true : false;
   const name = subtask.name;
   const checkid = `edit-subtask` + name;

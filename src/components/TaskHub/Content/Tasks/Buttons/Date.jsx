@@ -1,10 +1,9 @@
 import React, { useContext } from "react";
 import { Context } from "../../../../../context/Context";
-import { handelDates } from "../../../../../controllers/tasks/functions";
 import { Typography } from "@material-tailwind/react";
 
 function Date() {
-  const { currentTask } = useContext(Context);
+  const { currentTask, handelDates } = useContext(Context);
 
   return (
     <div>
