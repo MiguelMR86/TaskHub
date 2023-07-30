@@ -81,19 +81,18 @@ export const createSpace = async (space) => {
 // Function to get all spaces from a user
 // * It will return an array with all the spaces from the user
 export const getUserSpaces = async (userId) => {
-  const spaces = [];
   try {
     const stateQuery = query(spacesCollection, where("owner", "==", userId));
     const querySnapshot = await getDocs(stateQuery);
+    const spaces = [];
     querySnapshot.forEach((doc) => {
       spaces.push({ ...doc.data(), id: doc.id });
     });
     // order by date desc
     spaces.sort((a, b) => b.date - a.date);
+    return spaces;
   } catch (e) {
     console.log(e);
-  } finally {
-    return spaces;
   }
 };
 
