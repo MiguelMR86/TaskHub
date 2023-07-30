@@ -29,7 +29,7 @@ function TaskListBtn({ task, index }) {
         }}
         className={`w-full h-full px-4 flex justify-between items-center ${deadline}`}
       >
-        <p className="w-[100px] sm:w-fit sm:min-w-[149px] text-left truncate">{task.name}</p>
+        <p className="w-[100px]  sm:w-[300px] md:w-[500px] lg:w-[700px] text-left truncate">{task.name}</p>
         <div className="flex items-center justify-between h-full max-w-[250px] gap-2 sm:gap-4">
           <div
             className={`${priorityColor} text-xs min-w-[70px] h-[30px] rounded-full grid place-items-center text-white`}

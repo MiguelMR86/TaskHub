@@ -13,10 +13,6 @@ function TtitleTask() {
       variant="static"
       className="text-xl p-0 border-none"
       defaultValue={title}
-      onChange={(e) => {
-        if (e.target.value.length > 15)
-          e.target.value = e.target.value.slice(0, 15);
-      }}
       onBlur={(e) => {
         if (currentTask && currentTask.name !== e.target.value) {
           updateTaskName(currentTask.id, e.target.value).then(() => {
