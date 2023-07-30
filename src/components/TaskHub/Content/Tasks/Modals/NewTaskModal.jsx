@@ -40,6 +40,10 @@ function NewTaskModal() {
       <form onSubmit={handleCreateTask}>
         <DialogBody divider className="flex flex-col gap-3">
           <Input
+            onChange={(e) => {
+              if (e.target.value.length > 300)
+                e.target.value = e.target.value.slice(0, 300);
+            }}
             id="task-name"
             size="lg"
             label="Task Name"
