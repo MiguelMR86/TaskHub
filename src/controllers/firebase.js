@@ -168,7 +168,7 @@ export const deleteTask = async (id) => {
   }
 };
 
-// All the update functions will update the task last edit date
+// All the next update functions will update the task last edit date
 
 // Function to update a task name
 // * It will update the task name with the given id
