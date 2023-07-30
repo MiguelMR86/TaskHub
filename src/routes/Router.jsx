@@ -1,7 +1,8 @@
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
 import IndexPage from "../components/Index";
-import TaskManager from "../components/TaskManager/TaskManager";
+import SpaceManager from "../components/TaskHub/SpaceManager";
+import TaskManager from "../components/TaskHub/TaskManager";
 import NotFound from "../components/NotFound/NotFound";
 
 const router = createBrowserRouter([
@@ -11,7 +12,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/manager",
-    element: <TaskManager />,
+    element: <SpaceManager />,
   },
   {
     path: "/manager/space/:id",

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, memo } from "react";
 import { Context } from "../../../../context/Context";
 import TaskListBtn from "./Buttons/TaskListBtn";
 import NewTaskBtn from "./Buttons/NewTaskBtn";
