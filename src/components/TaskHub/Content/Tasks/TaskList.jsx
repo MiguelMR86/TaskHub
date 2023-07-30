@@ -14,7 +14,7 @@ function TaskList() {
   }, [currentSpace, currentTask]);
 
   return (
-    <div className="relative flex flex-col gap-10 p-4 h-full w-full border-4 border-[#DCDCDC] rounded-lg overflow-hidden overflow-y-auto">
+    <div className="relative flex flex-col gap-5 p-4 h-full w-full border-4 border-[#DCDCDC] rounded-lg overflow-hidden overflow-y-auto">
       <NavBar />
       <div
         id='drop-todo'

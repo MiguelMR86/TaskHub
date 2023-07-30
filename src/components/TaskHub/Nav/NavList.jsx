@@ -6,13 +6,13 @@ function NavList() {
   const { currentSection, setCurrentSection } = useContext(Context);
 
   return (
-      <div className="flex justify-between items-center gap-x-6 w-full h-full p-4 overflow-x-auto">
+      <div className="flex justify-between items-center gap-x-6 w-full overflow-x-auto">
         <div className="flex gap-x-6">
           <div>
             <Button
               fullWidth={true}
-              color="white"
-              className={`border-b-4 rounded shadow-xl ${currentSection == "Board" ? "border-[#2196F3]" : "border-gray-300 hover:border-gray-400"}`}
+              color="blue"
+              className={`border-b-4 rounded shadow-xl ${currentSection == "Board" ? "  border-blue-800" : "border-gray-300 hover:border-gray-400"}`}
               onClick={() => setCurrentSection("Board")}
             >
               Board
@@ -20,8 +20,8 @@ function NavList() {
           </div>
           <div>
             <Button
-              color="white"
-              className={`border-b-4 rounded shadow-xl ${currentSection == "List" ? "border-[#2196F3]" : "border-gray-300 hover:border-gray-400"}`}
+              color="blue"
+              className={`border-b-4 rounded shadow-xl ${currentSection == "List" ? "border-blue-800" : "border-gray-300 hover:border-gray-400"}`}
               onClick={() => setCurrentSection("List")}
             >
               List
@@ -29,8 +29,8 @@ function NavList() {
           </div>
           <div>
             <Button
-              color="white"
-              className={`border-b-4 rounded shadow-xl ${currentSection == "Calendar" ? "border-[#2196F3]" : "border-gray-300 hover:border-gray-400"}`}
+              color="blue"
+              className={`border-b-4 rounded shadow-xl ${currentSection == "Calendar" ? "border-blue-800" : "border-gray-300 hover:border-gray-400"}`}
               onClick={() => setCurrentSection("Calendar")}
             >
               Calendar
