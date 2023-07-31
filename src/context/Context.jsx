@@ -7,7 +7,6 @@ export function ContextProvider({ children, value: { getUser, getUserSpaces, get
   const [user, loading] = getUser();
 
   // SECTIONS
-  const [currentSection, setCurrentSection] = useState("");
   const [spaces, setSpaces] = useState([]);
   const [currentSpace, setCurrentSpace] = useState(null);
   const [tasks, setTasks] = useState([]);
@@ -85,7 +84,6 @@ export function ContextProvider({ children, value: { getUser, getUserSpaces, get
   const functions = {
     user, loading,
     handelInitTask,
-    currentSection, setCurrentSection,
     currentSpace, setCurrentSpace,
     spaces, setSpaces,
     tasks, setTasks,
