@@ -8,6 +8,7 @@ function NewSubtaskBtn() {
 
   return (
     <Input
+      name="new-subtask-input"
       id="edit-task-title"
       variant="static"
       containerProps={{

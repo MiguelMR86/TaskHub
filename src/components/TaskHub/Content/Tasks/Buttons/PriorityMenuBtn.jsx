@@ -10,6 +10,7 @@ function PriorityMenuBtn({ name }) {
 
   return (
     <button
+      name="priority-menu-button"
       onClick={() => {
         if (currentTask && currentTask.priority !== name) {
           updateTaskPriority(currentTask.id, name).then(() => {

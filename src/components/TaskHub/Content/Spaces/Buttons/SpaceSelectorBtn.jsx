@@ -20,6 +20,7 @@ function SpaceSelectorBtn() {
       <p>You don't have any space yet</p>
       <p className="mb-8">Let's create one!</p>
       <button
+        name="new-space-button"
         onClick={handleModals}
         className="text-2xl font-bold text-[#DCDCDC] border-4 border-[#DCDCDC] rounded-lg p-4 border-dashed hover:text-[#c0c0c0] hover:border-[#c0c0c0] transition-all"
       >

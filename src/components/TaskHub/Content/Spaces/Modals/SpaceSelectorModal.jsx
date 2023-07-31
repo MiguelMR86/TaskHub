@@ -35,6 +35,7 @@ function SpaceSelectorModal() {
       </DialogBody>
       <DialogFooter>
         <Button
+          name="cancel-space-selector-button"
           variant="text"
           color="gray"
           onClick={() => handleOpenSpaceSelector(null)}

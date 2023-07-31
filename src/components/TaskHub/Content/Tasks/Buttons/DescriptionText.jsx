@@ -13,6 +13,7 @@ function DescriptionText() {
       </Typography>
       
       <Textarea
+        name="edit-task-description"
         variant="static"
         labelProps={{ className: "hidden" }}
         id="edit-task-description"

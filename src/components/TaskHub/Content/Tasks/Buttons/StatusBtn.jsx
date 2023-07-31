@@ -18,6 +18,7 @@ function StatusBtn() {
 
   return (
     <Button
+      name="status-button"
       onClick={() => {
         handelStatusModal();
         handelStatusModalDelay();

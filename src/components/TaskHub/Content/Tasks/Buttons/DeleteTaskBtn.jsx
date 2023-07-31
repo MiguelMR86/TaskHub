@@ -7,6 +7,7 @@ function DeleteTaskBtn() {
   const { handelConfirmDeleteModal } = useContext(Context);
   return (
     <Button 
+    name="delete-task-menu-button"
     onClick={handelConfirmDeleteModal}
     color="red"
     className="w-fit flex items-center justify-center"

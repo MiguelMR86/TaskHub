@@ -10,6 +10,7 @@ function SpaceBtn({ space }) {
 
   return (
     <MenuItem
+      name="space-button"
       className="text-blue-gray-500 border hover:bg-blue-gray-100"
       key={space.id}
       onClick={() => {

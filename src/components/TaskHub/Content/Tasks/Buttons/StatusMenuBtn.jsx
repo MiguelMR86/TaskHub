@@ -9,6 +9,7 @@ function StatusMenuBtn({ name }) {
 
   return (
     <button
+      name="status-menu-button"
       onClick={() => {
         if (currentTask && currentTask.status !== name) {
           updateTaskStatus(currentTask.id, name).then(() => {

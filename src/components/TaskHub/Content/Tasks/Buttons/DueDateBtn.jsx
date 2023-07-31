@@ -9,6 +9,7 @@ function DueDateBtn() {
 
   return (
     <Input
+      name="due-date-input"
       label="Due Date"
       labelProps={{ className: deadline}}
       containerProps={{ className: "min-w-[150px]" }}

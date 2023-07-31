@@ -16,6 +16,7 @@ function SubtaskBtn({ subtask }) {
   return (
     <div className="flex items-center justify-between">
       <Checkbox
+        name="subtask-checkbox"
         id={checkid}
         color="blue"
         label={

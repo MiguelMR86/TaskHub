@@ -8,6 +8,7 @@ function TtitleTask() {
 
   return (
     <Input
+      name="title-task-input"
       id="edit-task-title"
       containerProps={{ className: "max-w-[210px]" }}
       variant="static"

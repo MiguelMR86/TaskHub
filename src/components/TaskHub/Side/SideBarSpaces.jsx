@@ -17,6 +17,7 @@ function SideBarSpaces() {
         className="flex items-center gap-2"
       >
         <Button
+          name="menu-spaces-button"
           fullWidth
           variant="text"
           color="blue-gray"

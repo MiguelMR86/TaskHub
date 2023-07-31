@@ -7,6 +7,7 @@ function ConfirmDeleteBtn() {
 
   return (
     <Button
+      name="confirm-delete-task-btn"
       onClick={() =>{
         deleteTask(currentTask.id).then(() => {
           handelConfirmDeleteModal()

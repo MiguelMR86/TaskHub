@@ -6,34 +6,39 @@ import {
   DialogHeader,
   DialogBody,
   DialogFooter,
-  
 } from "@material-tailwind/react";
 import ConfirmDeleteBtn from "../Buttons/ConfirmDeleteBtn";
 
 function ConfirmDeleteModal() {
-  const { openConfirmDelete, handelConfirmDeleteModal, currentTask } = useContext(Context);
+  const { openConfirmDelete, handelConfirmDeleteModal, currentTask } =
+    useContext(Context);
   const name = currentTask ? currentTask.name : "";
 
   return (
-    <Dialog size="lg" open={openConfirmDelete} handler={handelConfirmDeleteModal}>
+    <Dialog
+      size="lg"
+      open={openConfirmDelete}
+      handler={handelConfirmDeleteModal}
+    >
       <DialogHeader className="text-center">
         <div className="flex flex-col w-full">
-        Confirm Delete <p className="text-red-500 text-xl">{name}</p>
+          Confirm Delete <p className="text-red-500 text-xl">{name}</p>
         </div>
       </DialogHeader>
       <DialogBody divider>
-        Are you sure you want to delete this task? Once deleted, you
-        will NOT be able to recover this task!
+        Are you sure you want to delete this task? Once deleted, you will NOT be
+        able to recover this task!
       </DialogBody>
       <DialogFooter>
-      <Button
-            variant="gradient"
-            color="blue-gray"
-            onClick={handelConfirmDeleteModal}
-            className="mr-1"
-          >
-            <span>Cancel</span>
-          </Button>
+        <Button
+          name="cancel-delete-task-btn"
+          variant="gradient"
+          color="blue-gray"
+          onClick={handelConfirmDeleteModal}
+          className="mr-1"
+        >
+          <span>Cancel</span>
+        </Button>
         <ConfirmDeleteBtn />
       </DialogFooter>
     </Dialog>

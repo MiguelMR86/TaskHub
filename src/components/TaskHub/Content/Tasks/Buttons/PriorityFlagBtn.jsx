@@ -16,6 +16,7 @@ function PriorityFlagBtn() {
   
   return (
     <button
+      name="priority-flag-button"
       className="absolute z-10 -top-[11.53px] right-6 w-fit rounded-xl hover:scale-110 hover:-top-[7px] transition-all duration-300"
       onClick={() => {
         handelPriorityModal();

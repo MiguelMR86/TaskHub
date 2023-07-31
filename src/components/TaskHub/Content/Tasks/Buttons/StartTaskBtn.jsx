@@ -6,6 +6,7 @@ function StartBtn() {
 
   return (
     <button
+      name="start-task-button"
       onClick={() => {
         handleCreateTaskModal();
       }}

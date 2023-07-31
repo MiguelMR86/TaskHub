@@ -14,15 +14,16 @@ function TaskListBtn({ task, index }) {
 
   return (
     <div
-      key={task.id}
-      color="white"
-      className={`z-10 bg-white w-full min-h-[50px] mt-8 border border-gray-300 grid place-items-center hover:bg-gray-100 rounded-md hover:shadow-lg ${deadlineBorder}`}
-      draggable
-      onDragStart={(e) => handleDragStart(e, index)}
-      onDragOver={(e) => handleDragOver(e, task.status)}
-      onDrop={(e) => handleDrop(e, task.status)}
+    key={task.id}
+    color="white"
+    className={`z-10 bg-white w-full min-h-[50px] mt-8 border border-gray-400 grid place-items-center hover:bg-gray-100 rounded-md shadow-md hover:shadow-lg ${deadlineBorder}`}
+    draggable
+    onDragStart={(e) => handleDragStart(e, index)}
+    onDragOver={(e) => handleDragOver(e, task.status)}
+    onDrop={(e) => handleDrop(e, task.status)}
     >
       <button
+        name="task-list-btn"
         onClick={() => {
           setCurrentTask(task);
           handelEditModal();
@@ -36,7 +37,7 @@ function TaskListBtn({ task, index }) {
           >
             <p>{task.priority}</p>
           </div>
-          <p className={`text-xs text-gray-500 min-w-[50px] ${deadline}`}>
+          <p className={`text-xs text-gray-600 min-w-[50px] ${deadline}`}>
             {dueDate}
           </p>
         </div>

@@ -22,7 +22,7 @@ function TaskList() {
         onDragOver={(e) => handleDragOver(e, 'To Do')}
         onDrop={(e) => handleDrop(e, 'To Do')}
       >
-        <h3 className="text-xl">To Do</h3>
+        <h2 className="text-xl">To Do</h2>
         {tasks.map((task, index) => {
           if (task.status === "To Do") {
             return <TaskListBtn task={task} key={task.id} index={index} />;
@@ -35,7 +35,7 @@ function TaskList() {
         onDragOver={(e) => handleDragOver(e, 'In Progress')}
         onDrop={(e) => handleDrop(e, 'In Progress')}
         >
-          <h3 className="text-xl">In Progress</h3>
+          <h2 className="text-xl">In Progress</h2>
         {tasks.map((task, index) => {
           if (task.status === "In Progress") {
             return <TaskListBtn task={task} key={task.id} index={index} />;
@@ -48,7 +48,7 @@ function TaskList() {
         onDragOver={(e) => handleDragOver(e, 'Done')}
         onDrop={(e) => handleDrop(e, 'Done')}
       >
-        <h3 className="text-xl">Done</h3>
+        <h2 className="text-xl">Done</h2>
         {tasks.map((task, index) => {
           if (task.status === "Done") {
             return <TaskListBtn task={task} key={task.id} index={index} />;
