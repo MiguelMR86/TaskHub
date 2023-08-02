@@ -5,12 +5,14 @@ export const Context = createContext();
 export function ContextProvider({ children, value: { getUser, getUserSpaces, getUserTasks, updateTaskStatus,...other } }) {
   //USER
   const [user, loading] = getUser();
+  const [darkMode, setDarkMode] = useState(false);
 
   // SECTIONS
   const [spaces, setSpaces] = useState([]);
   const [currentSpace, setCurrentSpace] = useState(null);
   const [tasks, setTasks] = useState([]);
   const [currentTask, setCurrentTask] = useState(null);
+  const [LoadingTasks, setLoadingTasks] = useState(true);
 
   // MENUS
   const [openSideBar, setOpenSideBar] = useState(false);
@@ -31,6 +33,7 @@ export function ContextProvider({ children, value: { getUser, getUserSpaces, get
   const handelPriorityModal = () => setOpenPriority(!openPriority);
   const [openConfirmDelete, setOpenConfirmDelete] = useState(false);
   const handelConfirmDeleteModal = () => setOpenConfirmDelete(!openConfirmDelete);
+  const handelDarkMode = () => setDarkMode(!darkMode);
 
   // FUNTIONS
   const handelGetTasks = () => getUserTasks(currentSpace.id).then((tasks) => setTasks(tasks));
@@ -46,9 +49,11 @@ export function ContextProvider({ children, value: { getUser, getUserSpaces, get
           if (!space) window.location.href = "/manager";
           else{
             setCurrentSpace(space);
-            getUserTasks(spaceId).then((tasks) => setTasks(tasks));
+            getUserTasks(spaceId).then((tasks) => setTasks(tasks))
+            setLoadingTasks(false)
           }
         }
+        else setLoadingTasks(false)
       });
     } else {
       console.log("No user");
@@ -88,6 +93,7 @@ export function ContextProvider({ children, value: { getUser, getUserSpaces, get
     spaces, setSpaces,
     tasks, setTasks,
     currentTask, setCurrentTask,
+    LoadingTasks, setLoadingTasks,
     openSideBar, handelSideBarDisplay,
     openConfigMenu, setOpenConfigMenu,
     openCreateSpace, setOpenCreateSpace,
@@ -103,6 +109,7 @@ export function ContextProvider({ children, value: { getUser, getUserSpaces, get
     handleDragStart,
     handleDragOver,
     handleDrop,
+    darkMode, handelDarkMode
   };
 
   return (

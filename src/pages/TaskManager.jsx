@@ -5,8 +5,7 @@ import SideBar from "../components/TaskHub/Side/SideBar";
 import Loading from "../components/General/Others/Loading";
 
 function TaskManager() {
-  // Pending to remove load
-  const { handelInitTask, load } = useContext(Context);
+  const { handelInitTask, LoadingTasks } = useContext(Context);
 
   useEffect(() => {
     handelInitTask();
@@ -14,8 +13,14 @@ function TaskManager() {
 
   return (
     <div className="h-screen w-full flex flex-col">
-      <SideBar />
-      <MainContent />
+      {LoadingTasks ? (
+        <Loading />
+      ) : (
+        <>
+          <SideBar />
+          <MainContent />
+        </>
+      )}
     </div>
   );
 }

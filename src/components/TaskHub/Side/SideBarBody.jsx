@@ -12,7 +12,7 @@ function SideBarBody() {
           color="blue-gray"
           href="/manager"
         >
-          Home
+          Manager
         </a>
       </li>
       {/* <li>

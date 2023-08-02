@@ -4,8 +4,8 @@ import {FiSettings} from 'react-icons/fi'
 import { Button, Switch  } from '@material-tailwind/react'
 
 function ConfigBtn() {
-  const { openConfigMenu, setOpenConfigMenu } = useContext(Context)
-  
+  const { openConfigMenu, setOpenConfigMenu, handelDarkMode } = useContext(Context)
+
   return (
     <div className='relative'>
       <Button
@@ -22,14 +22,14 @@ function ConfigBtn() {
           className='flex justify-between items-center'
 
         >
-          Settings
+          Settings <p className='text-[10px]'>Soon</p>
         </Button>
 
         <label
           className='align-middle select-none font-sans font-bold uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg text-blue-gray-500 hover:bg-blue-gray-500/10 active:bg-blue-gray-500/30 w-full flex justify-between items-center relative overflow-hidden'
           htmlFor='dark-mode'>
           Dark Mode
-          <Switch id='dark-mode' name='dark-mode' color="blue"/>
+          <Switch onClick={handelDarkMode} id='dark-mode' name='dark-mode' color="blue"/>
         </label>
 
       </div>
