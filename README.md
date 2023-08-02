@@ -18,16 +18,35 @@ Gestión de Tareas: Crea, edita y elimina tareas de forma rápida y sencilla. As
 ![image](https://github.com/MiguelMR86/TaskHub/assets/90867675/646e2fe8-5e2d-4705-b251-96bb9834831c)
 
 ## Instalación
-Clona el repositorio de TaskHub desde GitHub: git clone https://github.com/tuusuario/TaskHub.git
-Navega al directorio del proyecto: cd TaskHub
-Instala las dependencias: npm install
-Inicia la aplicación: npm start
-Requisitos del Sistema
-Node.js 14.x o superior
-NPM 6.x o superior
-Contribuciones
+Clona el repositorio de TaskHub desde GitHub
+Navega al directorio del proyecto
+Instala las dependencias
+Inicia la aplicación
 
-## 
+```shell
+$ git clone https://github.com/MiguelMR86/TaskHub
+$ cd TaskHub
+$ code . # En caso de que lo tengas configurado
+$ npm install
+$ npm run dev
+```
+## 💻 Tecnologías
+**Front-end:**
+* HTML
+* Tailwind
+* JavaScript
+* React ( dom - icons - router )
+* Material-Tailwind
+
+**Back-end**
+* Firebase
+* Node
+* Vite
+
+**Extra**
+* Prettier
+
+## 🤝 Contribuciones
 ¡Gracias por considerar contribuir a TaskHub! Si deseas colaborar conmigo, por favor sigue estos pasos:
 
 Realiza un fork del repositorio.
@@ -38,5 +57,5 @@ Abre un Pull Request describiendo tus cambios detalladamente.
 Soporte
 Si tienes alguna pregunta, problema o sugerencia, por favor abre un issue en nuestro repositorio de GitHub.
 
-## Licencia
-TaskHub está bajo la Licencia MIT. Para más información, por favor revisa el archivo LICENSE.
+## 📜Licencia 
+TaskHub está bajo la Licencia [MIT](https://choosealicense.com/licenses/mit/). Para más información, por favor revisa el archivo LICENSE.
