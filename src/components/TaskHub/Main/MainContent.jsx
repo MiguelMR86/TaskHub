@@ -9,10 +9,11 @@ import EditTaskModal from "../Content/Tasks/Modals/EditTaskModal";
 import StartBtn from "../Content/Spaces/Buttons/StartBtn";
 import SpaceSelectorModal from "../Content/Spaces/Modals/SpaceSelectorModal";
 function MainContent() {
-  const { currentSpace, tasks } = useContext(Context);
+  const { currentSpace, tasks, darkMode } = useContext(Context);
 
   return (
-    <div className="w-full h-full flex flex-col gap-4 items-end bg-white p-4">
+    <div className={`w-full h-full flex flex-col gap-4 items-end p-4 ${darkMode ? " bg-gray-600" : "bg-white"}`}>
+
       <div className="flex w-full h-[7%]">
         <SideBarBtn />
         <SpaceTitle />

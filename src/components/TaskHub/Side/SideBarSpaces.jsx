@@ -21,7 +21,7 @@ function SideBarSpaces() {
           fullWidth
           variant="text"
           color="blue-gray"
-          className="flex justify-center items-center gap-2 border"
+          className="flex justify-center items-center gap-2 border hover:bg-blue-gray-100 bg-white"
           onClick={() => {
             handelSpacesMenu()
           }}

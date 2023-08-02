@@ -10,12 +10,12 @@ import SideBarSpaces from './SideBarSpaces';
 import Divider from '../../General/Others/Divider';
 
 function SideBar() {
-  const { openSideBar } = useContext(Context)
+  const { openSideBar, darkMode } = useContext(Context)
 
   return (
-    <Navbar color="transparent" fullWidth className={`absolute top-0 left-0 border-4 border-[#DCDCDC] w-[300px] h-full bg-white flex flex-col justify-between rounded-lg shadow-[0_5px_25px_rgba(0,0,0,0.3)] transition-all z-20 ${openSideBar ? '-translate-x-0' : ' -translate-x-[316px]'}`}>
+    <Navbar color="transparent" fullWidth className={`absolute top-0 left-0 border border-[#DCDCDC] w-[300px] h-full flex flex-col justify-between rounded-r-lg shadow-[0_5px_25px_rgba(0,0,0,0.3)] transition-all z-20 ${openSideBar ? '-translate-x-0' : ' -translate-x-[316px]'} ${darkMode ? "bg-gray-600 text-white" : "bg-white"}`}>
         <div className='flex flex-col items-end gap-4'>
-          <div className='w-[80%]'>
+          <div className={`w-[80%] ${darkMode ? "text-white" : "text-black"}`}>
             <Logo />
           </div>
           <SideBarBody/>

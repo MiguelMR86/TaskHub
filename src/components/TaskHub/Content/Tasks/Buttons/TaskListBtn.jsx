@@ -16,7 +16,7 @@ function TaskListBtn({ task, index }) {
     <div
     key={task.id}
     color="white"
-    className={`z-10 bg-white w-full min-h-[50px] mt-8 border border-gray-400 grid place-items-center hover:bg-gray-100 rounded-md shadow-md hover:shadow-lg ${deadlineBorder}`}
+    className={`z-10 bg-white w-full min-h-[50px] border border-gray-400 grid place-items-center hover:bg-gray-100 rounded-md shadow-md hover:shadow-lg ${deadlineBorder}`}
     draggable
     onDragStart={(e) => handleDragStart(e, index)}
     onDragOver={(e) => handleDragOver(e, task.status)}

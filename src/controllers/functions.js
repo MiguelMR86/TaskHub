@@ -61,3 +61,13 @@ export const handelInputDateInsert = (timestamp) => {
   const formattedDate = `${year}-${month}-${day}T${hours}:${minutes}`;
   return formattedDate;
 };
+
+export const getDarkMode = () => {
+  const darkMode = localStorage.getItem("darkMode");
+  if (darkMode && darkMode === "true") return true;
+  else return false;
+}
+
+export const updateDarkMode = (darkMode) => {
+  localStorage.setItem("darkMode", darkMode);
+}

@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Context } from "../../../context/Context";
 
 function SideBarBody() {
-
+  const { darkMode } = useContext(Context);
   return (
     <ul className="my-2 w-full flex flex-col gap-4">
       <li>
         <a
-          className="w-24 p-[10px] border grid place-items-center cursor-pointer rounded-md text-gray-700 text-base hover:shadow-lg hover:bg-gray-200 transition-all"
+          className="w-24 p-[10px] border grid place-items-center cursor-pointer rounded-md text-gray-700 text-base hover:shadow-lg hover:bg-gray-200 transition-all bg-white"
           name="home-button"
           variant="text"
           color="blue-gray"

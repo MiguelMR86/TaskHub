@@ -10,14 +10,14 @@ import {
   signInWithGoogle, signOut, getUser
 } from "./controllers/firebase";
 import { 
-  handelStatusColor, handelPriorityColor, handelPriorityFlag, handelDates, handelInputDateInsert
+  handelStatusColor, handelPriorityColor, handelPriorityFlag, handelDates, handelInputDateInsert, getDarkMode, updateDarkMode
  } from "./controllers/functions";
 
 const firebaseProvider = {
   createSpace, getUserSpaces,  getUserSpaceByName,
   createTask, getUserTasks, getUserTask, deleteTask, updateTaskName, updateTaskDescription, updateTaskDueDate, updateTaskPriority, updateTaskStatus, updateTaskSubtasks,
   signInWithGoogle, signOut, getUser,
-  handelStatusColor, handelPriorityColor, handelPriorityFlag, handelDates, handelInputDateInsert
+  handelStatusColor, handelPriorityColor, handelPriorityFlag, handelDates, handelInputDateInsert, getDarkMode, updateDarkMode
 };
 
 ReactDOM.createRoot(document.getElementById("root")).render(

@@ -1,23 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext } from 'react'
+import { Context } from '../../../context/Context'
 import {AiOutlineUser} from 'react-icons/ai'
 import { Button } from '@material-tailwind/react'
-import { auth } from '../../../config/firebase'
 
 function UserBtn() {
-  const [photoURL, setPhotoURL] = useState();
-
-  useEffect(() => {
-    auth.onAuthStateChanged((user) => {
-      if (user) {
-        setPhotoURL(user.photoURL)
-      }
-    })
-  }, [auth?.currentUser]);
+  const { user } = useContext(Context);
 
   return (
-    <Button className='w-[50px] h-[50px] p-0 m-0 flex justify-center items-center select-none text-white bg-[#2196F3] rounded-full'>
-        {auth?.currentUser?.photoURL ? 
-        <img src={photoURL} alt="Profile-Img" className=' rounded-full'/>
+    <Button className='w-[50px] h-[50px] border-2 p-0 m-0 flex justify-center items-center select-none text-white bg-[#2196F3] rounded-full'>
+        {user ? 
+        <img src={user.photoURL} alt="Profile-Img" className='rounded-full'/>
         : <AiOutlineUser size={30} />}
     </Button>
   )

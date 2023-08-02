@@ -10,7 +10,7 @@ function NewTaskBtn() {
     <button
       name="new-task-button"
       onClick={handleOpen}
-      className="flex justify-between items-center w-[50px] h-[50px] border p-4 bg-[#2196F3] text-white rounded-lg hover:bg-blue-gray-50 hover:text-[#2196F3] hover:shadow-lg transition-all duration-300 ease-in-out"
+      className="flex justify-between items-center w-[50px] h-[50px] p-4 bg-[#2196F3] text-white rounded-lg hover:bg-blue-gray-50 hover:text-[#2196F3] hover:shadow-lg transition-all duration-300 ease-in-out"
     >
       <HiOutlineFolderAdd className="scale-[1.7]" />
     </button>

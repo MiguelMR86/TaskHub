@@ -2,10 +2,10 @@ import React, { createContext, useState } from "react";
 import Loading from "../components/General/Others/Loading";
 export const Context = createContext();
 
-export function ContextProvider({ children, value: { getUser, getUserSpaces, getUserTasks, updateTaskStatus,...other } }) {
+export function ContextProvider({ children, value: { getUser, getUserSpaces, getUserTasks, updateTaskStatus, getDarkMode, updateDarkMode,...other } }) {
   //USER
   const [user, loading] = getUser();
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(getDarkMode());
 
   // SECTIONS
   const [spaces, setSpaces] = useState([]);
@@ -33,7 +33,7 @@ export function ContextProvider({ children, value: { getUser, getUserSpaces, get
   const handelPriorityModal = () => setOpenPriority(!openPriority);
   const [openConfirmDelete, setOpenConfirmDelete] = useState(false);
   const handelConfirmDeleteModal = () => setOpenConfirmDelete(!openConfirmDelete);
-  const handelDarkMode = () => setDarkMode(!darkMode);
+  const handelDarkMode = () => {setDarkMode(!darkMode); updateDarkMode(!darkMode)}
 
   // FUNTIONS
   const handelGetTasks = () => getUserTasks(currentSpace.id).then((tasks) => setTasks(tasks));
