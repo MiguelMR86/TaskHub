@@ -1,11 +1,15 @@
-import React from 'react'
-import { Typography } from "@material-tailwind/react";
+import React, { useContext } from "react";
+import { Context } from "../../context/Context";
+import {
+    Typography,
+    Button,
+    Card
+} from "@material-tailwind/react";
 
 function MainContent() {
-  return (
-    <div className='h-[81.5vh]'>
-        <div className=' flex flex-col gap-8 p-4 rounded-lg bg-white border-4 border-[#DCDCDC]'>
-            
+
+    return (
+        <div id="taskHub-info" className='flex flex-col gap-8 p-4 bg-white shadow-md border'>
             <div>
                 <Typography className='text-2xl font-semibold'>What is TaskHub?</Typography>
                 <Typography className='ml-4'>TaskHub is a task management app that helps you organize your tasks and projects.</Typography>
@@ -26,14 +30,12 @@ function MainContent() {
                 <Typography className='text-2xl font-semibold'>Why you should I use it?</Typography>
                 <Typography className='list-disc ml-4'>
                     <li>Free to use</li>
-                    <li>Easy to use</li> 
+                    <li>Easy to use</li>
                     <li>Open source</li>
                 </Typography>
             </div>
-
         </div>
-    </div>
-  )
+    )
 }
 
 export default MainContent

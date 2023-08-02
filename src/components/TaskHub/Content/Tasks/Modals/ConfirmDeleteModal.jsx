@@ -16,12 +16,13 @@ function ConfirmDeleteModal() {
 
   return (
     <Dialog
-      size="lg"
+      size="md"
+      className="w-full max-w-md"
       open={openConfirmDelete}
       handler={handelConfirmDeleteModal}
     >
       <DialogHeader className="text-center">
-        <div className="flex flex-col w-full">
+        <div className="flex flex-col w-full truncate text-ellipsis">
           Confirm Delete <p className="text-red-500 text-xl">{name}</p>
         </div>
       </DialogHeader>

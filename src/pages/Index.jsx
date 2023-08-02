@@ -1,12 +1,14 @@
 import React from 'react'
-import NavBar from '../components/Index/Nav/NavBar'
-import MainContent from '../components/Index/Main/MainContent'
+import Nav from '../components/Index/Nav'
+import Main from '../components/Index/Main'
+import Footer from '../components/Index/Footer'
 
 function IndexPage() {
   return (
-    <div className='p-4 bg-[#2196F3]'>
-      <NavBar />
-      <MainContent />
+    <div className='w-full h-screen bg-[#e5e5f7] bg-opacity-80'>
+      <Nav />
+      <Main />
+      <Footer />
     </div>
   )
 }
