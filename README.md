@@ -5,15 +5,15 @@ TaskHub es una aplicación intuitiva y fácil de usar que te ayuda a organizar t
 ## Características Principales
 Gestión de Tareas: Crea, edita y elimina tareas de forma rápida y sencilla. Asigna fechas de vencimiento y establece prioridades para mantener el enfoque en tus actividades más importantes.
 
-* Espacios: Organiza tus tareas en espacios para una mejor estructuración y visión clara de tus proyectos.
+### Espacios: Organiza tus tareas en espacios para una mejor estructuración y visión clara de tus proyectos.
 
 ![image](https://github.com/MiguelMR86/TaskHub/assets/90867675/239665aa-a753-48b3-9220-a8b680cb4e6a)
 
-* Tablero: Visualiza tus tareas en un tablero interactivo para planificar tu tiempo y evitar conflictos en tu agenda.
+### Tablero: Visualiza tus tareas en un tablero interactivo para planificar tu tiempo y evitar conflictos en tu agenda.
 
 ![image](https://github.com/MiguelMR86/TaskHub/assets/90867675/1ce65a82-a1b8-464b-97e8-71642ba91204)
 
-* Tareas: Esalece fechas de entrega, prioridades, estados y sub-tareas, para una mayor organización.
+### Tareas: Esalece fechas de entrega, prioridades, estados y sub-tareas, para una mayor organización.
 
 ![image](https://github.com/MiguelMR86/TaskHub/assets/90867675/646e2fe8-5e2d-4705-b251-96bb9834831c)
 
