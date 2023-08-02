@@ -1,11 +1,13 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Context } from '../../../context/Context'
 import {FiSettings} from 'react-icons/fi'
 import { Button, Switch  } from '@material-tailwind/react'
 
 function ConfigBtn() {
-  const { openConfigMenu, setOpenConfigMenu, handelDarkMode } = useContext(Context)
-
+  const { openConfigMenu, setOpenConfigMenu, handelDarkMode, darkMode } = useContext(Context)
+  useEffect(() => {
+    document.getElementById('dark-mode').checked = darkMode;
+  }, []);
   return (
     <div className='relative'>
       <Button
@@ -14,7 +16,7 @@ function ConfigBtn() {
         className={`w-[50px] h-[50px] p-0 m-0 flex justify-center items-center select-none text-white bg-[#2196F3] rounded-full ${openConfigMenu ? "rotate-[360deg]" : ""}`}>
           <FiSettings className=' scale-[2.3]'/>
       </Button>
-      <div className={`absolute top-[-150px] w-[200px] p-4 border-2 border-[#DCDCDC] bg-white text-black rounded-lg shadow-[0_5px_25px_rgba(0,0,0,0.1)] ${openConfigMenu ? "" : "hidden"}`}>
+      <div className={`absolute -top-[150px] -left-[150px] w-[200px] p-4 border-2 border-[#DCDCDC] bg-white text-black rounded-lg shadow-[0_5px_25px_rgba(0,0,0,0.1)] ${openConfigMenu ? "" : "hidden"}`}>
         <Button
           fullWidth
           variant="text"
