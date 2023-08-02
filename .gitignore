@@ -32,3 +32,4 @@ firebase.json
 .github
 
 .env
+.env.local
