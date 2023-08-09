@@ -56,7 +56,7 @@ export function ContextProvider({ children, value: { getUser, getUserSpaces, get
         else setLoadingTasks(false)
       });
     } else {
-      console.log("No user");
+      window.location.href = "/";
     }
   };
 

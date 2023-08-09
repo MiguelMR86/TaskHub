@@ -13,7 +13,7 @@ function LoginCard() {
 
     return (
         <div id="index-bg" className="w-full h-[90vh] flex justify-center items-center">
-            <Card className="w-full sm:w-[60%] p-8 border mx-4">
+            <Card className="w-full sm:w-[60%] max-w-xl p-8 border mx-4">
                 <Typography variant="h2" color="blue-gray" className="text-center mb-4">
                     Let's get started!
                 </Typography>
