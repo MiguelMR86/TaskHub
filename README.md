@@ -7,15 +7,15 @@ Gestión de Tareas: Crea, edita y elimina tareas de forma rápida y sencilla. As
 
 - **Espacios**: Organiza tus tareas en espacios para una mejor estructuración y visión clara de tus proyectos.
 
-![image](https://github.com/MiguelMR86/TaskHub/assets/90867675/239665aa-a753-48b3-9220-a8b680cb4e6a)
+![TaskHub-Spaces](https://github.com/MiguelMR86/TaskHub/assets/90867675/caf02039-6d04-4551-8d75-f2e62cc5bd82)
 
 - **Tablero:** Visualiza tus tareas en un tablero interactivo para planificar tu tiempo y evitar conflictos en tu agenda.
 
-![image](https://github.com/MiguelMR86/TaskHub/assets/90867675/1ce65a82-a1b8-464b-97e8-71642ba91204)
+![TaskHub-Board](https://github.com/MiguelMR86/TaskHub/assets/90867675/dfaa6157-774b-4cc1-b729-9080e5e13c8e)
 
 - **Tareas:** Esalece fechas de entrega, prioridades, estados y sub-tareas, para una mayor organización.
 
-![image](https://github.com/MiguelMR86/TaskHub/assets/90867675/646e2fe8-5e2d-4705-b251-96bb9834831c)
+![TaskHub-Task](https://github.com/MiguelMR86/TaskHub/assets/90867675/b6c5d370-4bfa-4b84-9f38-451c9eaf01d5)
 
 ## Instalación
 Clona el repositorio de TaskHub desde GitHub
