@@ -59,4 +59,4 @@ Abre un Pull Request describiendo tus cambios detalladamente.
 Si tienes alguna pregunta, problema o sugerencia, por favor abre un issue en el repositorio.
 
 ## 📜Licencia 
-© 2023 TaskHub está bajo la Licencia [MIT](https://choosealicense.com/licenses/mit/). Para más información, por favor revisa el archivo LICENSE.
+© 2023 TaskHub. Este proyecto es distribuido bajo la licencia [MIT](https://choosealicense.com/licenses/mit/). Consulta el archivo LICENSE para obtener más información.
