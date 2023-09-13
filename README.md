@@ -24,11 +24,11 @@ Instala las dependencias
 Inicia la aplicación
 
 ```shell
-$ git clone https://github.com/MiguelMR86/TaskHub
-$ cd TaskHub
-$ code . # En caso de que lo tengas configurado
-$ npm install
-$ npm run dev
+git clone https://github.com/MiguelMR86/TaskHub
+cd TaskHub
+code . # En caso de que lo tengas configurado
+npm install
+npm run dev
 ```
 ## 💻 Tecnologías
 **Front-end:**
