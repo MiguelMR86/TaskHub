@@ -71,3 +71,11 @@ export const getDarkMode = () => {
 export const updateDarkMode = (darkMode) => {
   localStorage.setItem("darkMode", darkMode);
 }
+
+export const handleDeadLineColor = (task) => {
+  return task.dueDate < Date.now()
+  ? task.status == "Done"
+    ? task.dueDate < task.lastEdit ? "border-red-500 border-2 text-red-500" : "border-green-500 border-2 text-green-500"
+    : "border-red-500 border-2 text-red-500"
+  : task.status == "Done" ? "border-green-500 border-2 text-green-500" : "";
+}

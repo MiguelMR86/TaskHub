@@ -2,7 +2,7 @@ import React, { createContext, useState } from "react";
 import Loading from "../components/General/Others/Loading";
 export const Context = createContext();
 
-export function ContextProvider({ children, value: { getUser, getUserSpaces, getUserTasks, updateTaskStatus, getDarkMode, updateDarkMode,...other } }) {
+export function ContextProvider({ children, value: { getUser, getUserSpaces, getUserTasks, updateTaskStatus, updateTaskDueDate, getDarkMode, updateDarkMode,...other } }) {
   //USER
   const [user, loading] = getUser();
   const [darkMode, setDarkMode] = useState(getDarkMode());
@@ -59,6 +59,18 @@ export function ContextProvider({ children, value: { getUser, getUserSpaces, get
       window.location.href = "/";
     }
   };
+  const handleUpdateDueDate = (value) => {
+    const input = value.length == 0 ? 0 : value;
+    const date = new Date(input).getTime();
+    if (Date.parse(input) < Date.now()) {
+      document.getElementById("edit-task-due-date").value = "";
+    }
+    else if (currentTask.dueDate !== date) {
+      updateTaskDueDate(currentTask.id, date).then(() => {
+        setCurrentTask({ ...currentTask, dueDate: date });
+      });
+    }
+  }
 
   // DRAG AND DROP
   const [dragOverStatus, setDragOverStatus] = useState(null);
@@ -109,7 +121,8 @@ export function ContextProvider({ children, value: { getUser, getUserSpaces, get
     handleDragStart,
     handleDragOver,
     handleDrop,
-    darkMode, handelDarkMode
+    darkMode, handelDarkMode,
+    handleUpdateDueDate
   };
 
   return (

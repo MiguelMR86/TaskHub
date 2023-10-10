@@ -3,17 +3,13 @@ import { Context } from "../../../../../context/Context";
 
 function TaskListBtn({ task, index }) {
   const { 
-    setCurrentTask, handelEditModal, handelDates, handelPriorityColor,
+    setCurrentTask, handelEditModal, handelDates, handelPriorityColor, handleDeadLineColor,
     handleDragStart, handleDragOver, handleDrop
   } = useContext(Context);
 
   const priorityColor = handelPriorityColor(task.priority);
   const dueDate = task.dueDate == 0 ? "There is no Due Date yet" : handelDates(task.dueDate);
-  const deadline = task.dueDate < Date.now()
-        ? task.status == "Done"
-          ? task.dueDate < task.lastEdit ? "border-red-500 border-2 text-red-500" : "border-green-500 border-2 text-green-500"
-          : "border-red-500 border-2 text-red-500"
-        : task.status == "Done" ? "border-green-500 border-2 text-green-500" : "";
+  const deadline = handleDeadLineColor(task);
   
   return (
     <div
