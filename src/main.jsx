@@ -4,25 +4,14 @@ import App from "./App.jsx";
 import "./index.css";
 import { ThemeProvider } from "@material-tailwind/react";
 import { ContextProvider } from "./context/Context.jsx";
-import {
-  createSpace, getUserSpaces, getUserSpaceByName,
-  createTask, getUserTasks, getUserTask, deleteTask, updateTaskName, updateTaskDescription, updateTaskDueDate, updateTaskPriority, updateTaskStatus, updateTaskSubtasks,
-  signInWithGoogle, signOut, getUser
-} from "./controllers/firebase";
-import { 
-  handelStatusColor, handelPriorityColor, handelPriorityFlag, handelDates, handelInputDateInsert, getDarkMode, updateDarkMode
- } from "./controllers/functions";
+import * as generalFunctions from "./controllers/firebase";
+import * as firebaseFunctions from "./controllers/functions";
 
-const firebaseProvider = {
-  createSpace, getUserSpaces,  getUserSpaceByName,
-  createTask, getUserTasks, getUserTask, deleteTask, updateTaskName, updateTaskDescription, updateTaskDueDate, updateTaskPriority, updateTaskStatus, updateTaskSubtasks,
-  signInWithGoogle, signOut, getUser,
-  handelStatusColor, handelPriorityColor, handelPriorityFlag, handelDates, handelInputDateInsert, getDarkMode, updateDarkMode
-};
+const provider = { ...generalFunctions, ...firebaseFunctions };
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <ThemeProvider>
-      <ContextProvider value={firebaseProvider}>
+      <ContextProvider value={provider}>
         <App />
       </ContextProvider>
   </ThemeProvider>
