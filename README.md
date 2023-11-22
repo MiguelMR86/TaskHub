@@ -7,7 +7,7 @@ Gestión de Tareas: Crea, edita y elimina tareas de forma rápida y sencilla. As
 
 - **Espacios**: Organiza tus tareas en espacios para una mejor estructuración y visión clara de tus proyectos.
 
-![TaskHub-Spaces](https://github.com/MiguelMR86/TaskHub/assets/90867675/caf02039-6d04-4551-8d75-f2e62cc5bd82)
+![image](https://github.com/MiguelMR86/TaskHub/assets/90867675/f295ac2a-b456-423d-b53a-4948ebcdb7f7)
 
 - **Tablero:** Visualiza tus tareas en un tablero interactivo para planificar tu tiempo y evitar conflictos en tu agenda.
 
